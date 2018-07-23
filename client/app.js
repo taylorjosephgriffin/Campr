@@ -1,4 +1,5 @@
 import React from 'react'
+import Campgrounds from './campgrounds.js'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-    
+      <Campgrounds campgrounds={this.state.campgrounds}/>
     )
   }
 }
