@@ -1,0 +1,14 @@
+.campground-list-image {
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.campground-name {
+  font-size: 40px;
+  font-weight: 100;
+  background-color: rgba(122, 194, 173, 0.7);
+}
+
+.nav-logos {
+  font-size: 30px;
+}
