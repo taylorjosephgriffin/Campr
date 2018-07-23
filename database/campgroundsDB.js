@@ -27,7 +27,7 @@ module.exports = [
   {
     id: uuid(),
     facilityNum: 'leoca3404',
-    facilityName: 'Leo Carrillo State Park',
+    facilityName: 'Leo Carrillo SP',
     facilityState: 'CA',
     latitude: '34.0445491',
     longitude: '-118.9582045',
@@ -73,7 +73,7 @@ module.exports = [
   {
     id: uuid(),
     facilityNum: 'andre3628',
-    facilityName: 'Andrew Molera State Park',
+    facilityName: 'Andrew Molera SP',
     facilityState: 'CA',
     latitude: '36.2884189',
     longitude: '-121.844272',
@@ -142,7 +142,7 @@ module.exports = [
   {
     id: uuid(),
     facilityNum: 'jumbo3399',
-    facilityName: 'Jumbo Rocks Campground',
+    facilityName: 'Jumbo Rocks',
     facilityState: 'CA',
     latitude: '33.9919309',
     longitude: '-116.0623802',
@@ -165,7 +165,7 @@ module.exports = [
   {
     id: uuid(),
     facilityNum: 'pigeo4076',
-    facilityName: 'Pigeon Point Campgrounds',
+    facilityName: 'Pigeon Point Campground',
     facilityState: 'CA',
     latitude: '40.76705358',
     longitude: '-123.1302704',
