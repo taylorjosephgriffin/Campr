@@ -13,7 +13,7 @@ export default function Campgrounds(props) {
               style={{backgroundImage:`url(${camps.facilityPhotos[0]})`,
               backgroundPosition: 'center',
               backgroundSize: 'cover'}}>
-                <h5 className='card-title campground-name text-light text-center'>{camps.facilityName}</h5>
+                <h5 className='card-title py-2 campground-name text-light text-center'>{camps.facilityName}</h5>
               </div>
             <div className='card-body'>
               <p className='card-text h5'>{`$${camps.price}.00 / night`}</p>
