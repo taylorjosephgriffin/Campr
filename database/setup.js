@@ -22,10 +22,10 @@ MongoClient
     .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
     .then(client => {
       const db = client.db()
-      const collection = db.collection('campsitesDB')
+      const collection = db.collection('campsites')
       return collection
         .deleteMany()
-        .then(() => collection.insertMany(seed2))
+        .then(() => collection.insertMany(campsitesDB))
         .then(() => client.close())
     })
     .catch(err => {
