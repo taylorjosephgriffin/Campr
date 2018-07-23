@@ -3,6 +3,7 @@ const { MongoClient } = require('mongodb')
 const express = require('express')
 const bodyParser = require('body-parser')
 const campgroundRouter = require('./routes/campground-router.js')
+const path = require('path')
 
 const app = express()
 
@@ -17,6 +18,7 @@ MongoClient
   .then(client => {
     const collection1 = client.db().collection('campgrounds')
     const collection2 = client.db().collection('campsites')
+    const publicPath = path.join(__dirname, 'public/')
 
     app
       .use((err, req, res, next) => {
@@ -24,6 +26,7 @@ MongoClient
         res.sendState(500)
       })
       .use('/campgrounds', campgroundRouter(collection1))
+      .use(express.static(publicPath))
 
     app.listen(process.env.PORT, () => {
       console.log(`listening on port ${process.env.PORT}`)
