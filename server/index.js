@@ -2,6 +2,7 @@ require('dotenv/config')
 const { MongoClient } = require('mongodb')
 const express = require('express')
 const bodyParser = require('body-parser')
+const campgroundRouter = require('./routes/campground-router.js')
 
 const app = express()
 
@@ -14,12 +15,15 @@ MongoClient
     process.exit(1)
   })
   .then(client => {
-    const collection = client.db().collection('campgrounds')
+    const collection1 = client.db().collection('campgrounds')
+    const collection2 = client.db().collection('campsites')
 
-    app.use((err, req, res, next) => {
-      console.error(err)
-      res.sendState(500)
-    })
+    app
+      .use((err, req, res, next) => {
+        console.error(err)
+        res.sendState(500)
+      })
+      .use('/campgrounds', campgroundRouter(collection1))
 
     app.listen(process.env.PORT, () => {
       console.log(`listening on port ${process.env.PORT}`)
