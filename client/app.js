@@ -1,6 +1,7 @@
 import React from 'react'
 import Campgrounds from './campgrounds.js'
 import Nav from './nav.js'
+import CampgroundDetail from './campground-detail.js'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -9,8 +10,23 @@ export default class App extends React.Component {
     this.state = {
       campgrounds: [
       ],
-      view: ''
+      detail: '',
+      path: window.location.hash.replace(/#/g, '')
     }
+    this.handleCampgroundClick = this.handleCampgroundClick.bind(this)
+  }
+
+  handleCampgroundClick(event) {
+    window.location.hash = 'details'
+    this.setState({
+      path: 'details'
+    })
+    const campground = this.state.campgrounds.filter(camp => {
+      return event.currentTarget.dataset.id === camp.id
+    })
+    this.setState({
+      detail: campground[0]
+    })
   }
 
   componentDidMount() {
@@ -21,14 +37,13 @@ export default class App extends React.Component {
           campgrounds: campgrounds
         })
     })
-
   }
 
   render() {
     return (
       <React.Fragment>
         <Nav />
-        <Campgrounds campgrounds={this.state.campgrounds}/>
+        <Campgrounds handleCampgroundClick={this.handleCampgroundClick} campgrounds={this.state.campgrounds}/>
       </React.Fragment>
     )
   }
