@@ -37,6 +37,11 @@ export default class App extends React.Component {
           campgrounds: campgrounds
         })
     })
+    window.addEventListener('hashchange', event => {
+      this.setState({
+        path: window.location.hash.replace(/#/g, '')
+      })
+    })
   }
 
   render() {
