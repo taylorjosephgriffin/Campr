@@ -1,27 +1,49 @@
 import React from 'react'
+import parse from './util/query-string.js'
 
-export default function Campgrounds(props) {
+export default class Campgrounds extends React.Component {
+  constructor(props) {
+    super(props)
 
-  return (
-    <div className='container-fluid'>
-      <div className='row'>
-      { props.campgrounds.map((camps, index) =>
-        <div key={index} className='col-xl-4 col-lg-6 mt-4'>
-          <div onClick={props.handleCampgroundClick} data-id={camps.id} className='card h-100 campground-card'>
-            <div
-              className='card-img-top campground-list-image h-100'
-              style={{backgroundImage:`url(${camps.facilityPhotos[0]})`,
-              backgroundPosition: 'center',
-              backgroundSize: 'cover'}}>
-                <h5 className='card-title py-2 campground-name text-light text-center'>{camps.facilityName}</h5>
+    this.state = {
+      campgrounds: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('/campgrounds')
+      .then(res => res.json())
+      .then(campgrounds => {
+        this.setState({
+          campgrounds: campgrounds
+        })
+    })
+  }
+
+  render() {
+    return (
+      <div className='container-fluid'>
+        <div className='row'>
+        { this.state.campgrounds.map((camps, index) =>
+          <div key={index} className='col-xl-4 col-lg-6 mt-4'>
+            <a href={`#details?id=${camps.id}`}>
+              <div data-id={camps.id} className='card h-100 campground-card'>
+                <div
+                  className='card-img-top campground-list-image h-100'
+                  style={{backgroundImage:`url(${camps.facilityPhotos[0]})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover'}}>
+                    <h5 className='card-title py-2 campground-name text-light text-center'>{camps.facilityName}</h5>
+                  </div>
+                <div className='card-body'>
+                  <p className='card-text h5'>{`$${camps.price}.00 / night`}</p>
+                </div>
               </div>
-            <div className='card-body'>
-              <p className='card-text h5'>{`$${camps.price}.00 / night`}</p>
-            </div>
+            </a>
           </div>
+        )}
         </div>
-      )}
       </div>
-    </div>
-  )
+    )
+  }
 }
