@@ -12,3 +12,7 @@
 .nav-logos {
   font-size: 30px;
 }
+
+.campground-card:hover {
+  cursor: pointer;
+}

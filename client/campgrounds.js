@@ -7,7 +7,7 @@ export default function Campgrounds(props) {
       <div className='row'>
       { props.campgrounds.map((camps, index) =>
         <div key={index} className='col-xl-4 col-lg-6 mt-4'>
-          <div className='card h-100'>
+          <div onClick={props.handleCampgroundClick} data-id={camps.id} className='card h-100 campground-card'>
             <div
               className='card-img-top campground-list-image h-100'
               style={{backgroundImage:`url(${camps.facilityPhotos[0]})`,
