@@ -26,7 +26,7 @@ export default class Campgrounds extends React.Component {
         <div className='row'>
         { this.state.campgrounds.map((camps, index) =>
           <div key={index} className='col-xl-4 col-lg-6 mt-4'>
-            <a href={`#details?id=${camps.id}`}>
+            <a className='campground-link' href={`#details?id=${camps.id}`}>
               <div data-id={camps.id} className='card h-100 campground-card'>
                 <div
                   className='card-img-top campground-list-image h-100'

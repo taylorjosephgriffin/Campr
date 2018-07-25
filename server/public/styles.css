@@ -1,6 +1,6 @@
-.campground-list-image {
+.campground-list-image,
+.campground-detail-card {
   min-height: 400px;
-  overflow: hidden;
 }
 
 .campground-name {
@@ -13,6 +13,26 @@
   font-size: 30px;
 }
 
-.campground-card:hover {
-  cursor: pointer;
+.campground-link:hover { text-decoration: none; }
+
+.carousel-indicators:hover { cursor: alias; }
+
+.camp-detail-name { overflow-wrap: normal; }
+
+.hr-detail { border-top: 3px double #8c8b8b; }
+
+.detail-images {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  max-height: 800px;
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+  .card-detail-page { flex-direction: column-reverse; }
+
+  .card-title { font-size: 30px; }
 }
