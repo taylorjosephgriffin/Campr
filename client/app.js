@@ -3,6 +3,7 @@ import Campgrounds from './campgrounds.js'
 import Nav from './nav.js'
 import CampgroundDetail from './campground-detail.js'
 import hash from './util/hash.js'
+import Campsites from './campsites.js'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,9 +17,11 @@ export default class App extends React.Component {
   renderView() {
   switch (this.state.path) {
     case 'details':
-      return <CampgroundDetail />
+      return <CampgroundDetail path={this.state.path}/>
     case 'campground-list':
       return <Campgrounds />
+    case 'campsite':
+      return <Campsites />
   }
 }
 
@@ -34,7 +37,7 @@ export default class App extends React.Component {
     return (
       <React.Fragment>
         <Nav />
-        { this.renderView()}
+        { this.renderView() }
       </React.Fragment>
     )
   }
