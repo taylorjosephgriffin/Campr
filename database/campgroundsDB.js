@@ -12,9 +12,13 @@ module.exports = [
     petsAllowed: true,
     hasSewer: false,
     hasWater: true,
+    hasFireRing: true,
+    hasRestroom: true,
+    checkIn: 2,
+    checkOut: 12,
     price: '25',
     amenities: [
-      'birding', 'boating', 'campfire rings', 'fishing', 'hiking'
+      'birding', 'boating', 'campfire', 'fishing', 'hiking'
     ],
     facilityPhotos: [
       'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1431450805/campground-photos/qxdssuny6hsor02lffdg.jpg',
@@ -35,9 +39,13 @@ module.exports = [
     petsAllowed: true,
     hasSewer: false,
     hasWater: true,
+    hasFireRing: true,
+    hasRestroom: true,
+    checkIn: 2,
+    checkOut: 12,
     price: '45',
     amenities: [
-      'birding', 'boating', 'campfire rings', 'fishing', 'hiking', 'surfing'
+      'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing'
     ],
     facilityPhotos: [
       'http://barnaclebusters.org/wp-content/uploads/2016/07/Camping-at-Leo-Carrillo-2012-93.jpg',
@@ -58,12 +66,15 @@ module.exports = [
     petsAllowed: true,
     hasSewer: false,
     hasWater: true,
+    hasFireRing: true,
+    hasRestroom: true,
+    checkIn: 2,
+    checkOut: 12,
     price: '35',
     amenities: [
       'camping', 'fishing', 'hiking', 'kayaking', 'swimming', 'relaxing'
     ],
     facilityPhotos: [
-      'https://www.nps.gov/seki/planyourvisit/images/SEQU_EF_101317_LPCG_detail_960.jpg?maxwidth=1200&maxheight=1200&autorotate=false',
       'https://www.nps.gov/npgallery/GetAsset/F0BE3097-1DD8-B71B-0B91986836B23C59/proxy/hires/',
       'https://www.nps.gov/npgallery/GetAsset/F0D45019-1DD8-B71B-0B4CF1CB266FE140/proxy/hires/',
       'https://www.nps.gov/npgallery/GetAsset/F0AEC54F-1DD8-B71B-0B1ECDA29309C1E5/proxy/hires/',
@@ -81,9 +92,13 @@ module.exports = [
     petsAllowed: true,
     hasSewer: false,
     hasWater: true,
+    hasFireRing: true,
+    hasRestroom: true,
+    checkIn: 2,
+    checkOut: 12,
     price: '45',
     amenities: [
-      'birding', 'boating', 'campfire rings', 'fishing', 'hiking', 'surfing'
+      'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing'
     ],
     facilityPhotos: [
       'https://s3-media3.fl.yelpcdn.com/bphoto/_O3CDKAFoeXv67UNwuxVFg/o.jpg',
@@ -104,9 +119,13 @@ module.exports = [
     petsAllowed: true,
     hasSewer: false,
     hasWater: true,
+    hasFireRing: true,
+    hasRestroom: true,
+    checkIn: 2,
+    checkOut: 12,
     price: '50',
     amenities: [
-      'birding', 'boating', 'campfire rings', 'fishing', 'hiking', 'surfing', 'kayaking'
+      'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing', 'kayaking'
     ],
     facilityPhotos: [
       'https://i.ytimg.com/vi/0PWyzof6eko/maxresdefault.jpg',
@@ -127,9 +146,13 @@ module.exports = [
     petsAllowed: true,
     hasSewer: false,
     hasWater: true,
+    hasFireRing: true,
+    hasRestroom: true,
+    checkIn: 2,
+    checkOut: 12,
     price: '70',
     amenities: [
-      'birding', 'boating', 'campfire rings', 'fishing', 'hiking', 'surfing', 'kayaking'
+      'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing', 'kayaking'
     ],
     facilityPhotos: [
       'https://bcsecure01-a.akamaihd.net/24/1138497952/201802/2715/1138497952_5730185614001_5730170009001-vs.jpg?pubId=1138497952&videoId=5730170009001',
@@ -150,9 +173,13 @@ module.exports = [
     petsAllowed: true,
     hasSewer: false,
     hasWater: true,
+    hasFireRing: true,
+    hasRestroom: true,
+    checkIn: 2,
+    checkOut: 12,
     price: '25',
     amenities: [
-      'birding', 'campfire rings', 'hiking', 'boldering', 'rock climbing'
+      'birding', 'campfire', 'hiking', 'boldering', 'rock climbing'
     ],
     facilityPhotos: [
       'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1469053009/campground-photos/nnoeqd8uzax0zedneday.jpg',
@@ -173,9 +200,13 @@ module.exports = [
     petsAllowed: true,
     hasSewer: false,
     hasWater: true,
+    hasFireRing: true,
+    hasRestroom: true,
+    checkIn: 2,
+    checkOut: 12,
     price: '15',
     amenities: [
-      'birding', 'boating', 'campfire rings', 'fishing', 'hiking', 'kayaking', 'swimming'
+      'birding', 'boating', 'campfire', 'fishing', 'hiking', 'kayaking', 'swimming'
     ],
     facilityPhotos: [
       'https://i.ytimg.com/vi/5gry0kKFwm0/maxresdefault.jpg',
@@ -196,9 +227,13 @@ module.exports = [
     petsAllowed: true,
     hasSewer: false,
     hasWater: true,
+    hasFireRing: true,
+    hasRestroom: true,
+    checkIn: 2,
+    checkOut: 12,
     price: '35',
     amenities: [
-      'birding', 'boating', 'campfire rings', 'fishing', 'hiking', 'kayaking', 'swimming'
+      'birding', 'boating', 'campfire', 'fishing', 'hiking', 'kayaking', 'swimming'
     ],
     facilityPhotos: [
       'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1491157866/campground-photos/ajncbc2bbpgniup0j4tb.jpg',
@@ -219,9 +254,13 @@ module.exports = [
     petsAllowed: true,
     hasSewer: false,
     hasWater: true,
+    hasFireRing: true,
+    hasRestroom: true,
+    checkIn: 2,
+    checkOut: 12,
     price: '15',
     amenities: [
-      'birding', 'boating', 'campfire rings', 'fishing', 'hiking', 'kayaking', 'swimming'
+      'birding', 'boating', 'campfire', 'fishing', 'hiking', 'kayaking', 'swimming'
     ],
     facilityPhotos: [
       'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1513047354/campground-photos/adzn8w0fz3klgp57aglp.jpg',
