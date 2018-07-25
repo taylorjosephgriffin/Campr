@@ -6,7 +6,7 @@ export default class CampgroundDetail extends React.Component {
     super(props)
 
     this.state = {
-      currentIndex: 0
+      carouselIndex: 0
     }
     this.carouselClick = this.carouselClick.bind(this)
   }
@@ -23,18 +23,17 @@ export default class CampgroundDetail extends React.Component {
   }
 
   carouselClick(event) {
-    const currentIndex = this.state.currentIndex
+    const carouselIndex = this.state.carouselIndex
     const campground = this.state.campground
-    const target = event.currentTarget
 
-    if (currentIndex < campground.facilityPhotos.length - 1 && target.dataset.slide === 'next') {
+    if (carouselIndex < campground.facilityPhotos.length - 1 && event.currentTarget.dataset.slide === 'next') {
       this.setState({
-        currentIndex: currentIndex + 1
+        carouselIndex: carouselIndex + 1
       })
     }
-    else if (currentIndex > 0 && event.currentTarget.dataset.slide === 'prev') {
+    else if (carouselIndex > 0 && event.currentTarget.dataset.slide === 'prev') {
       this.setState({
-        currentIndex: currentIndex - 1
+        carouselIndex: carouselIndex - 1
       })
     }
     return null
@@ -120,12 +119,12 @@ export default class CampgroundDetail extends React.Component {
                         <div className='carousel col-xl-8 col-lg-12 col-md-12'>
                           <ol className='carousel-indicators'>
                           { this.state.campground.facilityPhotos.map((photo, index) =>
-                            <li key={index} className={ index === this.state.currentIndex ? 'active' : 'not-active'}></li>
+                            <li key={index} className={ index === this.state.carouselIndex ? 'active' : 'not-active'}></li>
                           )}
                           </ol>
                           <div className='carousel-inner'>
                            { this.state.campground.facilityPhotos.map((photo, index) =>
-                             <div key={index} className={ index === this.state.currentIndex ? 'carousel-item active' : 'carousel-item'}>
+                             <div key={index} className={ index === this.state.carouselIndex ? 'carousel-item active' : 'carousel-item'}>
                                <img className='d-block w-100 h-100 detail-images' src={photo} alt={`slide #${index + 1}`}/>
                              </div>
                            )}
