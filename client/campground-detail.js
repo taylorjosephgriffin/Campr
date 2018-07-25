@@ -55,18 +55,18 @@ export default class CampgroundDetail extends React.Component {
                           <hr className='hr-detail'/>
                           <div className='container-fluid'>
                             <div className='row mt-4'>
-                              <h3 className='text-dark'><u>Amenities</u></h3>
+                              <h3 className='text-dark'><u>Activities</u></h3>
                             </div>
                             <div className='row'>
                             { this.state.campground.amenities.map((amenity, index) =>
-                              <ul key={index} className='list-group col-xl-4 col-lg-6 col-md-6 col-12'>
+                              <ul key={index} className='list-group col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 text-center'>
                                 <li className='list-group-item mt-3'>{amenity}</li>
                               </ul>
                             )}
                             </div>
                             <div className='row mt-3'>
                               <div className='col pl-0'>
-                                <h3 className='text-dark'><u>Services</u></h3>
+                                <h3 className='text-dark'><u>Accomodations</u></h3>
                               </div>
                             </div>
                             <div className='row mt-1'>
@@ -77,21 +77,15 @@ export default class CampgroundDetail extends React.Component {
                               <Service boolean={this.state.campground.hasWater} service={'Water'} />
                               <Service boolean={this.state.campground.hasRestroom} service={'Restroom'} />
                             </div>
-                            <div className='row mt-3'>
-                              <div className='col-6 pl-0'>
-                                <h5>Check-in:</h5>
-                              </div>
-                              <div className='col-6 pl-0'>
-                                <h5>Check-out:</h5>
-                              </div>
-                            </div>
-                            <div className='row'>
-                              <div className='col-6'>
-                                <h6>{`${this.state.campground.checkIn}:00PM`}</h6>
-                              </div>
-                              <div className='col-6'>
-                                <h6>{`${this.state.campground.checkOut}:00PM`}</h6>
-                              </div>
+                            <div className='row mt-4'>
+                              <ul className='list-group col-xl-6 col-lg-6 col-md-6 col-sm-6 mt-2 col-12'>
+                                <li className='list-group-item'>Check-in: {this.state.campground.checkIn}:00pm</li>
+                              </ul>
+                              <ul className='list-group col-xl-6 col-lg-6 col-md-6 col-sm-6 mt-2 col-12'>
+                                <li className='list-group-item'>
+                                  Check-out: {this.state.campground.checkOut}:00pm
+                                </li>
+                              </ul>
                             </div>
                           </div>
                         </div>
