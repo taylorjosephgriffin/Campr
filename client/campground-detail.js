@@ -49,10 +49,9 @@ export default class CampgroundDetail extends React.Component {
   }
 
   render() {
+    if (!this.state.campground) return null
     return (
-      !this.state.campground
-        ? null
-        : <div className='container-fluid'>
+          <div className='container-fluid'>
             <div className='row'>
               <div className='col-xl-12'>
                 <div className='campground-detail-card'>
