@@ -70,12 +70,12 @@ export default class CampgroundDetail extends React.Component {
                               </div>
                             </div>
                             <div className='row mt-1'>
-                              <Service boolean={this.state.campground.petsAllowed} service={'Allows pets'} />
-                              <Service boolean={this.state.campground.hasFireRing} service={'Fire Rings'} />
-                              <Service boolean={this.state.campground.hasAmps} service={'Amps'} />
-                              <Service boolean={this.state.campground.hasSewer} service={'Sewer'} />
-                              <Service boolean={this.state.campground.hasWater} service={'Water'} />
-                              <Service boolean={this.state.campground.hasRestroom} service={'Restroom'} />
+                              <Service hasService={this.state.campground.petsAllowed} service={'Allows pets'} />
+                              <Service hasService={this.state.campground.hasFireRing} service={'Fire Rings'} />
+                              <Service hasService={this.state.campground.hasAmps} service={'Amps'} />
+                              <Service hasService={this.state.campground.hasSewer} service={'Sewer'} />
+                              <Service hasService={this.state.campground.hasWater} service={'Water'} />
+                              <Service hasService={this.state.campground.hasRestroom} service={'Restroom'} />
                             </div>
                             <div className='row mt-4'>
                               <ul className='list-group col-xl-6 col-lg-6 col-md-6 col-sm-6 mt-2 col-12'>
