@@ -35,4 +35,8 @@
   .card-detail-page { flex-direction: column-reverse; }
 
   .card-title { font-size: 30px; }
+
+  .card-body { padding: 0 !important; }
+
+  .carousel { padding: 0 !important; }
 }
