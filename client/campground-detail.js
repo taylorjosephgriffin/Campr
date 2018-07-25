@@ -1,5 +1,6 @@
 import React from 'react'
 import queryString from './util/query-string.js'
+import Service from './service.js'
 
 export default class CampgroundDetail extends React.Component {
   constructor(props) {
@@ -39,15 +40,6 @@ export default class CampgroundDetail extends React.Component {
     return null
   }
 
-  services(service) {
-    if (service) {
-      return <i className='far fa-check-circle text-success d-block'></i>
-    }
-    else {
-      return <i className='far fa-times-circle text-danger d-block'></i>
-    }
-  }
-
   render() {
     if (!this.state.campground) return null
     return (
@@ -78,24 +70,12 @@ export default class CampgroundDetail extends React.Component {
                               </div>
                             </div>
                             <div className='row mt-1'>
-                              <div className='col-xl-6 col-12 mt-3 pl-0'>
-                                <h5>Allows pets? {this.services(this.state.campground.petsAllowed)}</h5>
-                              </div>
-                              <div className='col-xl-6 col-12 mt-3 pl-0'>
-                                <h5>Water hookup? {this.services(this.state.campground.hasWater)}</h5>
-                              </div>
-                              <div className='col-xl-6 col-12 mt-3 pl-0'>
-                                <h5>Sewer hookup? {this.services(this.state.campground.hasSewer)}</h5>
-                              </div>
-                              <div className='col-xl-6 col-lg-12 col-12 mt-3 pl-0'>
-                                <h5>Amps available? {this.services(this.state.campground.hasAmps)}</h5>
-                              </div>
-                              <div className='col-xl-6 col-12 mt-3 pl-0'>
-                                <h5>Fire rings? {this.services(this.state.campground.hasFireRing)}</h5>
-                              </div>
-                              <div className='col-xl-6 col-lg-12 col-12 mt-3 pl-0'>
-                                <h5>Public restrooms? {this.services(this.state.campground.hasRestroom)}</h5>
-                              </div>
+                              <Service boolean={this.state.campground.petsAllowed} service={'Allows pets'} />
+                              <Service boolean={this.state.campground.hasFireRing} service={'Fire Rings'} />
+                              <Service boolean={this.state.campground.hasAmps} service={'Amps'} />
+                              <Service boolean={this.state.campground.hasSewer} service={'Sewer'} />
+                              <Service boolean={this.state.campground.hasWater} service={'Water'} />
+                              <Service boolean={this.state.campground.hasRestroom} service={'Restroom'} />
                             </div>
                             <div className='row mt-3'>
                               <div className='col-6 pl-0'>
