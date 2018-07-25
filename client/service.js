@@ -8,7 +8,7 @@ export default function Service(props) {
 
 
   return (
-    <div className='col-xl-6 col-12 mt-3 pl-0'>
+    <div className='col-xl-6 col-6 mt-3 pl-0'>
       <h5>
         { props.boolean
           ? <i className='far fa-check-circle text-success'></i>

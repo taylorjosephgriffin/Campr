@@ -16,7 +16,7 @@ export default function CampgroundListItem(props) {
                 backgroundSize: 'cover'}}>
                   <h5 className='card-title py-2 campground-name text-light text-center'>{camps.facilityName}</h5>
                 </div>
-              <div className='card-body'>
+              <div className='card-body py-2 pl-2'>
                 <p className='card-text h5'>{`$${camps.price}.00 / night`}</p>
               </div>
             </div>

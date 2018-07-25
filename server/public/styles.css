@@ -9,9 +9,11 @@
   background-color: rgba(122, 194, 173, 0.7);
 }
 
-.nav-logos {
-  font-size: 30px;
-}
+.main-nav { height: 75px; }
+
+.nav-logos { font-size: 45px; }
+
+.home-link { font-size: 20px; }
 
 .campground-link:hover { text-decoration: none; }
 
@@ -39,4 +41,9 @@
   .card-body { padding: 0 !important; }
 
   .carousel { padding: 0 !important; }
+
+  .nav-logos {
+    font-size: 35px;
+    margin-left: 0;
+  }
 }
