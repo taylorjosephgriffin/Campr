@@ -49,7 +49,7 @@ export default function CampgroundDetailHeader(props) {
                         </ul>
                       </div>
                       <div className='row justify-content-end'>
-                        <div className='col-xl-4 col-lg-4 col-6 mt-5 pb-4 pl-0'>
+                        <div className='col-xl-4 col-lg-4 col-6 mt-5 pb-4 pl-0 translate-2'>
                           <a href={`#campsite?facilityNum=${props.campground.facilityNum}&id=${props.campground.id}`}>
                             <button className='btn btn-secondary shadow view-campsites mt-4 w-100'>
                               Campsites

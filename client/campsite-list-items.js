@@ -14,7 +14,7 @@ export default function CampsitesList(props) {
         <div className='row'>
         { activeSites.map((site, index) =>
           <div key={index} className='col-xl-4 col-lg-6 mt-4'>
-            <div className='card h-100 campsite-card'>
+            <div className='card h-100 campsite-card shadow'>
               <div
                 className='card-img-top campsite-list-image h-100'
                 style={{backgroundImage:`url(${site.sitePhoto})`,
@@ -30,10 +30,10 @@ export default function CampsitesList(props) {
                   <SiteInfo content={`Max vehicles: ${site.maxVehicles}`} />
                   <SiteInfo content={`Site type: ${site.siteType}`} />
                   <SiteInfo
-                    additionalElement={props.campground.petsAllowed
+                    additionalElement={site.available
                       ? <i className='far fa-check-circle text-success' />
                       : <i className='far fa-times-circle text-danger' />}
-                    content={` Allows pets`} />
+                    content={`Available `} />
                 </div>
               </div>
             </div>
