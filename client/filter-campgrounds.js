@@ -8,7 +8,7 @@ export default function Filter(props) {
       <div className='row justify-content-end'>
         <div className='col-xl-1'>
           <button id='Popover1' className='nav-link filter-link bg-transparent border-0 text-primary h4 ml-2 mt-2 float-right' onClick={props.toggle}><i className='fas fa-filter'></i></button>
-          <Popover className='w-100' placement="bottom" isOpen={props.popoverOpen} target="Popover1" onClick={props.toggle}>
+          <Popover className='w-100' placement="bottom" isOpen={props.popoverOpen} target="Popover1" toggle={props.toggle}>
             <PopoverHeader className='text-center'>Filter Results</PopoverHeader>
             <PopoverBody>
               <div className='form-group'>
@@ -33,6 +33,11 @@ export default function Filter(props) {
                   <option>Boldering</option>
                   <option>Rock climing</option>
                 </select>
+                <div className='form-check mt-3 ml-1 mb-3'>
+                  <input type='checkbox' className='form-check-input' />
+                  <div className='form-check-label h6'>Allows pets</div>
+                </div>
+                <button type='submit' className='btn btn-secondary filter-button mt-2'>Refine Search</button>
               </div>
             </PopoverBody>
           </Popover>
