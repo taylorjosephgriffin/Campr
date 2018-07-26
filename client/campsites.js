@@ -8,6 +8,7 @@ export default class CampsitesList extends React.Component {
     super(props)
 
     this.state = {
+      campsites: []
     }
   }
 
@@ -31,7 +32,6 @@ export default class CampsitesList extends React.Component {
   }
 
   render() {
-    if (!this.state.campsites) return null
     return (
       <CampsiteListItems campground={this.state.campground} campsites={this.state.campsites}/>
     )
