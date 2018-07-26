@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap'
 
 export default function Filter(props) {
 
@@ -6,8 +7,8 @@ export default function Filter(props) {
     <div className='container-fluid'>
       <div className='row justify-content-end'>
         <div className='col-xl-1'>
-          <button id='Popover1' className='nav-link filter-link bg-transparent border-0 text-primary h4 ml-2 mt-2 float-right' onClick={this.toggle}><i className='fas fa-filter'></i></button>
-          <Popover className='w-100' placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
+          <button id='Popover1' className='nav-link filter-link bg-transparent border-0 text-primary h4 ml-2 mt-2 float-right' onClick={props.toggle}><i className='fas fa-filter'></i></button>
+          <Popover className='w-100' placement="bottom" isOpen={props.popoverOpen} target="Popover1" onClick={props.toggle}>
             <PopoverHeader className='text-center'>Filter Results</PopoverHeader>
             <PopoverBody>
               <div className='form-group'>
