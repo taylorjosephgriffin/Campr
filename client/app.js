@@ -18,6 +18,7 @@ export default class App extends React.Component {
   switch (this.state.path) {
     case 'details':
       return <CampgroundDetail path={this.state.path}/>
+    case '':
     case 'campground-list':
       return <Campgrounds />
     case 'campsite':
