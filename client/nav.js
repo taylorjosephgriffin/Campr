@@ -3,8 +3,8 @@ import React from 'react'
 export default function Campgrounds(props) {
 
   return (
-    <nav className='navbar navbar-expand-lg bg-primary main-nav p-0'>
-      <a className='navbar-brand ml-xl-4 ml-2 text-light' href='#campground-list'>
+    <nav className='navbar navbar-expand-lg shadow bg-success main-nav p-0'>
+      <a className='navbar-brand ml-xl-4 ml-2 text-light' id='nav-brand' href='#campground-list'>
         <span className='nav-logos'>
           <i className='fas fa-fire logo-icon'></i>
           <span className='logo-name pl-2'>Campr</span>
