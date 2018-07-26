@@ -48,37 +48,42 @@ export default function CampgroundDetailHeader(props) {
                           </li>
                         </ul>
                       </div>
+                      <div className='row justify-content-end'>
+                        <div className='col-xl-4 col-lg-4 col-6 mt-5 pb-4 pl-0'>
+                          <a href={`#campsite?facilityNum=${props.campground.facilityNum}&id=${props.campground.id}`}>
+                            <button className='btn btn-secondary shadow view-campsites mt-4 w-100'>
+                              Campsites
+                            </button>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className='card py-3 carousel col-xl-8 col-lg-12 col-md-12'>
-                    <ol className='carousel-indicators'>
-                    { props.campground.facilityPhotos.map((photo, index) =>
-                      <li key={index} className={ index === props.carouselIndex ? 'active' : 'not-active'}></li>
-                    )}
-                    </ol>
+                  <div className='carousel col-xl-8 col-lg-12 col-md-12'>
                     <div className='carousel-inner'>
                      { props.campground.facilityPhotos.map((photo, index) =>
                        <div key={index} className={ index === props.carouselIndex ? 'carousel-item active' : 'carousel-item'}>
                          <img className='d-block w-100 h-100 detail-images' src={photo} alt={`slide #${index + 1}`}/>
+                           <ol className='carousel-indicators'>
+                           { props.campground.facilityPhotos.map((photo, index) =>
+                             <li key={index} className={ index === props.carouselIndex ? 'active' : 'not-active h-50'}></li>
+                           )}
+                           </ol>
+                           <a className='carousel-control-prev' onClick={props.carouselClick} role='button' data-slide='prev'>
+                             <span className='carousel-control-prev-icon' aria-hidden='true'></span>
+                             <span className='sr-only'>Previous</span>
+                           </a>
+                           <a className='carousel-control-next' onClick={props.carouselClick} role='button' data-slide='next'>
+                             <span className='carousel-control-next-icon' aria-hidden='true'></span>
+                             <span className='sr-only'>Next</span>
+                           </a>
                        </div>
                      )}
                     </div>
-                    <a className='carousel-control-prev' onClick={props.carouselClick} role='button' data-slide='prev'>
-                      <span className='carousel-control-prev-icon' aria-hidden='true'></span>
-                      <span className='sr-only'>Previous</span>
-                    </a>
-                    <a className='carousel-control-next' onClick={props.carouselClick} role='button' data-slide='next'>
-                      <span className='carousel-control-next-icon' aria-hidden='true'></span>
-                      <span className='sr-only'>Next</span>
-                    </a>
                   </div>
                 </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className='row'>
-        <div className='col-xl-8 offset-2'>
         </div>
       </div>
     </div>
