@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import parse from './util/query-string.js'
 import CampgroundListItem from './campground-list-item.js'
+import Filter from './filter-campgrounds.js'
 
 export default class Campgrounds extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      campgrounds: []
+      campgrounds: [],
+      popoverOpen: false
     }
+    this.toggle = this.toggle.bind(this)
   }
 
   componentDidMount() {
@@ -21,9 +24,18 @@ export default class Campgrounds extends React.Component {
     })
   }
 
+  toggle() {
+  this.setState({
+    popoverOpen: !this.state.popoverOpen
+  });
+}
+
   render() {
     return (
-      <CampgroundListItem campgrounds={this.state.campgrounds} />
+      <Fragment>
+        <Filter toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.popoverOpen} />
+        <CampgroundListItem campgrounds={this.state.campgrounds} />
+      </Fragment>
     )
   }
 }
