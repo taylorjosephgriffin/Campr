@@ -37,10 +37,27 @@ export default class Campgrounds extends React.Component {
     });
   }
 
+  filterData(event) {
+    event.preventDefault()
+    const filterForm = new FormData(event.target)
+    const amenity = filterForm.get('activity').toLowerCase()
+    const price = filterForm.get('price')
+    const pet = filterForm.get('pets')
+    let amenityFilter = {}
+
+    if (amenity === 'none') amenityFilter = {}
+    else {
+      amenityFilter[amenity] = true
+    }
+
+    this.loadCampgrounds(amenityFilter)
+
+  }
+
   render() {
     return (
       <Fragment>
-        <Filter toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.popoverOpen} />
+        <Filter filterData={this.filterData} toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.popoverOpen} />
         <CampgroundListItem campgrounds={this.state.campgrounds} />
       </Fragment>
     )
