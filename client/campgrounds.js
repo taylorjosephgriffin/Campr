@@ -9,9 +9,11 @@ export default class Campgrounds extends React.Component {
 
     this.state = {
       campgrounds: [],
+      filteredCampgrounds: [],
       popoverOpen: false
     }
     this.toggle = this.toggle.bind(this)
+    this.filterData = this.filterData.bind(this)
   }
 
   componentDidMount() {
@@ -25,15 +27,24 @@ export default class Campgrounds extends React.Component {
   }
 
   toggle() {
-  this.setState({
-    popoverOpen: !this.state.popoverOpen
-  });
-}
+    this.setState({
+      popoverOpen: !this.state.popoverOpen
+    });
+  }
+
+  filterData(event) {
+    event.preventDefault()
+    const filterForm = new FormData(event.target)
+    const amenity = filterForm.get('activity')
+    const price = filterForm.get('price')
+    const pet = filterForm.get('pets')
+  }
 
   render() {
+    console.log(this.state.filteredCampgrounds)
     return (
       <Fragment>
-        <Filter toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.popoverOpen} />
+        <Filter filter={this.state.filteredCampgrounds} filterData={this.filterData} toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.popoverOpen} />
         <CampgroundListItem campgrounds={this.state.campgrounds} />
       </Fragment>
     )
