@@ -7,11 +7,6 @@ export default function Filter(props) {
       <div className='row justify-content-end'>
         <div className='col-lg-6'>
           <button id='Popover1' className='nav-link filter-link bg-transparent border-0 text-primary h4 ml-2 mt-2 float-right' onClick={props.toggle}><i className='fas fa-filter'></i></button>
-            {props.filter.map((filter, index) =>
-              filter.price
-                ? <span key={ index } className='badge badge-primary float-right mr-2 mt-4 text-center'>{`$${filter.price}`}</span>
-                : <span key={ index } className='badge badge-secondary float-right mr-2 mt-4 text-center'><i className='fas fa-times-circle mr-1'></i>{filter.amenity}</span>
-            )}
           <Popover className='w-100' placement="bottom" isOpen={props.popoverOpen} target="Popover1" toggle={props.toggle}>
             <PopoverHeader className='text-center'>Filter Results</PopoverHeader>
             <PopoverBody>
@@ -36,7 +31,7 @@ export default function Filter(props) {
                     <option>Kayaking</option>
                     <option>Swimming</option>
                     <option>Boldering</option>
-                    <option>Rock climing</option>
+                    <option>Rock Climbing</option>
                   </select>
                   <div className='form-check mt-3 ml-1 mb-3'>
                     <input name='pets' type='checkbox' className='form-check-input' />

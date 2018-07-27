@@ -14,7 +14,15 @@
 
 .main-nav { height: 75px; }
 
+.filter-button { margin-left: 23%; }
+
 .nav-logos { font-size: 45px; }
+
+.filter-link,
+.filter-link:focus {
+  outline: none !important;
+  cursor: pointer;
+}
 
 .home-link { font-size: 20px; }
 
