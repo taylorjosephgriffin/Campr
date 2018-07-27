@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import parse from './util/query-string.js'
+import queryString from './util/query-string.js'
+import hash from './util/hash.js'
 import CampgroundListItem from './campground-list-item.js'
 import Filter from './filter-campgrounds.js'
 
@@ -9,21 +10,25 @@ export default class Campgrounds extends React.Component {
 
     this.state = {
       campgrounds: [],
-      filteredCampgrounds: [],
       popoverOpen: false
     }
     this.toggle = this.toggle.bind(this)
     this.filterData = this.filterData.bind(this)
   }
 
-  componentDidMount() {
-    fetch('/campgrounds')
+  loadCampgrounds(filter) {
+    fetch('/campgrounds' + queryString.stringify(filter))
       .then(res => res.json())
-      .then(campgrounds => {
+      .then(data => {
         this.setState({
-          campgrounds: campgrounds
+          campgrounds: data,
+          popoverOpen: false
         })
-    })
+      })
+  }
+
+  componentDidMount() {
+    this.loadCampgrounds({})
   }
 
   toggle() {
@@ -32,19 +37,10 @@ export default class Campgrounds extends React.Component {
     });
   }
 
-  filterData(event) {
-    event.preventDefault()
-    const filterForm = new FormData(event.target)
-    const amenity = filterForm.get('activity')
-    const price = filterForm.get('price')
-    const pet = filterForm.get('pets')
-  }
-
   render() {
-    console.log(this.state.filteredCampgrounds)
     return (
       <Fragment>
-        <Filter filter={this.state.filteredCampgrounds} filterData={this.filterData} toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.popoverOpen} />
+        <Filter toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.popoverOpen} />
         <CampgroundListItem campgrounds={this.state.campgrounds} />
       </Fragment>
     )
