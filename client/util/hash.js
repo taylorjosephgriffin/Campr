@@ -1,4 +1,4 @@
-import queryString from './query-string.js'
+import queryString from './query-string'
 
 export default {
   parse(hash = '') {
@@ -7,5 +7,8 @@ export default {
       path,
       params: queryString.parse(query)
     }
+  },
+  stringify({ path, params }) {
+    return '#' + path + queryString.stringify(params)
   }
 }

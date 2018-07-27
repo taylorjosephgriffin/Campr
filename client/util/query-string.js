@@ -9,5 +9,12 @@ export default {
         ...params,
         [key]: value
       }), {})
+  },
+  stringify(params = {}) {
+    const keys = Object.keys(params)
+    if (!keys.length) return ''
+    return '?' + keys
+      .map(key => `${key}=${params[key]}`)
+      .join('&')
   }
 }
