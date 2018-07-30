@@ -37,7 +37,7 @@ export default class Filter extends React.Component {
                   <div className='form-group'>
                     <label>Price</label>
                     <select name='price' className='form-control'>
-                      <option value='1000'>None</option>
+                      <option>None</option>
                       <option value='45'>less than $45</option>
                       <option value='35'>less than $35</option>
                       <option value='25'>less than $25</option>
