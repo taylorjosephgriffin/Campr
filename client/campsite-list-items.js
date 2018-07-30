@@ -1,12 +1,13 @@
 import React from 'react'
 import Service from './service.js'
-import queryString from './util/query-string.js'
+import * as qs from 'qs'
 import SiteInfo from './site-info.js'
 
 export default function CampsitesList(props) {
 
   const activeSites = props.campsites.filter(site => {
-    return site.facilityNum === queryString.parse(location.hash).facilityNum
+    const facilityQuery = location.hash.replace(/^(.*?)\?/, '')
+    return site.facilityNum === qs.parse(facilityQuery).facilityNum
   })
 
   return (

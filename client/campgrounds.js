@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react'
-import queryString from './util/query-string.js'
+import * as qs from 'qs'
 import hash from './util/hash.js'
 import CampgroundListItem from './campground-list-item.js'
 import Filter from './filter-campgrounds.js'
-const qs = require('qs')
 
 export default class Campgrounds extends React.Component {
   constructor(props) {
