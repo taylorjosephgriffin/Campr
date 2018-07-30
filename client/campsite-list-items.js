@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button, Row, Col, Container } from 'reactstrap'
 import Service from './service.js'
 import * as qs from 'qs'
 import SiteInfo from './site-info.js'
@@ -17,7 +18,7 @@ export default function CampsitesList(props) {
           <div key={index} className='col-xl-4 col-lg-6 mt-4'>
             <div className='card h-100 campsite-card shadow'>
               <div
-                className='card-img-top campsite-list-image h-100'
+                className='shadow card-img-top campsite-list-image h-100'
                 style={{backgroundImage:`url(${site.sitePhoto})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover'}}>
@@ -35,6 +36,13 @@ export default function CampsitesList(props) {
                       ? <i className='far fa-check-circle text-success' />
                       : <i className='far fa-times-circle text-danger' />}
                     content={`Available `} />
+                  <Container>
+                    <Row className='justify-content-end'>
+                      <Col xl='4' lg='6' xs='6'>
+                        <Button className='float-right w-100 shadow' size='lg' color='secondary'>Book</Button>
+                      </Col>
+                    </Row>
+                  </Container>
                 </div>
               </div>
             </div>
