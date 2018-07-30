@@ -4,8 +4,34 @@ module.exports = function campgroundRouter(collection) {
   const router = new Router()
 
   router.get('/', (req, res, next) => {
+    const validPrice = !isNaN(req.query.maxPrice)
+    const validAmenity = req.query.amenities
+
+    let filterQuery = {}
+
+    if (validAmenity && !validPrice) {
+      filterQuery.amenities = {
+        $all: req.query.amenities
+      }
+    }
+    else if (validPrice && !validAmenity) {
+      filterQuery.price = {
+        $lt: parseInt(req.query.maxPrice, 10)
+      }
+    }
+    else if (validPrice && validAmenity) {
+      filterQuery = {
+        $and:[
+          { amenities:
+            { $all: req.query.amenities }
+          },
+          { price: { $lt: parseInt(req.query.maxPrice, 10) } }
+        ]
+      }
+    }
+
     collection
-      .find()
+      .find(filterQuery)
       .toArray()
       .then(campgrounds => res.json(campgrounds))
       .catch(err => next(err))

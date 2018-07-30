@@ -16,7 +16,7 @@ module.exports = [
     hasRestroom: true,
     checkIn: 2,
     checkOut: 12,
-    price: '25',
+    price: 25,
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking'
     ],
@@ -43,7 +43,7 @@ module.exports = [
     hasRestroom: true,
     checkIn: 2,
     checkOut: 12,
-    price: '45',
+    price: 45,
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing'
     ],
@@ -63,14 +63,14 @@ module.exports = [
     latitude: '36.6057098',
     longitude: '-118.7240982',
     hasAmps: false,
-    petsAllowed: true,
+    petsAllowed: false,
     hasSewer: false,
     hasWater: true,
     hasFireRing: true,
     hasRestroom: true,
     checkIn: 2,
     checkOut: 12,
-    price: '35',
+    price: 35,
     amenities: [
       'camping', 'fishing', 'hiking', 'kayaking', 'swimming', 'relaxing'
     ],
@@ -96,7 +96,7 @@ module.exports = [
     hasRestroom: true,
     checkIn: 2,
     checkOut: 12,
-    price: '45',
+    price: 45,
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing'
     ],
@@ -123,7 +123,7 @@ module.exports = [
     hasRestroom: true,
     checkIn: 2,
     checkOut: 12,
-    price: '50',
+    price: 50,
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing', 'kayaking'
     ],
@@ -150,7 +150,7 @@ module.exports = [
     hasRestroom: true,
     checkIn: 2,
     checkOut: 12,
-    price: '70',
+    price: 70,
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing', 'kayaking'
     ],
@@ -177,7 +177,7 @@ module.exports = [
     hasRestroom: true,
     checkIn: 2,
     checkOut: 12,
-    price: '25',
+    price: 25,
     amenities: [
       'birding', 'campfire', 'hiking', 'boldering', 'rock climbing'
     ],
@@ -197,14 +197,14 @@ module.exports = [
     latitude: '40.76705358',
     longitude: '-123.1302704',
     hasAmps: false,
-    petsAllowed: true,
+    petsAllowed: false,
     hasSewer: false,
     hasWater: true,
     hasFireRing: true,
     hasRestroom: true,
     checkIn: 2,
     checkOut: 12,
-    price: '15',
+    price: 15,
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'kayaking', 'swimming'
     ],
@@ -231,7 +231,7 @@ module.exports = [
     hasRestroom: true,
     checkIn: 2,
     checkOut: 12,
-    price: '35',
+    price: 35,
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'kayaking', 'swimming'
     ],
@@ -251,14 +251,14 @@ module.exports = [
     latitude: '38.7141532',
     longitude: '-123.055823',
     hasAmps: false,
-    petsAllowed: true,
+    petsAllowed: false,
     hasSewer: false,
     hasWater: true,
     hasFireRing: true,
     hasRestroom: true,
     checkIn: 2,
     checkOut: 12,
-    price: '15',
+    price: 15,
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'kayaking', 'swimming'
     ],

@@ -14,7 +14,15 @@
 
 .main-nav { height: 75px; }
 
+.filter-button { margin-left: 23%; }
+
 .nav-logos { font-size: 45px; }
+
+.filter-link,
+.filter-link:focus {
+  outline: none !important;
+  cursor: pointer;
+}
 
 .home-link { font-size: 20px; }
 
@@ -40,6 +48,7 @@
 
 .detail-images {
   width: 100%;
+  max-height: 35vw;
   overflow: hidden;
 }
 
@@ -64,6 +73,12 @@
   .nav-logos {
     font-size: 35px;
     margin-left: 0;
+  }
+
+  .detail-images {
+    width: 100%;
+    max-height: 55vw;
+    overflow: hidden;
   }
 }
 

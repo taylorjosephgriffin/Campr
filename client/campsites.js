@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import queryString from './util/query-string.js'
+import * as qs from 'qs'
 import Service from './service.js'
 import CampsiteListItems from './campsite-list-items.js'
 
@@ -13,7 +13,8 @@ export default class CampsitesList extends React.Component {
   }
 
   componentDidMount() {
-    const id = queryString.parse(location.hash).id
+    const idQuery = location.hash.replace(/^(.*?)\?/, '')
+    const id = qs.parse(idQuery).id
     fetch('/campgrounds/' + id)
       .then(res => res.json())
       .then(camp => {

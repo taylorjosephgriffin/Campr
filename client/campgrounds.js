@@ -1,29 +1,48 @@
-import React from 'react'
-import parse from './util/query-string.js'
+import React, { Fragment } from 'react'
+import * as qs from 'qs'
+import hash from './util/hash.js'
 import CampgroundListItem from './campground-list-item.js'
+import Filter from './filter-campgrounds.js'
 
 export default class Campgrounds extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      campgrounds: []
+      campgrounds: [],
+      popoverOpen: false
     }
+    this.toggle = this.toggle.bind(this)
+    this.loadCampgrounds = this.loadCampgrounds.bind(this)
+  }
+
+  loadCampgrounds(filter) {
+    fetch('/campgrounds?' + qs.stringify(filter))
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          campgrounds: data,
+          popoverOpen: false
+        })
+      })
   }
 
   componentDidMount() {
-    fetch('/campgrounds')
-      .then(res => res.json())
-      .then(campgrounds => {
-        this.setState({
-          campgrounds: campgrounds
-        })
-    })
+    this.loadCampgrounds({})
+  }
+
+  toggle() {
+    this.setState({
+      popoverOpen: !this.state.popoverOpen
+    });
   }
 
   render() {
     return (
-      <CampgroundListItem campgrounds={this.state.campgrounds} />
+      <Fragment>
+        <Filter loadCampgrounds={this.loadCampgrounds} toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.popoverOpen} />
+        <CampgroundListItem campgrounds={this.state.campgrounds} />
+      </Fragment>
     )
   }
 }
