@@ -4,10 +4,31 @@ module.exports = function campgroundRouter(collection) {
   const router = new Router()
 
   router.get('/', (req, res, next) => {
-    let amenities = Object.keys(req.query)
-    let filterQuery = { amenities: { $all: amenities } }
+    const validPrice = !isNaN(req.query.maxPrice)
+    const validAmenity = req.query.amenities
 
-    if (amenities.length === 0) filterQuery = {}
+    let filterQuery = {}
+
+    if (validAmenity && !validPrice) {
+      filterQuery.amenities = {
+        $all: req.query.amenities
+      }
+    }
+    else if (validPrice && !validAmenity) {
+      filterQuery.price = {
+        $lt: parseInt(req.query.maxPrice, 10)
+      }
+    }
+    else if (validPrice && validAmenity) {
+      filterQuery = {
+        $and:[
+          { amenities:
+            { $all: req.query.amenities }
+          },
+          { price: { $lt: parseInt(req.query.maxPrice, 10) } }
+        ]
+      }
+    }
 
     collection
       .find(filterQuery)
