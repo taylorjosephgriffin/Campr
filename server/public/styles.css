@@ -16,7 +16,7 @@
 
 .filter-button { margin-left: 23%; }
 
-.nav-logos { font-size: 45px; }
+.nav-logos { font-size: 40px !important; }
 
 .filter-link,
 .filter-link:focus {
@@ -57,9 +57,7 @@
   overflow: hidden;
 }
 
-.view-campsites {
-  height: 50px;
-}
+.view-campsites { height: 50px; }
 
 @media (max-width: 1200px) {
   .card-detail-page { flex-direction: column-reverse; }
@@ -70,10 +68,7 @@
 
   .carousel { padding: 0 !important; }
 
-  .nav-logos {
-    font-size: 35px;
-    margin-left: 0;
-  }
+  .nav-logos { font-size: 35px; }
 
   .detail-images {
     width: 100%;
@@ -87,3 +82,5 @@
     font-size: 15px !important;
   }
 }
+
+.cart-icon { font-size: 25px; }
