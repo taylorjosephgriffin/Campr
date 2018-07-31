@@ -10,8 +10,9 @@ export default class App extends React.Component {
     super(props)
 
     this.state = {
-      path: hash.parse(location.hash).path
+      path: hash.parse(localStorage.getItem('hash')).path
     }
+    window.location.hash = localStorage.getItem('hash')
   }
 
   renderView() {

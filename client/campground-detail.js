@@ -31,6 +31,7 @@ export default class CampgroundDetail extends React.Component {
           campsites: sites
         })
       })
+      localStorage.setItem('hash', window.location.hash)
   }
 
   carouselClick(event) {
