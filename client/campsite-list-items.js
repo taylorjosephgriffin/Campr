@@ -11,7 +11,11 @@ export default function CampsitesList(props) {
     return site.facilityNum === qs.parse(facilityQuery).facilityNum
   })
 
-  return (
+  if (activeSites.length === 0 || !props.campground) {
+    return null
+  }
+  else {
+    return (
       <div className='container-fluid'>
         <div className='row'>
         { activeSites.map((site, index) =>
@@ -40,7 +44,11 @@ export default function CampsitesList(props) {
                     <Row className='justify-content-end'>
                       <Col xl='4' lg='6' xs='6'>
                         <a href={localStorage.getItem('hash') + `&siteId=${site.siteId}`}>
-                          <Button id={site.siteId} onClick={site.available ? props.renderModal : null} className={site.available ? 'float-right w-100 shadow bg-secondary' : 'float-right w-100 shadow disabled btn-dark'} size='lg'>Book</Button>
+                          <Button
+                            id={site.siteId}
+                            onClick={site.available ? props.renderModal : null}
+                            className={site.available ? 'float-right w-100 shadow bg-secondary' : 'float-right w-100 shadow disabled btn-dark'}
+                            size='lg'>Book</Button>
                         </a>
                       </Col>
                     </Row>
@@ -52,5 +60,6 @@ export default function CampsitesList(props) {
         )}
         </div>
       </div>
-  )
+    )
+  }
 }

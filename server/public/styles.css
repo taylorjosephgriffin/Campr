@@ -84,3 +84,11 @@
 }
 
 .cart-icon { font-size: 25px; }
+
+.modal-image {
+  width: 100%;
+}
+
+.hidden {
+  color: transparent;
+}

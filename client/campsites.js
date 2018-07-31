@@ -2,14 +2,23 @@ import React, { Fragment } from 'react'
 import * as qs from 'qs'
 import Service from './service.js'
 import CampsiteListItems from './campsite-list-items.js'
+import ReservationModal from './reservation-modal.js'
 
 export default class CampsitesList extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      campsites: []
+      campsites: [],
+      modalClicked: false
     }
+    this.renderModal = this.renderModal.bind(this)
+  }
+
+  renderModal(event) {
+    this.setState({
+      modalClicked: !this.state.modalClicked
+    })
   }
 
   componentDidMount() {
@@ -30,11 +39,30 @@ export default class CampsitesList extends React.Component {
           campsites: sites
         })
       })
+    localStorage.setItem('hash', window.location.hash)
   }
 
   render() {
     return (
-      <CampsiteListItems campground={this.state.campground} campsites={this.state.campsites}/>
+      !this.state.modalClicked
+        ? <Fragment>
+            <CampsiteListItems
+              renderModal={this.renderModal}
+              modalClicked={this.state.modalClicked}
+              campground={this.state.campground}
+              campsites={this.state.campsites}/>
+          </Fragment>
+        : <Fragment>
+            <ReservationModal
+              renderModal={this.renderModal}
+              modalClicked={this.state.modalClicked}
+              campsites={this.state.campsites}/>
+            <CampsiteListItems
+              renderModal={this.renderModal}
+              modalClicked={this.state.modalClicked}
+              campground={this.state.campground}
+              campsites={this.state.campsites}/>
+          </Fragment>
     )
   }
 }
