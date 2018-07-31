@@ -39,7 +39,9 @@ export default function CampsitesList(props) {
                   <Container>
                     <Row className='justify-content-end'>
                       <Col xl='4' lg='6' xs='6'>
-                        <Button onClick={site.available ? props.renderModal : null} className={site.available ? 'float-right w-100 shadow bg-secondary' : 'float-right w-100 shadow disabled btn-dark'} size='lg'>Book</Button>
+                        <a href={localStorage.getItem('hash') + `&siteId=${site.siteId}`}>
+                          <Button id={site.siteId} onClick={site.available ? props.renderModal : null} className={site.available ? 'float-right w-100 shadow bg-secondary' : 'float-right w-100 shadow disabled btn-dark'} size='lg'>Book</Button>
+                        </a>
                       </Col>
                     </Row>
                   </Container>
