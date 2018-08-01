@@ -19,5 +19,12 @@ module.exports = function reservationRouter(collection) {
       .then(reservation => res.json(reservation))
       .catch(err => next(err))
   })
+
+  router.get('/:reservationId', (req, res, next) => {
+    collection
+      .findOne({ reservationId: req.params.reservationId })
+      .then(reservation => res.json(reservation))
+      .catch(err => next(err))
+  })
   return router
 }
