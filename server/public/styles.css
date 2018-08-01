@@ -77,9 +77,18 @@
   }
 }
 
-@media (max-width: 736px) {
+@media (max-width: 575px) {
   .campsite-text {
     font-size: 15px !important;
+  }
+
+  .reservation-page {
+    flex-direction: column-reverse;
+  }
+
+  .reservation-image {
+    height: 400px;
+    margin-bottom: 10px;
   }
 }
 
