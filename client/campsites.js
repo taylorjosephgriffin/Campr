@@ -21,6 +21,21 @@ export default class CampsitesList extends React.Component {
     })
   }
 
+  createReservation(reservation) {
+    fetch('/reservations', {
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+      method: 'POST',
+      body: JSON.stringify(reservation)
+    }).then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.error(err))
+
+      window.location.hash = `#checkout?reservationId=${reservation.reservationId}`
+  }
+
   componentDidMount() {
     const idQuery = location.hash.replace(/^(.*?)\?/, '')
     const id = qs.parse(idQuery).id
@@ -54,6 +69,7 @@ export default class CampsitesList extends React.Component {
           </Fragment>
         : <Fragment>
             <ReservationModal
+              createReservation={this.createReservation}
               renderModal={this.renderModal}
               modalClicked={this.state.modalClicked}
               campground={this.state.campground}
