@@ -56,6 +56,7 @@ export default class CampsitesList extends React.Component {
             <ReservationModal
               renderModal={this.renderModal}
               modalClicked={this.state.modalClicked}
+              campground={this.state.campground}
               campsites={this.state.campsites}/>
             <CampsiteListItems
               renderModal={this.renderModal}

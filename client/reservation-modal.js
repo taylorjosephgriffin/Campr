@@ -23,6 +23,7 @@ export default class CreateReservationModal extends React.Component {
       modal: true,
       formValid: null
     }
+    localStorage.setItem('hash', `#campsite?facilityNum=${this.props.campground.facilityNum}&id=${this.props.campground.id}`)
     this.toggle = this.toggle.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -52,9 +53,6 @@ export default class CreateReservationModal extends React.Component {
       })
       return null
     }
-    else {
-
-    }
   }
 
   render() {
@@ -62,7 +60,6 @@ export default class CreateReservationModal extends React.Component {
       const siteIdQuery = location.hash.replace(/^(.*?)\?/, '')
       return site.siteId === qs.parse(siteIdQuery).siteId
     })
-    
     return (
       <div>
         <Modal centered isOpen={this.props.modalClicked} className={this.props.className}>
@@ -97,7 +94,9 @@ export default class CreateReservationModal extends React.Component {
                 <div className={this.state.formValid ? 'text-danger mt-2' : 'mt-2 hidden'}>Please enter a date range.</div>
               </FormGroup>
               <Button className='shadow float-right' color='primary'>Continue</Button>
-              <Button className='shadow float-right mr-3' color='secondary' onClick={this.toggle, this.props.renderModal}>Cancel</Button>
+              <a href={`#campsite?facilityNum=${this.props.campground.facilityNum}&id=${this.props.campground.id}`}>
+                <Button className='shadow float-right mr-3' color='secondary' onClick={this.toggle, this.props.renderModal}>Cancel</Button>
+              </a>
             </Form>
           </ModalBody>
         </Modal>

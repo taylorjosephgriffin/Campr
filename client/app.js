@@ -13,6 +13,7 @@ export default class App extends React.Component {
       path: hash.parse(localStorage.getItem('hash')).path
     }
     window.location.hash = localStorage.getItem('hash')
+    localStorage.setItem('hash', window.location.hash)
   }
 
   renderView() {

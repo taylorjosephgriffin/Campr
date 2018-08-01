@@ -2,7 +2,7 @@ import React from 'react'
 import Service from './service.js'
 
 export default function CampgroundDetailHeader(props) {
-
+  
   return (
     <div className='container-fluid'>
       <div className='row'>

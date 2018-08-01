@@ -43,7 +43,7 @@ export default function CampsitesList(props) {
                   <Container>
                     <Row className='justify-content-end'>
                       <Col xl='4' lg='6' xs='6'>
-                        <a href={localStorage.getItem('hash') + `&siteId=${site.siteId}`}>
+                        <a href={window.location.hash + `&siteId=${site.siteId}`}>
                           <Button
                             id={site.siteId}
                             onClick={site.available ? props.renderModal : null}

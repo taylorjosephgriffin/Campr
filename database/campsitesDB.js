@@ -4,7 +4,7 @@ module.exports = [
   {
     siteId: uuid(),
     facilityNum:'acker1227',
-    loop: 'ACKERMAN CAMPGROUND',
+    loop: 'Ackerman Campground',
     maxEqpLen: '40',
     maxPeople: '8',
     siteNumber: '01',
@@ -14,7 +14,7 @@ module.exports = [
   {
     siteId: uuid(),
     facilityNum:'acker1227',
-    loop: 'ACKERMAN CAMPGROUND',
+    loop: 'Ackerman Campground',
     maxEqpLen: '40',
     maxPeople: '8',
     siteNumber: '02',
@@ -24,7 +24,7 @@ module.exports = [
   {
     siteId: uuid(),
     facilityNum:'acker1227',
-    loop: 'ACKERMAN CAMPGROUND',
+    loop: 'Ackerman Campground',
     maxEqpLen: '40',
     maxPeople: '8',
     siteNumber: '03',
@@ -34,7 +34,7 @@ module.exports = [
   {
     siteId: uuid(),
     facilityNum:'acker1227',
-    loop: 'ACKERMAN CAMPGROUND',
+    loop: 'Ackerman Campground',
     maxEqpLen: '40',
     maxPeople: '8',
     siteNumber: '04',
@@ -44,7 +44,7 @@ module.exports = [
   {
     siteId: uuid(),
     facilityNum:'acker1227',
-    loop: 'ACKERMAN CAMPGROUND',
+    loop: 'Ackerman Campground',
     maxEqpLen: '40',
     maxPeople: '8',
     siteNumber: '05',

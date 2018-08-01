@@ -30,9 +30,11 @@
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "moment": "^2.22.2",
     "mongodb": "^3.1.1",
     "qs": "^6.5.2",
     "react": "^16.4.1",
+    "react-dates": "^17.1.1",
     "react-dom": "^16.4.1",
     "uuid": "^3.3.2"
   },
