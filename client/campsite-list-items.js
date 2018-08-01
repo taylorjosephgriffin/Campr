@@ -16,7 +16,7 @@ export default function CampsitesList(props) {
   }
   else {
     return (
-      <div className='container-fluid'>
+      <div className='container-fluid mt-5 pt-4'>
         <div className='row'>
         { activeSites.map((site, index) =>
           <div key={index} className='col-xl-4 col-lg-6 mt-4'>

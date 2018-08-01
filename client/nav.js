@@ -28,7 +28,7 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <div>
-        <Navbar className='main-nav shadow' color='success' expand='md'>
+        <Navbar className='main-nav fixed-top shadow' color='success' expand='md'>
           <NavbarBrand className='text-white nav-logos' href='#campground-list'><i className='fas fa-fire logo-icon mr-2'></i>Campr</NavbarBrand>
             <Nav className='ml-auto' navbar>
               <Row>

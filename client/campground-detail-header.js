@@ -2,9 +2,9 @@ import React from 'react'
 import Service from './service.js'
 
 export default function CampgroundDetailHeader(props) {
-  
+
   return (
-    <div className='container-fluid'>
+    <div className='container-fluid mt-5 pt-5'>
       <div className='row'>
         <div className='col-xl-12'>
           <div className='campground-detail-card'>
