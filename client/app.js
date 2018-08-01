@@ -4,6 +4,7 @@ import Nav from './nav.js'
 import CampgroundDetail from './campground-detail.js'
 import hash from './util/hash.js'
 import Campsites from './campsites.js'
+import CheckoutWizard from './checkout-wizard.js'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -25,6 +26,8 @@ export default class App extends React.Component {
       return <Campgrounds />
     case 'campsite':
       return <Campsites />
+    case 'checkout':
+      return <CheckoutWizard />
   }
 }
 
