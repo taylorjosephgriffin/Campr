@@ -13,7 +13,6 @@ export default class App extends React.Component {
       path: hash.parse(localStorage.getItem('hash')).path
     }
     window.location.hash = localStorage.getItem('hash')
-    localStorage.setItem('hash', window.location.hash)
   }
 
   renderView() {
@@ -22,6 +21,7 @@ export default class App extends React.Component {
       return <CampgroundDetail path={this.state.path}/>
     case '':
     case 'campground-list':
+    localStorage.setItem('hash', window.location.hash)
       return <Campgrounds />
     case 'campsite':
       return <Campsites />
