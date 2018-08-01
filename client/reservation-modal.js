@@ -15,6 +15,7 @@ import { Button,
   FormText } from 'reactstrap'
 import DateRangeComponent from './date-range-picker.js'
 import * as qs from 'qs'
+import uuid from 'uuid/v4'
 
 export default class CreateReservationModal extends React.Component {
   constructor(props) {
@@ -34,24 +35,41 @@ export default class CreateReservationModal extends React.Component {
     })
   }
 
-  renderGuests() {
-    const maxPeople = parseInt(this.props.campsites[0].maxPeople, 10)
-    const guests = []
-      for (let i = 1; i < maxPeople + 1; i++) {
-        guests.push(i)
-      }
-    return guests
+  renderOptions(option) {
+    const max = parseInt(option, 10)
+    const options = []
+    for (let i = 1; i < max + 1; i++) {
+      options.push(i)
+    }
+    return options
   }
 
   handleSubmit(event) {
     event.preventDefault()
+    const clickedSite = this.props.campsites.filter(site => {
+      const siteIdQuery = location.hash.replace(/^(.*?)\?/, '')
+      return site.siteId === qs.parse(siteIdQuery).siteId
+    })
     const resData = new FormData(event.target)
+    const reservationObj = {
+        reservationId: uuid(),
+        campground: this.props.campground,
+        campsite: clickedSite[0],
+        reservation: {
+          guests: resData.get('guests'),
+          vehicles: resData.get('vehicles'),
+          startDate: resData.get('startDate'),
+          endDate: resData.get('endDate')
+        }
+      }
 
     if (!startDate.value || !endDate.value) {
       this.setState({
         formValid: true
       })
-      return null
+    }
+    else {
+      this.props.createReservation(reservationObj)
     }
   }
 
@@ -83,7 +101,15 @@ export default class CreateReservationModal extends React.Component {
               <FormGroup>
                 <Label>Guests</Label>
                 <Input type='select' name='guests'>
-                  {this.renderGuests().map(option =>
+                  {this.renderOptions(this.props.campsites[0].maxPeople).map(option =>
+                    <option key={option} value={option}>{option}</option>
+                  )}
+                </Input>
+              </FormGroup>
+              <FormGroup>
+                <Label>Vehicles</Label>
+                <Input type='select' name='vehicles'>
+                  {this.renderOptions(this.props.campsites[0].maxVehicles).map(option =>
                     <option key={option} value={option}>{option}</option>
                   )}
                 </Input>
