@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button, Row, Col, Container } from 'reactstrap'
-import Service from './service.js'
+import Service from '../util/service.js'
 import * as qs from 'qs'
-import SiteInfo from './site-info.js'
+import SiteInfo from '../util/site-info.js'
 
 export default function CampsitesList(props) {
 

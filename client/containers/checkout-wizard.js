@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Confirm from './confirm.js'
+import Confirm from '../components/confirm.js'
 import * as qs from 'qs'
 import { Col, Label } from 'reactstrap'
 

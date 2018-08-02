@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import * as qs from 'qs'
-import Service from './service.js'
-import CampsiteListItems from './campsite-list-items.js'
-import ReservationModal from './reservation-modal.js'
+import Service from '../util/service.js'
+import CampsiteListItems from '../components/campsite-list-items.js'
+import ReservationModal from '../components/reservation-modal.js'
 
 export default class CampsitesList extends React.Component {
   constructor(props) {

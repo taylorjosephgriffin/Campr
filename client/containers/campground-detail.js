@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import * as qs from 'qs'
-import Service from './service.js'
-import CampgroundDetailHeader from './campground-detail-header.js'
+import Service from '../util/service.js'
+import CampgroundDetailHeader from '../components/campground-detail-header.js'
 
 export default class CampgroundDetail extends React.Component {
   constructor(props) {

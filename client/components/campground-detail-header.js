@@ -1,5 +1,5 @@
 import React from 'react'
-import Service from './service.js'
+import Service from '../util/service.js'
 
 export default function CampgroundDetailHeader(props) {
 
