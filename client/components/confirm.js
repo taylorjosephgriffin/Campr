@@ -33,7 +33,6 @@ const headerMargin = {
 }
 
 export default function Confirm(props) {
-  localStorage.setItem('hash', window.location.hash)
 
   const cardImage = {
     width: '100%',

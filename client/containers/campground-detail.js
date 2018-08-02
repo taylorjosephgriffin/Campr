@@ -14,9 +14,7 @@ export default class CampgroundDetail extends React.Component {
   }
 
   componentDidMount() {
-    const idQuery = location.hash.replace(/^(.*?)\?/, '')
-    const id = qs.parse(idQuery).id
-    fetch('/campgrounds/' + id)
+    fetch('/campgrounds/' + this.props.params.id)
       .then(res => res.json())
       .then(camp => {
         this.setState({
@@ -31,7 +29,6 @@ export default class CampgroundDetail extends React.Component {
           campsites: sites
         })
       })
-    localStorage.setItem('hash', window.location.hash)
   }
 
   carouselClick(event) {

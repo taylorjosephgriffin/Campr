@@ -54,7 +54,6 @@ export default class CampsitesList extends React.Component {
           campsites: sites
         })
       })
-    localStorage.setItem('hash', window.location.hash)
   }
 
   render() {

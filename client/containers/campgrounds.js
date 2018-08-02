@@ -28,7 +28,14 @@ export default class Campgrounds extends React.Component {
   }
 
   componentDidMount() {
-    this.loadCampgrounds({})
+    fetch('/campgrounds/')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          campgrounds: data,
+          popoverOpen: false
+        })
+      })
   }
 
   toggle() {
