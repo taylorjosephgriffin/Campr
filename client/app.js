@@ -12,10 +12,9 @@ export default class App extends React.Component {
     super(props)
 
     this.state = {
-      path: hash.parse(localStorage.getItem('hash')).path,
+      path: hash.parse(location.hash).path || '',
       params: qs.parse(location.hash.replace(/^(.*?)\?/, ''))
     }
-    window.location.hash = localStorage.getItem('hash')
   }
 
   renderView() {
@@ -24,12 +23,11 @@ export default class App extends React.Component {
       return <CampgroundDetail params={this.state.params} path={this.state.path}/>
     case '':
     case 'campground-list':
-    localStorage.setItem('hash', window.location.hash)
       return <Campgrounds params={this.state.params}/>
     case 'campsite':
       return <Campsites />
     case 'checkout':
-      return <CheckoutWizard />
+      return <CheckoutWizard params={this.state.params}/>
   }
 }
 
@@ -43,7 +41,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.params)
     return (
       <React.Fragment>
         <Nav path={this.state.path}/>
