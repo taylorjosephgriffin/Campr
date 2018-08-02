@@ -12,6 +12,11 @@ import {
   PopoverBody,
   Button } from 'reactstrap';
 
+const popoverStyle = {
+  maxHeight: '300px',
+  overflow: 'scroll'
+}
+
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -39,8 +44,14 @@ export default class Navigation extends React.Component {
       })
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.reservations !== this.state.reservations) {
+      this.componentDidMount()
+    }
+    else return null
+  }
+
   render() {
-    console.log(this.state)
     return (
       <div>
         <Navbar className='main-nav fixed-top shadow' color='success' expand='md'>
@@ -55,7 +66,7 @@ export default class Navigation extends React.Component {
                 <Col className='pl-0 pr-3'>
                   <NavItem>
                     <Button id='Popover1' onClick={this.toggle} className='text-white cart-link bg-transparent border-0'><i className='fas fa-shopping-cart cart-icon mt-1 ml-2'></i></Button>
-                      <Popover className='w-100 p-0' placement="bottom" isOpen={this.state.isOpen} target="Popover1" toggle={this.toggle}>
+                      <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.isOpen} target="Popover1" toggle={this.toggle}>
                         <PopoverHeader className='text-center'>Reservations</PopoverHeader>
                         <PopoverBody className='p-0'>
                           { !this.state.reservations ? null : this.state.reservations.map((reservation, index) =>
