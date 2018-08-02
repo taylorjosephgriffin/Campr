@@ -47,7 +47,6 @@ export default class Navigation extends React.Component {
     if (prevState.reservations !== this.state.reservations) {
       this.componentDidMount()
     }
-    else return null
   }
 
   render() {

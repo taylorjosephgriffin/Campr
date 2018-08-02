@@ -51,7 +51,6 @@ export default class CheckoutWizard extends React.Component {
     if (this.props.params !== prevProps.params) {
       this.componentDidMount()
     }
-    else return null
   }
 
   renderDetails(label, data, style, xlSize, smSize, xsSize) {
