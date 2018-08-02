@@ -16,7 +16,7 @@ module.exports = function reservationRouter(collection) {
     collection
       .find()
       .toArray()
-      .then(reservation => res.json(reservation))
+      .then(reservations => res.json(reservations))
       .catch(err => next(err))
   })
 

@@ -18,9 +18,9 @@ MongoClient
     process.exit(1)
   })
   .then(client => {
-    const collection1 = client.db().collection('campgrounds')
-    const collection2 = client.db().collection('campsites')
-    const collection3 = client.db().collection('reservations')
+    const campgrounds = client.db().collection('campgrounds')
+    const campsites = client.db().collection('campsites')
+    const reservations = client.db().collection('reservations')
     const publicPath = path.join(__dirname, 'public/')
 
     app
@@ -28,9 +28,9 @@ MongoClient
         console.error(err)
         res.sendState(500)
       })
-      .use('/campgrounds', campgroundRouter(collection1))
-      .use('/campsites', campsiteRouter(collection2))
-      .use('/reservations', reservationRouter(collection3))
+      .use('/campgrounds', campgroundRouter(campgrounds))
+      .use('/campsites', campsiteRouter(campsites))
+      .use('/reservations', reservationRouter(reservations))
       .use(express.static(publicPath))
 
     app.listen(process.env.PORT, () => {
