@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import * as qs from 'qs'
-import CampgroundListItem from '../components/campground-list-item.js'
+import CampgroundList from '../components/campground-list.js'
 import Filter from '../components/filter-campgrounds.js'
 
 export default class Campgrounds extends React.Component {
@@ -47,7 +47,7 @@ export default class Campgrounds extends React.Component {
     return (
       <Fragment>
         <Filter loadCampgrounds={this.loadCampgrounds} toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.popoverOpen} />
-        <CampgroundListItem campgrounds={this.state.campgrounds} />
+        <CampgroundList campgrounds={this.state.campgrounds} />
       </Fragment>
     )
   }

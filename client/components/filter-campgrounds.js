@@ -56,7 +56,7 @@ export default class Filter extends React.Component {
                       <option>Boldering</option>
                       <option>Rock Climbing</option>
                     </select>
-                    <button type='submit' className='btn btn-secondary filter-button mt-4'>Refine Search</button>
+                    <Button type='submit' className='btn btn-secondary filter-button mt-4'>Refine Search</Button>
                   </div>
                 </form>
               </PopoverBody>

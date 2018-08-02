@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import * as qs from 'qs'
-import CampsiteListItems from '../components/campsite-list-items.js'
+import CampsiteList from '../components/campsite-list.js'
 import ReservationModal from '../components/reservation-modal.js'
 
-export default class CampsitesList extends React.Component {
+export default class Campsites extends React.Component {
   constructor(props) {
     super(props)
 
@@ -59,7 +59,7 @@ export default class CampsitesList extends React.Component {
     return (
       !this.state.modalClicked
         ? <Fragment>
-          <CampsiteListItems
+          <CampsiteList
             renderModal={this.renderModal}
             modalClicked={this.state.modalClicked}
             campground={this.state.campground}
@@ -72,7 +72,7 @@ export default class CampsitesList extends React.Component {
             modalClicked={this.state.modalClicked}
             campground={this.state.campground}
             campsites={this.state.campsites}/>
-          <CampsiteListItems
+          <CampsiteList
             renderModal={this.renderModal}
             modalClicked={this.state.modalClicked}
             campground={this.state.campground}
