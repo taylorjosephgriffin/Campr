@@ -18,18 +18,18 @@ export default class App extends React.Component {
   }
 
   renderView() {
-  switch (this.state.path) {
-    case 'details':
-      return <CampgroundDetail params={this.state.params} path={this.state.path}/>
-    case '':
-    case 'campground-list':
-      return <Campgrounds params={this.state.params}/>
-    case 'campsite':
-      return <Campsites />
-    case 'checkout':
-      return <CheckoutWizard params={this.state.params}/>
+    switch (this.state.path) {
+      case 'details':
+        return <CampgroundDetail params={this.state.params}/>
+      case '':
+      case 'campground-list':
+        return <Campgrounds params={this.state.params}/>
+      case 'campsite':
+        return <Campsites />
+      case 'checkout':
+        return <CheckoutWizard params={this.state.params}/>
+    }
   }
-}
 
   componentDidMount() {
     window.addEventListener('hashchange', event => {
