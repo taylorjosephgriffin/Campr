@@ -19,9 +19,11 @@
 .nav-logos { font-size: 40px !important; }
 
 .filter-link,
-.filter-link:focus {
+.filter-link:focus,
+.cart-link:focus {
   outline: none !important;
   cursor: pointer;
+  box-shadow: none !important;
 }
 
 .home-link { font-size: 20px; }
@@ -100,4 +102,9 @@
 
 .hidden {
   color: transparent;
+}
+
+.reservation-popover {
+  border: 0.5px solid lightgrey;
+  width: 100%;
 }
