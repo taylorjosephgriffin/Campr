@@ -24,7 +24,6 @@ export default class CreateReservationModal extends React.Component {
       modal: true,
       formValid: null
     }
-    localStorage.setItem('hash', `#campsite?facilityNum=${this.props.campground.facilityNum}&id=${this.props.campground.id}`)
     this.toggle = this.toggle.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -81,21 +80,23 @@ export default class CreateReservationModal extends React.Component {
     return (
       <div>
         <Modal centered isOpen={this.props.modalClicked} className={this.props.className}>
-          <ModalHeader onClick={this.props.renderModal} toggle={this.toggle}>
-            <Container>
-              <Row>
-                <Col xl='6'>
-                  <h3 className='text-dark text-center'>{clickedSite.length === 0 ? null : clickedSite[0].loop}</h3>
-                  <Badge color='secondary mt-2'><h6 className='mb-0 text-white'>{clickedSite.length === 0 ? null : `site #${clickedSite[0].siteNumber}`}</h6></Badge>
-                </Col>
-                <Col xl='6'>
-                  <div>
-                    <img className='modal-image' src={clickedSite.length === 0 ? null : clickedSite[0].sitePhoto} />
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </ModalHeader>
+          <a href={`#campsite?facilityNum=${this.props.campground.facilityNum}&id=${this.props.campground.id}`}>
+            <ModalHeader onClick={this.props.renderModal} toggle={this.toggle}>
+              <Container>
+                <Row>
+                  <Col xl='6'>
+                    <h3 className='text-dark text-center'>{clickedSite.length === 0 ? null : clickedSite[0].loop}</h3>
+                    <Badge color='secondary mt-2'><h6 className='mb-0 text-white'>{clickedSite.length === 0 ? null : `site #${clickedSite[0].siteNumber}`}</h6></Badge>
+                  </Col>
+                  <Col xl='6'>
+                    <div>
+                      <img className='modal-image' src={clickedSite.length === 0 ? null : clickedSite[0].sitePhoto} />
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </ModalHeader>
+          </a>
           <ModalBody>
             <Form onSubmit={this.handleSubmit}>
               <FormGroup>
