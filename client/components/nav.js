@@ -67,7 +67,7 @@ export default class Navigation extends React.Component {
                   <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.isOpen} target="Popover1" toggle={this.toggle}>
                     <PopoverHeader className='text-center'>Reservations</PopoverHeader>
                     <PopoverBody className='p-0'>
-                      { !this.state.reservations ? null : this.state.reservations.map((reservation, index) =>
+                      { this.state.reservations && this.state.reservations.map((reservation, index) =>
                         <a href={`#checkout?reservationId=${reservation.reservationId}`} onClick={this.toggle} key={index}>
                           <PopoverBody className='reservation-popover rounded'>
                             <Row>

@@ -45,7 +45,7 @@ export default function CampsitesList(props) {
                           <a href={window.location.hash + `&siteId=${site.siteId}`}>
                             <Button
                               id={site.siteId}
-                              onClick={site.available ? props.renderModal : null}
+                              onClick={site.available && props.renderModal}
                               className={site.available ? 'float-right w-100 shadow bg-secondary' : 'float-right w-100 shadow disabled btn-dark'}
                               size='lg'>Book</Button>
                           </a>

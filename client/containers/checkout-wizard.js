@@ -79,9 +79,11 @@ export default class CheckoutWizard extends React.Component {
           </div>
         </div>
         <Stepper step={this.state.step}/>
-        {!this.state.reservation
-          ? null
-          : <Confirm params={this.props.params} renderPrice={this.renderPrice} renderDetails={this.renderDetails} reservation={this.state.reservation}></Confirm>}
+        {this.state.reservation && <Confirm
+          params={this.props.params}
+          renderPrice={this.renderPrice}
+          renderDetails={this.renderDetails}
+          reservation={this.state.reservation}></Confirm>}
       </div>
 
     )
