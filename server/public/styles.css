@@ -108,3 +108,11 @@
   border: 0.5px solid lightgrey;
   width: 100%;
 }
+
+.checkout-stepper {
+  margin-top: 50px;
+}
+
+.progress {
+  height: 45px !important;
+}

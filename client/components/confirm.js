@@ -1,27 +1,6 @@
 import React from 'react'
 import { Card, Button, CardHeader, CardText, CardBody, CardTitle, Col, Row, Container, Label } from 'reactstrap';
 
-let image = 'https://web.sonoma.edu/campusrec/images/wwp/backpack_tahoe.jpg'
-
-const divStyle1 = {
-  width: '100%',
-  height: '100vh',
-  backgroundImage: `url(${image})`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  position: 'fixed',
-  zIndex: '-999999'
-}
-
-const layer = {
-  backgroundColor: 'rgba(241, 150, 164, 0.5)',
-  position: 'absolute',
-  top: '0',
-  left: '0',
-  width: '100%',
-  height: '100%'
-}
-
 const cardBody = {
   width: '100%',
   marginTop: '10vh',
@@ -52,10 +31,6 @@ export default function Confirm(props) {
 
   return (
     <div>
-    <div style={divStyle1}>
-      <div style={layer}>
-      </div>
-        </div>
         <Container fluid className='mt-5'>
           <Row className='justify-content-center'>
             <Col xl='6' lg='8' className='reservation-page'>
