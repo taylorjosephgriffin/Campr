@@ -14,14 +14,20 @@ export default class CheckoutWizard extends React.Component {
   }
 
   componentDidMount() {
-    const reservationId = qs.parse(location.hash.replace(/^(.*?)\?/, '')).reservationId
-    fetch('/reservations/' + reservationId)
+    fetch('/reservations/' + this.props.params.reservationId)
       .then(res => res.json())
       .then(data => {
         this.setState({
           reservation: data
         })
       })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.params !== prevProps.params) {
+      this.componentDidMount()
+    }
+    else return null
   }
 
   renderDetails(label, data, style, xlSize, smSize, xsSize) {
@@ -46,7 +52,7 @@ export default class CheckoutWizard extends React.Component {
     return (
       !this.state.reservation
         ? null
-        : <Confirm renderPrice={this.renderPrice} renderDetails={this.renderDetails} reservation={this.state.reservation}></Confirm>
+        : <Confirm params={this.props.params} renderPrice={this.renderPrice} renderDetails={this.renderDetails} reservation={this.state.reservation}></Confirm>
     )
   }
 }
