@@ -3,7 +3,7 @@ const uuid = require('uuid/v4')
 module.exports = [
   {
     siteId: uuid(),
-    facilityNum:'acker1227',
+    facilityNum: 'acker1227',
     loop: 'Ackerman Campground',
     maxEqpLen: '40',
     maxPeople: '8',
@@ -13,7 +13,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'acker1227',
+    facilityNum: 'acker1227',
     loop: 'Ackerman Campground',
     maxEqpLen: '40',
     maxPeople: '8',
@@ -23,7 +23,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'acker1227',
+    facilityNum: 'acker1227',
     loop: 'Ackerman Campground',
     maxEqpLen: '40',
     maxPeople: '8',
@@ -33,7 +33,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'acker1227',
+    facilityNum: 'acker1227',
     loop: 'Ackerman Campground',
     maxEqpLen: '40',
     maxPeople: '8',
@@ -43,7 +43,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'acker1227',
+    facilityNum: 'acker1227',
     loop: 'Ackerman Campground',
     maxEqpLen: '40',
     maxPeople: '8',
@@ -53,7 +53,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'leoca3404',
+    facilityNum: 'leoca3404',
     loop: 'Canyon Campground',
     maxEqpLen: '31',
     maxPeople: '8',
@@ -63,7 +63,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'leoca3404',
+    facilityNum: 'leoca3404',
     loop: 'Canyon Campground',
     maxEqpLen: '31',
     maxPeople: '8',
@@ -73,7 +73,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'leoca3404',
+    facilityNum: 'leoca3404',
     loop: 'Canyon Campground',
     maxEqpLen: '31',
     maxPeople: '8',
@@ -83,7 +83,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'leoca3404',
+    facilityNum: 'leoca3404',
     loop: 'Canyon Campground',
     maxEqpLen: '31',
     maxPeople: '8',
@@ -93,7 +93,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'leoca3404',
+    facilityNum: 'leoca3404',
     loop: 'Canyon Campground',
     maxEqpLen: '31',
     maxPeople: '8',
@@ -103,7 +103,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'bucke3660',
+    facilityNum: 'bucke3660',
     loop: 'Buckeye Flat',
     maxEqpLen: '0',
     maxPeople: '8',
@@ -113,7 +113,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'bucke3660',
+    facilityNum: 'bucke3660',
     loop: 'Buckeye Flat',
     maxEqpLen: '0',
     maxPeople: '8',
@@ -123,7 +123,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'bucke3660',
+    facilityNum: 'bucke3660',
     loop: 'Buckeye Flat',
     maxEqpLen: '0',
     maxPeople: '8',
@@ -133,7 +133,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'bucke3660',
+    facilityNum: 'bucke3660',
     loop: 'Buckeye Flat',
     maxEqpLen: '0',
     maxPeople: '8',
@@ -143,7 +143,7 @@ module.exports = [
   },
   {
     siteId: uuid(),
-    facilityNum:'bucke3660',
+    facilityNum: 'bucke3660',
     loop: 'Buckeye Flat',
     maxEqpLen: '0',
     maxPeople: '8',

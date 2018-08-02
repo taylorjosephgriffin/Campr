@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import * as qs from 'qs'
-import hash from '../util/hash.js'
 import CampgroundListItem from '../components/campground-list-item.js'
 import Filter from '../components/filter-campgrounds.js'
 
@@ -41,7 +40,7 @@ export default class Campgrounds extends React.Component {
   toggle() {
     this.setState({
       popoverOpen: !this.state.popoverOpen
-    });
+    })
   }
 
   render() {

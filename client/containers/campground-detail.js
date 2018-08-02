@@ -1,6 +1,4 @@
-import React, { Fragment } from 'react'
-import * as qs from 'qs'
-import Service from '../util/service.js'
+import React from 'react'
 import CampgroundDetailHeader from '../components/campground-detail-header.js'
 
 export default class CampgroundDetail extends React.Component {
@@ -20,7 +18,7 @@ export default class CampgroundDetail extends React.Component {
         this.setState({
           campground: camp
         })
-    })
+      })
 
     fetch('/campsites')
       .then(res => res.json())

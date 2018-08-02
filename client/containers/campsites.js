@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import * as qs from 'qs'
-import Service from '../util/service.js'
 import CampsiteListItems from '../components/campsite-list-items.js'
 import ReservationModal from '../components/reservation-modal.js'
 
@@ -24,16 +23,16 @@ export default class CampsitesList extends React.Component {
   createReservation(reservation) {
     fetch('/reservations', {
       headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       method: 'POST',
       body: JSON.stringify(reservation)
     }).then(res => res.json())
       .then(data => console.log(data))
       .catch(err => console.error(err))
 
-      window.location.hash = `#checkout?reservationId=${reservation.reservationId}`
+    window.location.hash = `#checkout?reservationId=${reservation.reservationId}`
   }
 
   componentDidMount() {
@@ -45,7 +44,7 @@ export default class CampsitesList extends React.Component {
         this.setState({
           campground: camp
         })
-    })
+      })
 
     fetch('/campsites')
       .then(res => res.json())
@@ -60,25 +59,25 @@ export default class CampsitesList extends React.Component {
     return (
       !this.state.modalClicked
         ? <Fragment>
-            <CampsiteListItems
-              renderModal={this.renderModal}
-              modalClicked={this.state.modalClicked}
-              campground={this.state.campground}
-              campsites={this.state.campsites}/>
-          </Fragment>
+          <CampsiteListItems
+            renderModal={this.renderModal}
+            modalClicked={this.state.modalClicked}
+            campground={this.state.campground}
+            campsites={this.state.campsites}/>
+        </Fragment>
         : <Fragment>
-            <ReservationModal
-              createReservation={this.createReservation}
-              renderModal={this.renderModal}
-              modalClicked={this.state.modalClicked}
-              campground={this.state.campground}
-              campsites={this.state.campsites}/>
-            <CampsiteListItems
-              renderModal={this.renderModal}
-              modalClicked={this.state.modalClicked}
-              campground={this.state.campground}
-              campsites={this.state.campsites}/>
-          </Fragment>
+          <ReservationModal
+            createReservation={this.createReservation}
+            renderModal={this.renderModal}
+            modalClicked={this.state.modalClicked}
+            campground={this.state.campground}
+            campsites={this.state.campsites}/>
+          <CampsiteListItems
+            renderModal={this.renderModal}
+            modalClicked={this.state.modalClicked}
+            campground={this.state.campground}
+            campsites={this.state.campsites}/>
+        </Fragment>
     )
   }
 }

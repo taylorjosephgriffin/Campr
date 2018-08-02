@@ -1,9 +1,7 @@
 import React, { Fragment } from 'react'
 import Confirm from '../components/confirm.js'
-import * as qs from 'qs'
-import { Col, Label, Row } from 'reactstrap'
+import { Col, Label } from 'reactstrap'
 import Stepper from '../components/stepper.js'
-
 
 let image = 'https://web.sonoma.edu/campusrec/images/wwp/backpack_tahoe.jpg'
 
@@ -25,7 +23,6 @@ const layer = {
   width: '100%',
   height: '100%'
 }
-
 
 export default class CheckoutWizard extends React.Component {
   constructor(props) {
@@ -59,9 +56,9 @@ export default class CheckoutWizard extends React.Component {
 
   renderDetails(label, data, style, xlSize, smSize, xsSize) {
     return <Col style={style} xl={xlSize} lg={xlSize} md={xlSize} sm={smSize} xs={xsSize}>
-              <Label>{label}</Label>
-              <h5>{data}</h5>
-            </Col>
+      <Label>{label}</Label>
+      <h5>{data}</h5>
+    </Col>
   }
 
   renderPrice(label, data, style, size, className) {
@@ -83,9 +80,9 @@ export default class CheckoutWizard extends React.Component {
           </div>
         </div>
         <Stepper step={this.state.step}/>
-          {!this.state.reservation
-            ? null
-            : <Confirm params={this.props.params} renderPrice={this.renderPrice} renderDetails={this.renderDetails} reservation={this.state.reservation}></Confirm>}
+        {!this.state.reservation
+          ? null
+          : <Confirm params={this.props.params} renderPrice={this.renderPrice} renderDetails={this.renderDetails} reservation={this.state.reservation}></Confirm>}
       </div>
 
     )

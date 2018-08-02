@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Button, CardHeader, CardText, CardBody, CardTitle, Col, Row, Container, Label } from 'reactstrap';
+import { Card, Button, CardHeader, Col, Row, Container } from 'reactstrap'
 
 const cardBody = {
   width: '100%',
@@ -31,10 +31,10 @@ export default function Confirm(props) {
 
   return (
     <div>
-        <Container fluid className='mt-5'>
-          <Row className='justify-content-center'>
-            <Col xl='6' lg='8' className='reservation-page'>
-              <Card className='border-secondary' style={cardBody}>
+      <Container fluid className='mt-5'>
+        <Row className='justify-content-center'>
+          <Col xl='6' lg='8' className='reservation-page'>
+            <Card className='border-secondary' style={cardBody}>
               <CardHeader className='card-header'>
                 <Row className='row reservation-page'>
                   <Col xl='6' lg='6' sm='6'>
@@ -66,9 +66,9 @@ export default function Confirm(props) {
                 <Button color='success' className='shadow float-right mr-4'>Continue</Button>
               </Row>
             </Card>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   )
 }

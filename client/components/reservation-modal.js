@@ -3,7 +3,6 @@ import { Button,
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter,
   Container,
   Row,
   Col,
@@ -11,8 +10,7 @@ import { Button,
   Form,
   FormGroup,
   Label,
-  Input,
-  FormText } from 'reactstrap'
+  Input } from 'reactstrap'
 import DateRangeComponent from './date-range-picker.js'
 import * as qs from 'qs'
 import uuid from 'uuid/v4'
@@ -26,6 +24,7 @@ export default class CreateReservationModal extends React.Component {
     }
     this.toggle = this.toggle.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   toggle() {
@@ -51,18 +50,18 @@ export default class CreateReservationModal extends React.Component {
     })
     const resData = new FormData(event.target)
     const reservationObj = {
-        reservationId: uuid(),
-        campground: this.props.campground,
-        campsite: clickedSite[0],
-        reservation: {
-          guests: resData.get('guests'),
-          vehicles: resData.get('vehicles'),
-          startDate: resData.get('startDate'),
-          endDate: resData.get('endDate')
-        }
+      reservationId: uuid(),
+      campground: this.props.campground,
+      campsite: clickedSite[0],
+      reservation: {
+        guests: resData.get('guests'),
+        vehicles: resData.get('vehicles'),
+        startDate: resData.get('startDate'),
+        endDate: resData.get('endDate')
       }
+    }
 
-    if (!startDate.value || !endDate.value) {
+    if (!reservationObj.reservation.startDate || !reservationObj.reservation.endDate) {
       this.setState({
         formValid: true
       })
@@ -70,6 +69,11 @@ export default class CreateReservationModal extends React.Component {
     else {
       this.props.createReservation(reservationObj)
     }
+  }
+
+  handleClick() {
+    this.props.renderModal()
+    this.toggle()
   }
 
   render() {
@@ -122,12 +126,12 @@ export default class CreateReservationModal extends React.Component {
               </FormGroup>
               <Button className='shadow float-right' color='primary'>Continue</Button>
               <a href={`#campsite?facilityNum=${this.props.campground.facilityNum}&id=${this.props.campground.id}`}>
-                <Button className='shadow float-right mr-3' color='secondary' onClick={this.toggle, this.props.renderModal}>Cancel</Button>
+                <Button className='shadow float-right mr-3' color='secondary' onClick={this.handleClick}>Cancel</Button>
               </a>
             </Form>
           </ModalBody>
         </Modal>
       </div>
-    );
+    )
   }
 }
