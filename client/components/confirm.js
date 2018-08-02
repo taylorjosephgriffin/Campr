@@ -1,5 +1,7 @@
 import React from 'react'
 import { Card, Button, CardHeader, Col, Row, Container } from 'reactstrap'
+import RenderPrice from './render-price.js'
+import RenderDetails from './render-details.js'
 
 const cardBody = {
   width: '100%',
@@ -39,13 +41,13 @@ export default function Confirm(props) {
                 <Row className='row reservation-page'>
                   <Col xl='6' lg='6' sm='6'>
                     <Row>
-                      {props.renderDetails('Park:', props.reservation.campground.facilityName, headerMargin, '12')}
-                      {props.renderDetails('Site:', props.reservation.campsite.siteNumber, headerMargin, '12')}
-                      {props.renderDetails('Guests:', props.reservation.reservation.guests, headerMargin, '6', '6', '6')}
-                      {props.renderDetails('Vehicles:', props.reservation.reservation.vehicles, headerMargin, '6', '6', '6')}
-                      {props.renderDetails('Site Type:', props.reservation.campsite.siteType, headerMargin, '12')}
-                      {props.renderDetails('Arriving:', props.reservation.reservation.startDate, headerMargin, '6', '6', '6')}
-                      {props.renderDetails('Leaving:', props.reservation.reservation.endDate, headerMargin, '6', '6', '6')}
+                      <RenderDetails label={'Park:'} data={props.reservation.campground.facilityName} style={headerMargin} xlSize={'12'} smSize={''} xsSize={''} />
+                      <RenderDetails label={'Site:'} data={props.reservation.campsite.siteNumber} style={headerMargin} xlSize={'12'} smSize={''} xsSize={''} />
+                      <RenderDetails label={'Guests:'} data={props.reservation.reservation.guests} style={headerMargin} xlSize={'6'} smSize={'6'} xsSize={'6'} />
+                      <RenderDetails label={'Vehicles:'} data={props.reservation.reservation.vehicles} style={headerMargin} xlSize={'6'} smSize={'6'} xsSize={'6'} />
+                      <RenderDetails label={'Site Type:'} data={props.reservation.campsite.siteType} style={headerMargin} xlSize={'12'} smSize={''} xsSize={''} />
+                      <RenderDetails label={'Arriving:'} data={props.reservation.reservation.startDate} style={headerMargin} xlSize={'6'} smSize={'6'} xsSize={'6'} />
+                      <RenderDetails label={'Leaving:'} data={props.reservation.reservation.endDate} style={headerMargin} xlSize={'6'} smSize={'6'} xsSize={'6'} />
                     </Row>
                   </Col>
                   <Col className='reservation-image' xl='6' lg='6' md='6' sm='6'>
@@ -55,10 +57,10 @@ export default function Confirm(props) {
               </CardHeader>
               <CardHeader className='text-secondary bg-white'>
                 <Row>
-                  {props.renderPrice(`$${props.reservation.campground.price}.00 X ${nights} nights`, `$${siteCost}.00`, headerMargin, '6')}
-                  {props.renderPrice('Service Fee:', `$${serviceFee}.00`, headerMargin, '6')}
-                  {props.renderPrice('Tax (8%):', `$${parseFloat(tax).toFixed(2)}`, headerMargin, '6')}
-                  {props.renderPrice('Total:', `$${parseFloat(total).toFixed(2)}`, headerMargin, '6', 'text-success')}
+                  <RenderPrice label={`$${props.reservation.campground.price}.00 X ${nights} nights`} data={`$${siteCost}.00`} style={headerMargin} size={'6'}/>
+                  <RenderPrice label={'Service Fee:'} data={`$${serviceFee}.00`} style={headerMargin} size={'6'}/>
+                  <RenderPrice label={'Tax (8%):'} data={`$${parseFloat(tax).toFixed(2)}`} style={headerMargin} size={'6'}/>
+                  <RenderPrice label={'Total:'} data={`$${parseFloat(total).toFixed(2)}`} style={headerMargin} size={'6'} className={'text-success'}/>
                 </Row>
               </CardHeader>
               <Row className='justify-content-end my-2'>
