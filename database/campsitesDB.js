@@ -219,7 +219,7 @@ module.exports = [
     maxPeople: '10',
     siteNumber: '01',
     siteType: 'Tent',
-    sitePhoto: 'https://madetotravel.ca/wp-content/uploads/2018/02/camping-1031360_960_720.jpg' // broken
+    sitePhoto: 'https://www.sunset.com/wp-content/uploads/camping-tents-nemo-hornet-pu-0318.jpg'
   },
   {
     siteId: uuid(),
@@ -249,7 +249,7 @@ module.exports = [
     maxPeople: '10',
     siteNumber: '01',
     siteType: 'Tent',
-    sitePhoto: 'https://madetotravel.ca/wp-content/uploads/2018/01/P1020004-2-1024x753.jpg' // broken
+    sitePhoto: 'https://cl9r93gnrb42o3l0v1aawby1-wpengine.netdna-ssl.com/wp-content/uploads/2017/07/beach-camp-web.jpg'
   },
   {
     siteId: uuid(),
@@ -429,7 +429,7 @@ module.exports = [
     maxPeople: '6',
     siteNumber: '103',
     siteType: 'Tent',
-    sitePhoto: 'https://timsartoris.com/blog/wp-content/uploads/2010/06/IMG_17399.jpg' // broken
+    sitePhoto: 'https://jameskaiser.com/wp-content/uploads/2015/03/upper-pines-campground-yosemite-valley-2.jpg'
   },
   {
     siteId: uuid(),
@@ -439,7 +439,7 @@ module.exports = [
     maxPeople: '6',
     siteNumber: '104',
     siteType: 'Tent',
-    sitePhoto: 'https://www.simonphoto.net/SimonPhotoAlbums/Yosemite%202006/Campsite.jpg' // broken
+    sitePhoto: 'https://www.campsitephotos.com/photo/camp/6848/North_Pines_404.jpg'
   },
   {
     siteId: uuid(),

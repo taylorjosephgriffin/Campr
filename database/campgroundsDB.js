@@ -48,9 +48,9 @@ module.exports = [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing'
     ],
     facilityPhotos: [
-      'https://barnaclebusters.org/wp-content/uploads/2016/07/Camping-at-Leo-Carrillo-2012-93.jpg', // broken
+      'https://i.ytimg.com/vi/R0A7WDkiHDM/maxresdefault.jpg',
       'https://i.imgur.com/J9ZrKjx.jpg',
-      'https://barnaclebusters.org/wp-content/uploads/2016/07/Camping-at-Leo-Carrillo-2012-12.jpg', // broken
+      'https://i.ytimg.com/vi/Bz4mnAQY1kg/maxresdefault.jpg',
       'https://orig15.deviantart.net/c4d0/f/2012/085/c/2/redmill_rapid_by_kg4wih-d4tycsa.jpg',
       'https://i.ytimg.com/vi/-OreZ4kqPZE/maxresdefault.jpg'
     ]
@@ -213,7 +213,7 @@ module.exports = [
       'https://ltbackpackers.files.wordpress.com/2012/08/emerald-sapphire-lake-backpack-trip-fig200.jpg',
       'https://i.pinimg.com/originals/55/a7/d7/55a7d7ed3a6df92e6a54fd8ea5af1c6c.jpg',
       'https://activenorcal.net/downloads/2280/download/IMG_9332.jpg?cb=a6697f569ac945925b16bbe03dba5aa1&w=-1',
-      'https://reallyredding.com/wp-content/gallery/dinner-cruise/Dinner-Cruise-Camping.jpg' // broken
+      'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1505848511/campground-photos/fjx2akqohrc3u4hila4s.jpg'
     ]
   },
   {
@@ -238,7 +238,7 @@ module.exports = [
     facilityPhotos: [
       'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1491157866/campground-photos/ajncbc2bbpgniup0j4tb.jpg',
       'https://i.ytimg.com/vi/eDqdyJ0FA8g/maxresdefault.jpg',
-      'https://www.lenzenhuber-studios.com/recently/2017/yose17/IMAG0513m.jpg', // broken
+      'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1491157855/campground-photos/brfrsl9haakmdwtkpc6j.jpg',
       'https://i.pinimg.com/originals/96/a5/bf/96a5bf934790b396bf5c7810149f71eb.jpg',
       'https://beautifulwashington.com/images/pine-ridge-trail/pine-ridge-trail-23.jpg'
     ]
