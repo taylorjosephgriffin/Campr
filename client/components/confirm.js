@@ -25,7 +25,8 @@ export default function Confirm(props) {
 
   const startDate = new Date(props.reservation.reservation.startDate)
   const endDate = new Date(props.reservation.reservation.endDate)
-  const nights = endDate.getDate() - startDate.getDate()
+  const timeDiff = Math.abs(endDate.getTime() - startDate.getTime())
+  const nights = Math.ceil(timeDiff / (1000 * 3600 * 24))
   const siteCost = props.reservation.campground.price * nights
   const serviceFee = 20
   const tax = (siteCost + serviceFee) * 0.08
