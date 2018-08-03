@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Confirm from '../components/confirm.js'
-import { Col, Label } from 'reactstrap'
 import Stepper from '../components/stepper.js'
 
 let image = 'https://web.sonoma.edu/campusrec/images/wwp/backpack_tahoe.jpg'
