@@ -79,7 +79,7 @@ module.exports = [
     maxPeople: '8',
     siteNumber: '03',
     siteType: 'Tent',
-    sitePhoto: 'http://npplan.com/wp-content/uploads/2016/05/Cumberland-Island-240.jpg'
+    sitePhoto: 'https://npplan.com/wp-content/uploads/2016/05/Cumberland-Island-240.jpg'
   },
   {
     siteId: uuid(),
@@ -99,7 +99,7 @@ module.exports = [
     maxPeople: '8',
     siteNumber: '05',
     siteType: 'Tent',
-    sitePhoto: 'http://s13929.pcdn.co/wp-content/uploads/2014/03/Hawaii_Family_Camping_Vacation-1920x1080.jpg'
+    sitePhoto: 'https://s13929.pcdn.co/wp-content/uploads/2014/03/Hawaii_Family_Camping_Vacation-1920x1080.jpg'
   },
   {
     siteId: uuid(),
@@ -149,7 +149,7 @@ module.exports = [
     maxPeople: '8',
     siteNumber: '05',
     siteType: 'Tent',
-    sitePhoto: 'http://www.californiasbestcamping.com/photos16/hospital_flat_campground.jpg'
+    sitePhoto: 'https://www.californiasbestcamping.com/photos16/hospital_flat_campground.jpg'
   },
   {
     siteId: uuid(),
@@ -219,7 +219,7 @@ module.exports = [
     maxPeople: '10',
     siteNumber: '01',
     siteType: 'Tent',
-    sitePhoto: 'http://madetotravel.ca/wp-content/uploads/2018/02/camping-1031360_960_720.jpg'
+    sitePhoto: 'https://www.sunset.com/wp-content/uploads/camping-tents-nemo-hornet-pu-0318.jpg'
   },
   {
     siteId: uuid(),
@@ -249,7 +249,7 @@ module.exports = [
     maxPeople: '10',
     siteNumber: '01',
     siteType: 'Tent',
-    sitePhoto: 'http://madetotravel.ca/wp-content/uploads/2018/01/P1020004-2-1024x753.jpg'
+    sitePhoto: 'https://cl9r93gnrb42o3l0v1aawby1-wpengine.netdna-ssl.com/wp-content/uploads/2017/07/beach-camp-web.jpg'
   },
   {
     siteId: uuid(),
@@ -259,7 +259,7 @@ module.exports = [
     maxPeople: '8',
     siteNumber: '01',
     siteType: 'Tent',
-    sitePhoto: 'http://www.crystalcovestatepark.org/wp-content/uploads/2016/05/image4.jpg'
+    sitePhoto: 'https://www.crystalcovestatepark.org/wp-content/uploads/2016/05/image4.jpg'
   },
   {
     siteId: uuid(),
@@ -269,7 +269,7 @@ module.exports = [
     maxPeople: '8',
     siteNumber: '02',
     siteType: 'Tent',
-    sitePhoto: 'http://www.crystalcovestatepark.org/wp-content/uploads/2016/05/image1.jpg'
+    sitePhoto: 'https://www.crystalcovestatepark.org/wp-content/uploads/2016/05/image1.jpg'
   },
   {
     siteId: uuid(),
@@ -279,7 +279,7 @@ module.exports = [
     maxPeople: '8',
     siteNumber: '03',
     siteType: 'Tent',
-    sitePhoto: 'http://www.crystalcovestatepark.org/wp-content/uploads/2016/05/image5.jpg'
+    sitePhoto: 'https://www.crystalcovestatepark.org/wp-content/uploads/2016/05/image5.jpg'
   },
   {
     siteId: uuid(),
@@ -289,7 +289,7 @@ module.exports = [
     maxPeople: '8',
     siteNumber: '04',
     siteType: 'Tent',
-    sitePhoto: 'http://www.crystalcovestatepark.org/wp-content/uploads/2016/05/image6.jpg'
+    sitePhoto: 'https://www.crystalcovestatepark.org/wp-content/uploads/2016/05/image6.jpg'
   },
   {
     siteId: uuid(),
@@ -299,7 +299,7 @@ module.exports = [
     maxPeople: '8',
     siteNumber: '05',
     siteType: 'Tent',
-    sitePhoto: 'http://www.crystalcovestatepark.org/wp-content/uploads/2016/05/image8.jpg'
+    sitePhoto: 'https://www.crystalcovestatepark.org/wp-content/uploads/2016/05/image8.jpg'
   },
   {
     siteId: uuid(),
@@ -369,7 +369,7 @@ module.exports = [
     maxPeople: '8',
     siteNumber: '02',
     siteType: 'Tent',
-    sitePhoto: 'http://ak.picdn.net/offset/photos/57559c1cba6f6bfc1a48506c/medium/photo.jpg'
+    sitePhoto: 'https://ak.picdn.net/offset/photos/57559c1cba6f6bfc1a48506c/medium/photo.jpg'
   },
   {
     siteId: uuid(),
@@ -379,7 +379,7 @@ module.exports = [
     maxPeople: '8',
     siteNumber: '03',
     siteType: 'Tent',
-    sitePhoto: 'http://www.fs.usda.gov/Internet/FSE_MEDIA/stelprdb5302302.jpg'
+    sitePhoto: 'https://www.fs.usda.gov/Internet/FSE_MEDIA/stelprdb5302302.jpg'
   },
   {
     siteId: uuid(),
@@ -429,7 +429,7 @@ module.exports = [
     maxPeople: '6',
     siteNumber: '103',
     siteType: 'Tent',
-    sitePhoto: 'http://timsartoris.com/blog/wp-content/uploads/2010/06/IMG_17399.jpg'
+    sitePhoto: 'https://jameskaiser.com/wp-content/uploads/2015/03/upper-pines-campground-yosemite-valley-2.jpg'
   },
   {
     siteId: uuid(),
@@ -439,7 +439,7 @@ module.exports = [
     maxPeople: '6',
     siteNumber: '104',
     siteType: 'Tent',
-    sitePhoto: 'http://www.simonphoto.net/SimonPhotoAlbums/Yosemite%202006/Campsite.jpg'
+    sitePhoto: 'https://www.campsitephotos.com/photo/camp/6848/North_Pines_404.jpg'
   },
   {
     siteId: uuid(),
@@ -489,7 +489,7 @@ module.exports = [
     maxPeople: '8',
     siteNumber: 'A04',
     siteType: 'Tent',
-    sitePhoto: 'http://korn-locker.com/wp-content/uploads/2018/04/campground-fire-pits-lovely-liberty-glen-campground-sonoma-lake-2-hours-from-sf-of-campground-fire-pits.jpg'
+    sitePhoto: 'https://korn-locker.com/wp-content/uploads/2018/04/campground-fire-pits-lovely-liberty-glen-campground-sonoma-lake-2-hours-from-sf-of-campground-fire-pits.jpg'
   },
   {
     siteId: uuid(),

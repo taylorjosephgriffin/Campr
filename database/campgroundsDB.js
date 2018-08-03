@@ -48,10 +48,10 @@ module.exports = [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing'
     ],
     facilityPhotos: [
-      'http://barnaclebusters.org/wp-content/uploads/2016/07/Camping-at-Leo-Carrillo-2012-93.jpg',
-      'http://i.imgur.com/J9ZrKjx.jpg',
-      'http://barnaclebusters.org/wp-content/uploads/2016/07/Camping-at-Leo-Carrillo-2012-12.jpg',
-      'http://orig15.deviantart.net/c4d0/f/2012/085/c/2/redmill_rapid_by_kg4wih-d4tycsa.jpg',
+      'https://i.ytimg.com/vi/R0A7WDkiHDM/maxresdefault.jpg',
+      'https://i.imgur.com/J9ZrKjx.jpg',
+      'https://i.ytimg.com/vi/Bz4mnAQY1kg/maxresdefault.jpg',
+      'https://orig15.deviantart.net/c4d0/f/2012/085/c/2/redmill_rapid_by_kg4wih-d4tycsa.jpg',
       'https://i.ytimg.com/vi/-OreZ4kqPZE/maxresdefault.jpg'
     ]
   },
@@ -158,7 +158,7 @@ module.exports = [
       'https://bcsecure01-a.akamaihd.net/24/1138497952/201802/2715/1138497952_5730185614001_5730170009001-vs.jpg?pubId=1138497952&videoId=5730170009001',
       'https://i.ytimg.com/vi/sUQ7qKxaTdk/maxresdefault.jpg',
       'https://i.ytimg.com/vi/M4gAtrLX7Y8/maxresdefault.jpg',
-      'http://upload.wikimedia.org/wikipedia/commons/1/19/Prairie_Creek_Redwoods_State_Park.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/1/19/Prairie_Creek_Redwoods_State_Park.jpg',
       'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4Ykzv3Fqxikmw1fjl/young-couple-hiking-at-crystal-cove-state-park-newport-beach-ca_hfheokt__F0001.png'
     ]
   },
@@ -212,8 +212,8 @@ module.exports = [
       'https://i.ytimg.com/vi/5gry0kKFwm0/maxresdefault.jpg',
       'https://ltbackpackers.files.wordpress.com/2012/08/emerald-sapphire-lake-backpack-trip-fig200.jpg',
       'https://i.pinimg.com/originals/55/a7/d7/55a7d7ed3a6df92e6a54fd8ea5af1c6c.jpg',
-      'http://activenorcal.net/downloads/2280/download/IMG_9332.jpg?cb=a6697f569ac945925b16bbe03dba5aa1&w=-1',
-      'http://reallyredding.com/wp-content/gallery/dinner-cruise/Dinner-Cruise-Camping.jpg'
+      'https://activenorcal.net/downloads/2280/download/IMG_9332.jpg?cb=a6697f569ac945925b16bbe03dba5aa1&w=-1',
+      'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1505848511/campground-photos/fjx2akqohrc3u4hila4s.jpg'
     ]
   },
   {
@@ -238,7 +238,7 @@ module.exports = [
     facilityPhotos: [
       'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1491157866/campground-photos/ajncbc2bbpgniup0j4tb.jpg',
       'https://i.ytimg.com/vi/eDqdyJ0FA8g/maxresdefault.jpg',
-      'http://www.lenzenhuber-studios.com/recently/2017/yose17/IMAG0513m.jpg',
+      'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1491157855/campground-photos/brfrsl9haakmdwtkpc6j.jpg',
       'https://i.pinimg.com/originals/96/a5/bf/96a5bf934790b396bf5c7810149f71eb.jpg',
       'https://beautifulwashington.com/images/pine-ridge-trail/pine-ridge-trail-23.jpg'
     ]
@@ -266,8 +266,8 @@ module.exports = [
       'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1513047354/campground-photos/adzn8w0fz3klgp57aglp.jpg',
       'https://img.hipcamp.com/image/upload/c_limit,f_auto,h_1200,q_60,w_1920/v1513047349/campground-photos/aeu23q1kmokl8f7ctd1g.jpg',
       'https://onelongdrive.net/wp-content/uploads/2016/04/024_PortageValley_vlcsnap-2016-04-24-19h13m07s113.png',
-      'http://cdn-assets.alltrails.com/uploads/photo/image/10238480/91c1250b7039a4cdab325c23da05b1a7.jpg',
-      'http://imgur.com/6xxdRsd.jpg'
+      'https://cdn-assets.alltrails.com/uploads/photo/image/10238480/91c1250b7039a4cdab325c23da05b1a7.jpg',
+      'https://imgur.com/6xxdRsd.jpg'
     ]
   }
 ]
