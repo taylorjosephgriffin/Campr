@@ -9,7 +9,7 @@ export default class Campgrounds extends React.Component {
 
     this.state = {
       campgrounds: [],
-      popoverOpen: false
+      showFilters: false
     }
     this.toggle = this.toggle.bind(this)
     this.loadCampgrounds = this.loadCampgrounds.bind(this)
@@ -39,14 +39,14 @@ export default class Campgrounds extends React.Component {
 
   toggle() {
     this.setState({
-      popoverOpen: !this.state.popoverOpen
+      showFilters: !this.state.showFilters
     })
   }
 
   render() {
     return (
       <Fragment>
-        <Filter loadCampgrounds={this.loadCampgrounds} toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.popoverOpen} />
+        <Filter loadCampgrounds={this.loadCampgrounds} toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.showFilters} />
         <CampgroundList campgrounds={this.state.campgrounds} />
       </Fragment>
     )
