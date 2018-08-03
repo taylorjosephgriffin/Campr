@@ -21,7 +21,7 @@ export default class Campgrounds extends React.Component {
       .then(data => {
         this.setState({
           campgrounds: data,
-          popoverOpen: false
+          showFilters: false
         })
       })
   }
@@ -32,7 +32,7 @@ export default class Campgrounds extends React.Component {
       .then(data => {
         this.setState({
           campgrounds: data,
-          popoverOpen: false
+          showFilters: false
         })
       })
   }

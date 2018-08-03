@@ -22,7 +22,6 @@ export default class Filter extends React.Component {
       filter.maxPrice = price
     }
     this.props.loadCampgrounds(filter)
-    this.props.toggle()
   }
 
   render() {
