@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import * as qs from 'qs'
 import CampsiteList from '../components/campsite-list.js'
 import ReservationModal from '../components/reservation-modal.js'
 
@@ -9,14 +8,15 @@ export default class Campsites extends React.Component {
 
     this.state = {
       campsites: [],
-      modalClicked: false
+      campground: null,
+      showReservationModal: false
     }
-    this.renderModal = this.renderModal.bind(this)
+    this.toggleReservationModal = this.toggleReservationModal.bind(this)
   }
 
-  renderModal(event) {
+  toggleReservationModal(event) {
     this.setState({
-      modalClicked: !this.state.modalClicked
+      showReservationModal: !this.state.showReservationModal
     })
   }
 
@@ -29,7 +29,6 @@ export default class Campsites extends React.Component {
       method: 'POST',
       body: JSON.stringify(reservation)
     }).then(res => res.json())
-      .then(data => console.log(data))
       .catch(err => console.error(err))
 
     window.location.hash = `#checkout?reservationId=${reservation.reservationId}`
@@ -54,29 +53,22 @@ export default class Campsites extends React.Component {
   }
 
   render() {
+    if (!this.state.campground || !this.state.campsites) return null
     return (
-      !this.state.modalClicked
-        ? <Fragment>
-          <CampsiteList
-            renderModal={this.renderModal}
-            modalClicked={this.state.modalClicked}
-            campground={this.state.campground}
-            campsites={this.state.campsites}/>
-        </Fragment>
-        : <Fragment>
-          <ReservationModal
-            createReservation={this.createReservation}
-            renderModal={this.renderModal}
-            modalClicked={this.state.modalClicked}
-            campground={this.state.campground}
-            campsites={this.state.campsites}
-            params={this.props.params}/>
-          <CampsiteList
-            renderModal={this.renderModal}
-            modalClicked={this.state.modalClicked}
-            campground={this.state.campground}
-            campsites={this.state.campsites}/>
-        </Fragment>
+      <Fragment>
+        { this.state.campsites.length > 0 &&
+        <ReservationModal
+          createReservation={this.createReservation}
+          isOpen={this.state.showReservationModal}
+          close={this.toggleReservationModal}
+          campground={this.state.campground}
+          campsites={this.state.campsites}
+          params={this.props.params}/> }
+        <CampsiteList
+          startReservation={this.toggleReservationModal}
+          campground={this.state.campground}
+          campsites={this.state.campsites}/>
+      </Fragment>
     )
   }
 }

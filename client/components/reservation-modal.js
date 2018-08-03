@@ -14,22 +14,13 @@ import { Button,
 import DateRangeComponent from './date-range-picker.js'
 import uuid from 'uuid/v4'
 
-export default class CreateReservationModal extends React.Component {
+export default class ReservationModal extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      modal: true,
       formValid: null
     }
-    this.toggle = this.toggle.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  toggle() {
-    this.setState({
-      modal: false
-    })
   }
 
   renderOptions(option) {
@@ -44,7 +35,7 @@ export default class CreateReservationModal extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     const clickedSite = this.props.campsites.filter(site => {
-      return site.siteId === this.params.siteId
+      return site.siteId === this.props.params.siteId
     })
     const resData = new FormData(event.target)
     const reservationObj = {
@@ -69,29 +60,24 @@ export default class CreateReservationModal extends React.Component {
     }
   }
 
-  handleClick() {
-    this.props.renderModal()
-    this.toggle()
-  }
-
   render() {
     const clickedSite = this.props.campsites.filter(site => {
       return site.siteId === this.props.params.siteId
     })
     return (
       <div>
-        <Modal centered isOpen={this.props.modalClicked} className={this.props.className}>
+        <Modal centered isOpen={this.props.isOpen} className={this.props.className}>
           <a href={`#campsite?facilityNum=${this.props.campground.facilityNum}&id=${this.props.campground.id}`}>
-            <ModalHeader onClick={this.props.renderModal} toggle={this.toggle}>
+            <ModalHeader onClick={this.props.close}>
               <Container>
                 <Row>
                   <Col xl='6'>
                     <h3 className='text-dark text-center'>{clickedSite.length !== 0 && clickedSite[0].loop}</h3>
-                    <Badge color='secondary mt-2'><h6 className='mb-0 text-white'>{clickedSite.length !== 0 && `site #${clickedSite[0].siteNumber}`}</h6></Badge>
+                    <Badge color='secondary mt-2'><h6 className='mb-0 text-white'>{clickedSite.length !== 0 ? `site #${clickedSite[0].siteNumber}` : null}</h6></Badge>
                   </Col>
                   <Col xl='6'>
                     <div>
-                      <img className='modal-image' src={clickedSite.length !== 0 && clickedSite[0].sitePhoto} />
+                      <img className='modal-image' src={clickedSite.length !== 0 ? clickedSite[0].sitePhoto : null} />
                     </div>
                   </Col>
                 </Row>
@@ -123,7 +109,7 @@ export default class CreateReservationModal extends React.Component {
               </FormGroup>
               <Button className='shadow float-right' color='primary'>Continue</Button>
               <a href={`#campsite?facilityNum=${this.props.campground.facilityNum}&id=${this.props.campground.id}`}>
-                <Button className='shadow float-right mr-3' color='secondary' onClick={this.handleClick}>Cancel</Button>
+                <Button className='shadow float-right mr-3' color='secondary' onClick={this.props.close}>Cancel</Button>
               </a>
             </Form>
           </ModalBody>

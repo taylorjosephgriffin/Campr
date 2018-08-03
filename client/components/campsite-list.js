@@ -46,7 +46,7 @@ export default function CampsitesList(props) {
                             <Button
                               disabled={!site.available}
                               id={site.siteId}
-                              onClick={props.renderModal}
+                              onClick={props.startReservation}
                               className={site.available ? 'float-right w-100 shadow bg-secondary' : 'float-right w-100 shadow disabled btn-dark'}
                               size='lg'>Book</Button>
                           </a>

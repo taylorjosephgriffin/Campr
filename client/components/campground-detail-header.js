@@ -1,5 +1,5 @@
 import React from 'react'
-import Service from '../util/service.js'
+import Service from './service.js'
 import CampgroundDetailCarousel from './campground-detail-carousel.js'
 
 export default function CampgroundDetailHeader(props) {
