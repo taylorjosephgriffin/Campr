@@ -53,6 +53,9 @@ export default class Campsites extends React.Component {
   }
 
   render() {
+    const activeSites = this.state.campsites.filter(site => {
+      return site.facilityNum === this.props.params.facilityNum
+    })
     if (!this.state.campground || !this.state.campsites) return null
     return (
       <Fragment>
@@ -65,6 +68,7 @@ export default class Campsites extends React.Component {
           campsites={this.state.campsites}
           params={this.props.params}/> }
         <CampsiteList
+          activeSites={activeSites}
           startReservation={this.toggleReservationModal}
           campground={this.state.campground}
           campsites={this.state.campsites}/>
