@@ -12,6 +12,7 @@ export default class Campsites extends React.Component {
       showReservationModal: false
     }
     this.toggleReservationModal = this.toggleReservationModal.bind(this)
+    this.retrieveAllCampgroundData = this.retrieveAllCampgroundData.bind(this)
   }
 
   toggleReservationModal(event) {
@@ -35,12 +36,12 @@ export default class Campsites extends React.Component {
       .catch(err => console.error(err))
   }
 
-  componentDidMount() {
+  retrieveAllCampgroundData() {
     fetch('/campgrounds/' + this.props.params.id)
       .then(res => res.json())
-      .then(camp => {
+      .then(campground => {
         this.setState({
-          campground: camp
+          campground: campground
         })
       })
 
@@ -51,6 +52,10 @@ export default class Campsites extends React.Component {
           campsites: sites
         })
       })
+  }
+
+  componentDidMount() {
+    this.retrieveAllCampgroundData()
   }
 
   render() {
