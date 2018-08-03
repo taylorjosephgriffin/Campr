@@ -15,15 +15,15 @@ A web app for reserving campsites.
 
 ## Key Features
 
-### Landing Page/Campground List View
+### View Campground List
 
 ![Campground List View](https://github.com/taylorjosephgriffin/Campr/blob/deploy-to-heroku/screenshots/campground-list.gif?raw=true)
 
-### Campground Details View
+### View Campsite Details
 
 ![Campground Details View](https://github.com/taylorjosephgriffin/Campr/blob/deploy-to-heroku/screenshots/campground-details-view.gif?raw=true)
 
-### Campsite List & Confirmation Page
+### View Campsite List and Create a Reservation
 
 ![Campsite List](https://github.com/taylorjosephgriffin/Campr/blob/deploy-to-heroku/screenshots/campsite-list-confirmation-view.gif?raw=true)
 
@@ -34,33 +34,40 @@ A web app for reserving campsites.
 - NPM v6
 - Mongodb v4
 
-### Clone the repository
+### Getting Started
 
-* `git clone https://github.com/taylorjosephgriffin/Campr`
+Clone the repository
+```
+git clone https://github.com/taylorjosephgriffin/Campr`
+```
 
-### Navigate to repo folder
+Navigate to repo folder
+```
+cd campr
+```
 
-* `cd campr`
+Install dependencies
+```
+npm install
+```
 
-### Install dependencies
-
-* `npm install`
-
-### Create a `.env` file in the project root. Example:
+Create a `.env` file in the project root. Example:
 
 ```
 MONGODB_URI=mongodb://localhost:27017/campr
 PORT=3000
 ```
 
-### Automatically run/restart server with `nodemon` and live reload page on update with `browser-sync`
+Automatically run/restart server with `nodemon` and live reload page on update with `browser-sync`
+```
+npm run watch
+```
 
-* `npm run watch`
-
-### Run without `nodemon` and `browser-sync`
-
-* `npm run build`
-* `npm run start`
+Run without `nodemon` and `browser-sync`
+```
+npm run build
+npm run start
+```
 
 ## Current Features:
 
