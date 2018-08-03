@@ -3,7 +3,6 @@ import Campgrounds from './containers/campgrounds.js'
 import Nav from './components/nav.js'
 import CampgroundDetail from './containers/campground-detail.js'
 import hash from './util/hash.js'
-import * as qs from 'qs'
 import Campsites from './containers/campsites.js'
 import CheckoutWizard from './containers/checkout-wizard.js'
 
@@ -11,9 +10,11 @@ export default class App extends React.Component {
   constructor(props) {
     super(props)
 
+    const { path, params } = hash.parse(location.hash)
+
     this.state = {
-      path: hash.parse(location.hash).path || '',
-      params: qs.parse(location.hash.replace(/^(.*?)\?/, ''))
+      path: path,
+      params: params
     }
   }
 
@@ -25,7 +26,7 @@ export default class App extends React.Component {
       case 'campground-list':
         return <Campgrounds params={this.state.params}/>
       case 'campsite':
-        return <Campsites />
+        return <Campsites params={this.state.params}/>
       case 'checkout':
         return <CheckoutWizard params={this.state.params}/>
     }
@@ -33,9 +34,10 @@ export default class App extends React.Component {
 
   componentDidMount() {
     window.addEventListener('hashchange', event => {
+      const { path, params } = hash.parse(location.hash)
       this.setState({
-        path: hash.parse(location.hash).path,
-        params: qs.parse(location.hash.replace(/^(.*?)\?/, ''))
+        path: path,
+        params: params
       })
     })
   }

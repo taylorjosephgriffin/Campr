@@ -36,9 +36,7 @@ export default class Campsites extends React.Component {
   }
 
   componentDidMount() {
-    const idQuery = location.hash.replace(/^(.*?)\?/, '')
-    const id = qs.parse(idQuery).id
-    fetch('/campgrounds/' + id)
+    fetch('/campgrounds/' + this.props.params.id)
       .then(res => res.json())
       .then(camp => {
         this.setState({
@@ -71,7 +69,8 @@ export default class Campsites extends React.Component {
             renderModal={this.renderModal}
             modalClicked={this.state.modalClicked}
             campground={this.state.campground}
-            campsites={this.state.campsites}/>
+            campsites={this.state.campsites}
+            params={this.props.params}/>
           <CampsiteList
             renderModal={this.renderModal}
             modalClicked={this.state.modalClicked}

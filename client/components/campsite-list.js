@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Row, Col, Container } from 'reactstrap'
 import * as qs from 'qs'
-import SiteInfo from '../util/site-info.js'
+import SiteInfo from './site-info.js'
 
 export default function CampsitesList(props) {
 
@@ -44,8 +44,9 @@ export default function CampsitesList(props) {
                         <Col xl='4' lg='6' xs='6'>
                           <a href={window.location.hash + `&siteId=${site.siteId}`}>
                             <Button
+                              disabled={!site.available}
                               id={site.siteId}
-                              onClick={site.available && props.renderModal}
+                              onClick={props.renderModal}
                               className={site.available ? 'float-right w-100 shadow bg-secondary' : 'float-right w-100 shadow disabled btn-dark'}
                               size='lg'>Book</Button>
                           </a>

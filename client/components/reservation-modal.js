@@ -12,7 +12,6 @@ import { Button,
   Label,
   Input } from 'reactstrap'
 import DateRangeComponent from './date-range-picker.js'
-import * as qs from 'qs'
 import uuid from 'uuid/v4'
 
 export default class CreateReservationModal extends React.Component {
@@ -45,8 +44,7 @@ export default class CreateReservationModal extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     const clickedSite = this.props.campsites.filter(site => {
-      const siteIdQuery = location.hash.replace(/^(.*?)\?/, '')
-      return site.siteId === qs.parse(siteIdQuery).siteId
+      return site.siteId === this.params.siteId
     })
     const resData = new FormData(event.target)
     const reservationObj = {
@@ -78,8 +76,7 @@ export default class CreateReservationModal extends React.Component {
 
   render() {
     const clickedSite = this.props.campsites.filter(site => {
-      const siteIdQuery = location.hash.replace(/^(.*?)\?/, '')
-      return site.siteId === qs.parse(siteIdQuery).siteId
+      return site.siteId === this.props.params.siteId
     })
     return (
       <div>
