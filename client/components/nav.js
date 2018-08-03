@@ -25,6 +25,7 @@ export default class Navigation extends React.Component {
       isOpen: false
     }
     this.toggle = this.toggle.bind(this)
+    this.refreshReservationList = this.refreshReservationList.bind(this)
   }
 
   toggle() {
@@ -33,7 +34,7 @@ export default class Navigation extends React.Component {
     })
   }
 
-  componentDidMount() {
+  refreshReservationList() {
     fetch('/reservations')
       .then(res => res.json())
       .then(reservation => {
@@ -43,9 +44,13 @@ export default class Navigation extends React.Component {
       })
   }
 
+  componentDidMount() {
+    this.refreshReservationList()
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (prevState.reservations !== this.state.reservations) {
-      this.componentDidMount()
+      this.refreshReservationList()
     }
   }
 

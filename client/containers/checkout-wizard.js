@@ -35,9 +35,10 @@ export default class CheckoutWizard extends React.Component {
     }
     this.renderDetails = this.renderDetails.bind(this)
     this.renderPrice = this.renderPrice.bind(this)
+    this.refreshReservations = this.refreshReservations.bind(this)
   }
 
-  componentDidMount() {
+  refreshReservations() {
     fetch('/reservations/' + this.props.params.reservationId)
       .then(res => res.json())
       .then(data => {
@@ -47,9 +48,13 @@ export default class CheckoutWizard extends React.Component {
       })
   }
 
+  componentDidMount() {
+    this.refreshReservations()
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.params !== prevProps.params) {
-      this.componentDidMount()
+      this.refreshReservations()
     }
   }
 
