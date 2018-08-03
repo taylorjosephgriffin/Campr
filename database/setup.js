@@ -25,7 +25,17 @@ MongoClient
     const collection = db.collection('campsites')
     return collection
       .deleteMany()
-      .then(() => collection.insertMany(campsitesDB))
+      .then(() => {
+        campsitesDB.map(site => {
+          let num = Math.floor(Math.random() * 10) + 1
+          num > 5
+            ? site.available = true
+            : site.available = false
+
+          site.maxVehicles = 3
+        })
+        collection.insertMany(campsitesDB)
+      })
       .then(() => client.close())
   })
   .catch(err => {

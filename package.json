@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A react web app for nature enthusiasts who want to view and reserve campsites.",
   "main": "index.js",
+  "engines": {
+   "node": "10.0.0"
+  },
   "scripts": {
     "start": "node server/index.js",
     "build": "browserify -g uglifyify -t babelify client/ -o server/public/main.js",
@@ -10,7 +13,9 @@
     "watch:client": "watchify -vd -t babelify client/ -o server/public/main.js",
     "watch:public": "browser-sync start -c browser-sync.js",
     "watch": "npm-run-all --parallel watch:*",
-    "prewatch": "node database/setup.js"
+    "prewatch": "node database/setup.js",
+    "postinstall" : "npm run build",
+    "heroku-postbuild": "node database/setup.js"
   },
   "lint-staged": {
     "*.html": [
