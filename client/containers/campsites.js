@@ -29,9 +29,10 @@ export default class Campsites extends React.Component {
       method: 'POST',
       body: JSON.stringify(reservation)
     }).then(res => res.json())
+      .then(() => {
+        window.location.hash = `#checkout?reservationId=${reservation.reservationId}`
+      })
       .catch(err => console.error(err))
-
-    window.location.hash = `#checkout?reservationId=${reservation.reservationId}`
   }
 
   componentDidMount() {
