@@ -42,7 +42,7 @@ export default function Confirm(props) {
                 <Row className='row reservation-page'>
                   <Col xl='6' lg='6' sm='6'>
                     <Row>
-                      <RenderDetails label={'Park:'} data={props.reservation.campground.facilityName} style={headerMargin} xlSize={'12'} smSize={''} xsSize={''} />
+                      <RenderDetails label={'Park:'} data={props.reservation.campground.facilityName} style={headerMargin} xlSize={'12'} smSize={'12'} xsSize={'12'} />
                       <RenderDetails label={'Site:'} data={props.reservation.campsite.siteNumber} style={headerMargin} xlSize={'12'} smSize={''} xsSize={''} />
                       <RenderDetails label={'Guests:'} data={props.reservation.reservation.guests} style={headerMargin} xlSize={'6'} smSize={'6'} xsSize={'6'} />
                       <RenderDetails label={'Vehicles:'} data={props.reservation.reservation.vehicles} style={headerMargin} xlSize={'6'} smSize={'6'} xsSize={'6'} />
