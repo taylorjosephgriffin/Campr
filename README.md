@@ -1,7 +1,7 @@
 # Campr
 A web app for reserving campsites.
 
-![Campr Logo](https://github.com/taylorjosephgriffin/Campr/blob/deploy-to-heroku/screenshots/campground-list.gif?raw=true)
+![Campr Logo](https://github.com/taylorjosephgriffin/Campr/blob/master/screenshots/campr-logo-readme.gif?raw=true)
 
 ## Usage
 
