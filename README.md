@@ -3,13 +3,7 @@ A web app for reserving campsites.
 
 ![Campr Logo](https://github.com/taylorjosephgriffin/Campr/blob/master/screenshots/campr-logo-readme.gif?raw=true)
 
-## Usage
-
-```
-$ mongo
-```
-
-## Languages/Libraries
+## Technologies Used
 
 - Javascript
 - React.js
@@ -19,37 +13,7 @@ $ mongo
 - MongoDB
 - Reactstrap
 
-## Installation
-
-Clone the repository
-
-* `git clone https://github.com/taylorjosephgriffin/Campr`
-
-Navigate to repo folder
-
-* `cd campr`
-
-Install dependencies
-
-* `npm install`
-
-Create a `.env` file in the project root. Example:
-
-```
-MONGODB_URI=mongodb://localhost:27017/codesandbox
-PORT=3000
-```
-
-Automatically run/restart server with `nodemon` and live reload page on update with `browser-sync`
-
-* `npm run watch`
-
-Run without `nodemon` and `browser-sync`
-
-* `npm run build`
-* `npm run start`
-
-## Screen Capture
+## Key Features
 
 ### Landing Page/Campground List View
 
@@ -62,6 +26,41 @@ Run without `nodemon` and `browser-sync`
 ### Campsite List & Confirmation Page
 
 ![Campsite List](https://github.com/taylorjosephgriffin/Campr/blob/deploy-to-heroku/screenshots/campsite-list-confirmation-view.gif?raw=true)
+
+## Installation
+
+### System Requirements
+- Node.js v10
+- NPM v6
+- Mongodb v4
+
+### Clone the repository
+
+* `git clone https://github.com/taylorjosephgriffin/Campr`
+
+### Navigate to repo folder
+
+* `cd campr`
+
+### Install dependencies
+
+* `npm install`
+
+### Create a `.env` file in the project root. Example:
+
+```
+MONGODB_URI=mongodb://localhost:27017/campr
+PORT=3000
+```
+
+### Automatically run/restart server with `nodemon` and live reload page on update with `browser-sync`
+
+* `npm run watch`
+
+### Run without `nodemon` and `browser-sync`
+
+* `npm run build`
+* `npm run start`
 
 ## Current Features:
 
