@@ -16,12 +16,14 @@
 
 .filter-button { margin-left: 23%; }
 
-.nav-logos { font-size: 45px; }
+.nav-logos { font-size: 40px !important; }
 
 .filter-link,
-.filter-link:focus {
+.filter-link:focus,
+.cart-link:focus {
   outline: none !important;
   cursor: pointer;
+  box-shadow: none !important;
 }
 
 .home-link { font-size: 20px; }
@@ -57,9 +59,7 @@
   overflow: hidden;
 }
 
-.view-campsites {
-  height: 50px;
-}
+.view-campsites { height: 50px; }
 
 @media (max-width: 1200px) {
   .card-detail-page { flex-direction: column-reverse; }
@@ -70,10 +70,7 @@
 
   .carousel { padding: 0 !important; }
 
-  .nav-logos {
-    font-size: 35px;
-    margin-left: 0;
-  }
+  .nav-logos { font-size: 35px; }
 
   .detail-images {
     width: 100%;
@@ -82,8 +79,40 @@
   }
 }
 
-@media (max-width: 736px) {
+@media (max-width: 575px) {
   .campsite-text {
     font-size: 15px !important;
   }
+
+  .reservation-page {
+    flex-direction: column-reverse;
+  }
+
+  .reservation-image {
+    height: 400px;
+    margin-bottom: 10px;
+  }
+}
+
+.cart-icon { font-size: 25px; }
+
+.modal-image {
+  width: 100%;
+}
+
+.hidden {
+  color: transparent;
+}
+
+.reservation-popover {
+  border: 0.5px solid lightgrey;
+  width: 100%;
+}
+
+.checkout-stepper {
+  margin-top: 50px;
+}
+
+.progress {
+  height: 45px !important;
 }

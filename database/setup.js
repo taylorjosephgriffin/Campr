@@ -18,17 +18,17 @@ MongoClient
     process.exit(1)
   })
 
-  MongoClient
-    .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
-    .then(client => {
-      const db = client.db()
-      const collection = db.collection('campsites')
-      return collection
-        .deleteMany()
-        .then(() => collection.insertMany(campsitesDB))
-        .then(() => client.close())
-    })
-    .catch(err => {
-      console.error(err)
-      process.exit(1)
-    })
+MongoClient
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+  .then(client => {
+    const db = client.db()
+    const collection = db.collection('campsites')
+    return collection
+      .deleteMany()
+      .then(() => collection.insertMany(campsitesDB))
+      .then(() => client.close())
+  })
+  .catch(err => {
+    console.error(err)
+    process.exit(1)
+  })

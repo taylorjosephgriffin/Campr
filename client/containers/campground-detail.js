@@ -1,7 +1,5 @@
-import React, { Fragment } from 'react'
-import * as qs from 'qs'
-import Service from './service.js'
-import CampgroundDetailHeader from './campground-detail-header.js'
+import React from 'react'
+import CampgroundDetailHeader from '../components/campground-detail-header.js'
 
 export default class CampgroundDetail extends React.Component {
   constructor(props) {
@@ -14,15 +12,13 @@ export default class CampgroundDetail extends React.Component {
   }
 
   componentDidMount() {
-    const idQuery = location.hash.replace(/^(.*?)\?/, '')
-    const id = qs.parse(idQuery).id
-    fetch('/campgrounds/' + id)
+    fetch('/campgrounds/' + this.props.params.id)
       .then(res => res.json())
       .then(camp => {
         this.setState({
           campground: camp
         })
-    })
+      })
 
     fetch('/campsites')
       .then(res => res.json())

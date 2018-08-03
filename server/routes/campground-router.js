@@ -21,7 +21,7 @@ module.exports = function campgroundRouter(collection) {
     }
     else if (validPrice && validAmenity) {
       filterQuery = {
-        $and:[
+        $and: [
           { amenities:
             { $all: req.query.amenities }
           },

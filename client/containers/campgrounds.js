@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react'
 import * as qs from 'qs'
-import hash from './util/hash.js'
-import CampgroundListItem from './campground-list-item.js'
-import Filter from './filter-campgrounds.js'
+import CampgroundList from '../components/campground-list.js'
+import Filter from '../components/filter-campgrounds.js'
 
 export default class Campgrounds extends React.Component {
   constructor(props) {
@@ -10,7 +9,7 @@ export default class Campgrounds extends React.Component {
 
     this.state = {
       campgrounds: [],
-      popoverOpen: false
+      showFilters: false
     }
     this.toggle = this.toggle.bind(this)
     this.loadCampgrounds = this.loadCampgrounds.bind(this)
@@ -22,26 +21,33 @@ export default class Campgrounds extends React.Component {
       .then(data => {
         this.setState({
           campgrounds: data,
-          popoverOpen: false
+          showFilters: false
         })
       })
   }
 
   componentDidMount() {
-    this.loadCampgrounds({})
+    fetch('/campgrounds/')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          campgrounds: data,
+          showFilters: false
+        })
+      })
   }
 
   toggle() {
     this.setState({
-      popoverOpen: !this.state.popoverOpen
-    });
+      showFilters: !this.state.showFilters
+    })
   }
 
   render() {
     return (
       <Fragment>
-        <Filter loadCampgrounds={this.loadCampgrounds} toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.popoverOpen} />
-        <CampgroundListItem campgrounds={this.state.campgrounds} />
+        <Filter loadCampgrounds={this.loadCampgrounds} toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.showFilters} />
+        <CampgroundList campgrounds={this.state.campgrounds} />
       </Fragment>
     )
   }

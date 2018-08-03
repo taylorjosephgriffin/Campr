@@ -26,11 +26,11 @@ export default class Filter extends React.Component {
 
   render() {
     return (
-      <div className='container-fluid'>
+      <div className='container-fluid mt-5 pt-4'>
         <div className='row justify-content-end'>
           <div className='col-lg-6'>
-            <button id='Popover1' className='nav-link filter-link bg-transparent border-0 text-primary h4 ml-2 mt-2 float-right' onClick={this.props.toggle}><i className='fas fa-filter'></i></button>
-            <Popover className='w-100' placement="bottom" isOpen={this.props.popoverOpen} target="Popover1" toggle={this.props.toggle}>
+            <button id='Popover2' className='nav-link filter-link bg-transparent border-0 text-primary h4 ml-2 mt-2 float-right' onClick={this.props.toggle}><i className='fas fa-filter'></i></button>
+            <Popover className='w-100' placement="bottom" isOpen={this.props.popoverOpen} target="Popover2" toggle={this.props.toggle}>
               <PopoverHeader className='text-center'>Filter Results</PopoverHeader>
               <PopoverBody>
                 <form onSubmit={this.handleSubmit}>
@@ -56,7 +56,7 @@ export default class Filter extends React.Component {
                       <option>Boldering</option>
                       <option>Rock Climbing</option>
                     </select>
-                    <button type='submit' className='btn btn-secondary filter-button mt-4'>Refine Search</button>
+                    <Button type='submit' className='btn btn-secondary filter-button mt-4'>Refine Search</Button>
                   </div>
                 </form>
               </PopoverBody>
