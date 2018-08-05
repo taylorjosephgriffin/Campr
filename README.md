@@ -86,6 +86,7 @@ npm run start
 * User can delete a pending reservation.
 * User can pay for a reservation.
 * User can receive order confirmation via email.
+* Convert entire project to using Reactstrap components. 
 * User can leave a review for a specific campground.
 * User can calculate their fuel cost. 
 * User can save a campground to a list of favorites. 
