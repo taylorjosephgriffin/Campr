@@ -44,7 +44,7 @@ export default class EditReservationModal extends React.Component {
       })
     }
     else {
-      console.log(reservationObj)
+      this.props.updateReservation(reservationObj)
       this.props.close()
     }
   }

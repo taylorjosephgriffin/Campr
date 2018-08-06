@@ -35,6 +35,7 @@ export default class CheckoutWizard extends React.Component {
       showEditModal: false
     }
     this.refreshReservations = this.refreshReservations.bind(this)
+    this.updateReservation = this.updateReservation.bind(this)
     this.toggleEditModal = this.toggleEditModal.bind(this)
   }
 
@@ -64,6 +65,21 @@ export default class CheckoutWizard extends React.Component {
     }
   }
 
+  updateReservation(update) {
+    fetch('/reservations/' + this.props.params.reservationId, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'PUT',
+      body: JSON.stringify(update)
+    }).then(res => {
+      res.json()
+      this.refreshReservations()
+    })
+      .catch(err => console.error(err))
+  }
+
   render() {
     return (
       <div>
@@ -85,6 +101,7 @@ export default class CheckoutWizard extends React.Component {
               params={this.props.params}
               reservation={this.state.reservation}
               isOpen={this.state.showEditModal}
+              updateReservation={this.updateReservation}
               close={this.toggleEditModal} />
           </div>
         }
