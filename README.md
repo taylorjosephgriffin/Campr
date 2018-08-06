@@ -79,10 +79,10 @@ npm run start
 * User can filter search results by amenities and price.
 * User can create a reservation.
 * User can view a pending reservation.
+* User can edit a pending reservation.
 
 ## Roadmap:
 
-* User can edit a pending reservation.
 * User can delete a pending reservation.
 * User can pay for a reservation.
 * User can receive order confirmation via email.
