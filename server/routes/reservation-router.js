@@ -12,6 +12,22 @@ module.exports = function reservationRouter(collection) {
       .catch(err => next(err))
   })
 
+  router.put('/:reservationId', (req, res, next) => {
+    const { body, params: { id } } = req
+    collection
+      .findOneAndUpdate(
+        { id },
+        { $set: { reservation: body } },
+        { returnOriginal: false }
+      )
+      .then(({ value }) => {
+        value
+          ? res.json(value)
+          : res.sendState(404)
+      })
+      .catch(err => next(err))
+  })
+
   router.get('/', (req, res, next) => {
     collection
       .find()
