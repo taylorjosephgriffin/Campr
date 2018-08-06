@@ -65,8 +65,11 @@ export default function Confirm(props) {
                 </Row>
               </CardHeader>
               <Row className='justify-content-end my-2'>
-                <Button color='danger' className='shadow float-right mr-3'>Back</Button>
-                <Button color='success' className='shadow float-right mr-4'>Continue</Button>
+                <a href='#campground-list'>
+                  <Button color='info' className='shadow float-left mr-2'>Home</Button>
+                </a>
+                <Button onClick={props.toggleEditModal} color='success' className='shadow float-right mr-2'>Edit</Button>
+                <Button color='secondary' className='shadow float-right mr-4'>Continue</Button>
               </Row>
             </Card>
           </Col>

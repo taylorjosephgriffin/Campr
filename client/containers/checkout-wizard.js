@@ -1,6 +1,7 @@
 import React from 'react'
 import Confirm from '../components/confirm.js'
 import Stepper from '../components/stepper.js'
+import EditReservationModal from '../components/edit-reservation-modal.js'
 
 let image = 'https://web.sonoma.edu/campusrec/images/wwp/backpack_tahoe.jpg'
 
@@ -30,9 +31,18 @@ export default class CheckoutWizard extends React.Component {
     this.state = {
       step: {
         confirm: 33.33
-      }
+      },
+      showEditModal: false
     }
     this.refreshReservations = this.refreshReservations.bind(this)
+    this.updateReservation = this.updateReservation.bind(this)
+    this.toggleEditModal = this.toggleEditModal.bind(this)
+  }
+
+  toggleEditModal(event) {
+    this.setState({
+      showEditModal: !this.state.showEditModal
+    })
   }
 
   refreshReservations() {
@@ -55,6 +65,21 @@ export default class CheckoutWizard extends React.Component {
     }
   }
 
+  updateReservation(update) {
+    fetch('/reservations/' + this.props.params.reservationId, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'PUT',
+      body: JSON.stringify(update)
+    }).then(res => {
+      res.json()
+      this.refreshReservations()
+    })
+      .catch(err => console.error(err))
+  }
+
   render() {
     return (
       <div>
@@ -63,11 +88,23 @@ export default class CheckoutWizard extends React.Component {
           </div>
         </div>
         <Stepper step={this.state.step}/>
-        {this.state.reservation && <Confirm
-          params={this.props.params}
-          renderPrice={this.renderPrice}
-          renderDetails={this.renderDetails}
-          reservation={this.state.reservation}></Confirm>}
+        {this.state.reservation &&
+          <div>
+            <Confirm
+              params={this.props.params}
+              renderPrice={this.renderPrice}
+              renderDetails={this.renderDetails}
+              reservation={this.state.reservation}
+              toggleEditModal={this.toggleEditModal} />
+            <EditReservationModal
+              campsite={this.state.reservation.campsite}
+              params={this.props.params}
+              reservation={this.state.reservation}
+              isOpen={this.state.showEditModal}
+              updateReservation={this.updateReservation}
+              close={this.toggleEditModal} />
+          </div>
+        }
       </div>
 
     )
