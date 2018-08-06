@@ -10,7 +10,8 @@ import {
   Popover,
   PopoverHeader,
   PopoverBody,
-  Button } from 'reactstrap'
+  Button,
+  Badge } from 'reactstrap'
 
 const popoverStyle = {
   maxHeight: '300px',
@@ -66,9 +67,9 @@ export default class Navigation extends React.Component {
                   <NavLink className='text-white home-link' href='#campground-list'>Home</NavLink>
                 </NavItem>
               </Col>
-              <Col className='pl-0 pr-3'>
+              <Col className='pl-0 pr-1'>
                 <NavItem>
-                  <Button id='Popover1' onClick={this.toggle} className='text-white cart-link bg-transparent border-0'><i className='fas fa-shopping-cart cart-icon mt-1 ml-2'></i></Button>
+                  <Button id='Popover1' onClick={this.toggle} className='text-white cart-link bg-transparent border-0'><i className='fas fa-shopping-cart cart-icon mt-1 ml-2'></i><Badge style={{transform: 'translateY(-15px)'}} className='px-2' color='secondary'>{this.state.reservations && this.state.reservations.length}</Badge></Button>
                   <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.isOpen} target="Popover1" toggle={this.toggle}>
                     <PopoverHeader className='text-center'>Reservations</PopoverHeader>
                     <PopoverBody className='p-0'>
