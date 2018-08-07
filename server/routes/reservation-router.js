@@ -28,6 +28,13 @@ module.exports = function reservationRouter(collection) {
       .catch(err => next(err))
   })
 
+  router.delete('/:reservationId', (req, res, next) => {
+    collection
+      .findOneAndDelete({reservationId: req.params.reservationId})
+      .then(reservation => res.json())
+      .catch(err => next(err))
+  })
+
   router.get('/', (req, res, next) => {
     collection
       .find()
