@@ -2,6 +2,7 @@ import React from 'react'
 import Confirm from '../components/confirm.js'
 import Stepper from '../components/stepper.js'
 import EditReservationModal from '../components/edit-reservation-modal.js'
+import DeleteReservationModal from '../components/delete-reservation-modal.js'
 
 let image = 'https://web.sonoma.edu/campusrec/images/wwp/backpack_tahoe.jpg'
 
@@ -32,16 +33,24 @@ export default class CheckoutWizard extends React.Component {
       step: {
         confirm: 33.33
       },
-      showEditModal: false
+      showEditModal: false,
+      showDeleteModal: false
     }
     this.refreshReservations = this.refreshReservations.bind(this)
     this.updateReservation = this.updateReservation.bind(this)
     this.toggleEditModal = this.toggleEditModal.bind(this)
+    this.toggleDeleteModal = this.toggleDeleteModal.bind(this)
   }
 
   toggleEditModal(event) {
     this.setState({
       showEditModal: !this.state.showEditModal
+    })
+  }
+
+  toggleDeleteModal(event) {
+    this.setState({
+      showDeleteModal: !this.state.showDeleteModal
     })
   }
 
@@ -95,7 +104,8 @@ export default class CheckoutWizard extends React.Component {
               renderPrice={this.renderPrice}
               renderDetails={this.renderDetails}
               reservation={this.state.reservation}
-              toggleEditModal={this.toggleEditModal} />
+              toggleEditModal={this.toggleEditModal}
+              toggleDeleteModal={this.toggleDeleteModal}/>
             <EditReservationModal
               campsite={this.state.reservation.campsite}
               params={this.props.params}
@@ -103,6 +113,9 @@ export default class CheckoutWizard extends React.Component {
               isOpen={this.state.showEditModal}
               updateReservation={this.updateReservation}
               close={this.toggleEditModal} />
+            <DeleteReservationModal
+              isOpen={this.state.showDeleteModal}
+              close={this.toggleDeleteModal}/>
           </div>
         }
       </div>
