@@ -1,5 +1,5 @@
 import React from 'react'
-import Confirm from '../components/confirm.js'
+import Checkout from '../components/checkout.js'
 import Stepper from '../components/stepper.js'
 import EditReservationModal from '../components/edit-reservation-modal.js'
 import DeleteReservationModal from '../components/delete-reservation-modal.js'
@@ -31,8 +31,11 @@ export default class CheckoutWizard extends React.Component {
 
     this.state = {
       step: {
-        confirm: 33.33
+        confirm: 33.33,
+        payment: 0,
+        finished: 0
       },
+      view: 'confirm',
       showEditModal: false,
       showDeleteModal: false
     }
@@ -41,6 +44,9 @@ export default class CheckoutWizard extends React.Component {
     this.toggleEditModal = this.toggleEditModal.bind(this)
     this.toggleDeleteModal = this.toggleDeleteModal.bind(this)
     this.deleteReservation = this.deleteReservation.bind(this)
+    this.paymentView = this.paymentView.bind(this)
+    this.confirmView = this.confirmView.bind(this)
+    this.finishedView = this.finishedView.bind(this)
   }
 
   toggleEditModal(event) {
@@ -52,6 +58,35 @@ export default class CheckoutWizard extends React.Component {
   toggleDeleteModal(event) {
     this.setState({
       showDeleteModal: !this.state.showDeleteModal
+    })
+  }
+
+  confirmView() {
+    this.setState({
+      step: {
+        confirm: 33.33
+      },
+      view: 'confirm'
+    })
+  }
+
+  paymentView() {
+    this.setState({
+      step: {
+        confirm: 33.33,
+        payment: 33.33
+      },
+      view: 'payment'
+    })
+  }
+
+  finishedView() {
+    this.setState({
+      step: {
+        confirm: 33.33,
+        payment: 33.33,
+        finished: 33.33
+      }
     })
   }
 
@@ -103,6 +138,7 @@ export default class CheckoutWizard extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <div style={divStyle1}>
@@ -112,13 +148,16 @@ export default class CheckoutWizard extends React.Component {
         <Stepper step={this.state.step}/>
         {this.state.reservation &&
           <div>
-            <Confirm
+            <Checkout
               params={this.props.params}
               renderPrice={this.renderPrice}
               renderDetails={this.renderDetails}
               reservation={this.state.reservation}
               toggleEditModal={this.toggleEditModal}
-              toggleDeleteModal={this.toggleDeleteModal}/>
+              toggleDeleteModal={this.toggleDeleteModal}
+              paymentView={this.paymentView}
+              confirmView={this.confirmView}
+              view={this.state.view}/>
             <EditReservationModal
               campsite={this.state.reservation.campsite}
               params={this.props.params}
