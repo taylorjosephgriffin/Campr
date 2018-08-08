@@ -80,10 +80,10 @@ npm run start
 * User can create a reservation.
 * User can view a pending reservation.
 * User can edit a pending reservation.
+* User can delete a pending reservation.
 
 ## Roadmap:
 
-* User can delete a pending reservation.
 * User can pay for a reservation.
 * User can receive order confirmation via email.
 * Convert entire project to using Reactstrap components. 
