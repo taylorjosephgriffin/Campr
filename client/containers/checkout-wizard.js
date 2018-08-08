@@ -40,6 +40,7 @@ export default class CheckoutWizard extends React.Component {
     this.updateReservation = this.updateReservation.bind(this)
     this.toggleEditModal = this.toggleEditModal.bind(this)
     this.toggleDeleteModal = this.toggleDeleteModal.bind(this)
+    this.deleteReservation = this.deleteReservation.bind(this)
   }
 
   toggleEditModal(event) {
@@ -52,6 +53,18 @@ export default class CheckoutWizard extends React.Component {
     this.setState({
       showDeleteModal: !this.state.showDeleteModal
     })
+  }
+
+  deleteReservation() {
+    fetch('/reservations/' + this.props.params.reservationId,
+      {
+        method: 'DELETE'
+      })
+      .then(res => {
+        res.json()
+        window.location.hash = 'campground-list'
+      })
+      .catch(err => console.error(err))
   }
 
   refreshReservations() {
@@ -115,7 +128,8 @@ export default class CheckoutWizard extends React.Component {
               close={this.toggleEditModal} />
             <DeleteReservationModal
               isOpen={this.state.showDeleteModal}
-              close={this.toggleDeleteModal}/>
+              close={this.toggleDeleteModal}
+              deleteReservation={this.deleteReservation}/>
           </div>
         }
       </div>

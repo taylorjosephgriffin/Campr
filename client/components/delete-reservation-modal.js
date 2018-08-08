@@ -39,7 +39,7 @@ export default class DeleteReservationModal extends React.Component {
           </ModalBody>
           <ModalFooter className='py-2'>
             <Button onClick={this.props.close} className='shadow float-right mr-2' color='info'>Cancel</Button>
-            <Button className='shadow float-right' color='danger'>Delete</Button>
+            <Button onClick={this.props.deleteReservation} className='shadow float-right' color='danger'>Delete</Button>
           </ModalFooter>
         </Modal>
       </div>

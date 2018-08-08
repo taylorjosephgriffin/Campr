@@ -73,19 +73,21 @@ export default class Navigation extends React.Component {
                   <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.isOpen} target="Popover1" toggle={this.toggle}>
                     <PopoverHeader className='text-center'>Reservations</PopoverHeader>
                     <PopoverBody className='p-0'>
-                      { this.state.reservations && this.state.reservations.map((reservation, index) =>
-                        <a href={`#checkout?reservationId=${reservation.reservationId}`} onClick={this.toggle} key={index}>
-                          <PopoverBody className='reservation-popover rounded'>
-                            <Row>
-                              <Col xl='12' lg='12'>
-                                <div>{reservation.campsite.loop}</div>
-                                <div>{`${reservation.reservation.startDate} - ${reservation.reservation.endDate}`}</div>
-                                <div>{`Guests: ${reservation.reservation.guests}`}</div>
-                              </Col>
-                            </Row>
-                          </PopoverBody>
-                        </a>
-                      )}
+                      { this.state.reservations && this.state.reservations.length !== 0
+                        ? this.state.reservations.map((reservation, index) =>
+                          <a href={`#checkout?reservationId=${reservation.reservationId}`} onClick={this.toggle} key={index}>
+                            <PopoverBody className='reservation-popover rounded'>
+                              <Row>
+                                <Col xl='12' lg='12'>
+                                  <div>{reservation.campsite.loop}</div>
+                                  <div>{`${reservation.reservation.startDate} - ${reservation.reservation.endDate}`}</div>
+                                  <div>{`Guests: ${reservation.reservation.guests}`}</div>
+                                </Col>
+                              </Row>
+                            </PopoverBody>
+                          </a>
+                        )
+                        : <div className='text-center my-3'>You have no reservations.</div>}
                     </PopoverBody>
                   </Popover>
                 </NavItem>
