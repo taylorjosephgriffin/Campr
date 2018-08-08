@@ -68,6 +68,7 @@ export default class CheckoutWizard extends React.Component {
       },
       view: 'confirm'
     })
+    window.scrollTo(0, 0)
   }
 
   paymentView() {
@@ -78,6 +79,7 @@ export default class CheckoutWizard extends React.Component {
       },
       view: 'payment'
     })
+    window.scrollTo(0, 0)
   }
 
   finishedView() {
