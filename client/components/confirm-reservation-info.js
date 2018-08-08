@@ -17,7 +17,7 @@ export default function Confirm(props) {
   }
 
   return (
-    <CardHeader className='card-header'>
+    <CardHeader className='card-header bg-white text-dark'>
       <Row className='row reservation-page'>
         <Col xl='6' lg='6' sm='6'>
           <Row>

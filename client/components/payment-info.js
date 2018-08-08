@@ -1,10 +1,10 @@
 import React from 'react'
-import { CardHeader, Col, Row, Form, Label, Input, FormGroup } from 'reactstrap'
+import { CardBody, Col, Row, Form, Label, Input, FormGroup } from 'reactstrap'
 
 export default function PaymentInfo(props) {
 
   return (
-    <CardHeader className='card-header'>
+    <CardBody className='card-header bg-white text-dark'>
       <Row className='row payment-form'>
         <Col xl='12' lg='12' sm='12'>
           <Form>
@@ -61,6 +61,6 @@ export default function PaymentInfo(props) {
           </Form>
         </Col>
       </Row>
-    </CardHeader>
+    </CardBody>
   )
 }
