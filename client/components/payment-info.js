@@ -7,7 +7,7 @@ export default function PaymentInfo(props) {
     <CardBody className='card-header bg-white text-dark'>
       <Row className='row payment-form'>
         <Col xl='12' lg='12' sm='12'>
-          <Form>
+          <Form id='order-form' onSubmit={props.handleOrderSubmit}>
             <Row>
               <Col xl='12' className='mt-1'>
                 <FormGroup>

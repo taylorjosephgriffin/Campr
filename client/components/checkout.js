@@ -25,7 +25,7 @@ export default class Checkout extends React.Component {
       case 'confirm':
         return <ConfirmReservationInfo reservation={this.props.reservation} />
       case 'payment':
-        return <PaymentInfo />
+        return <PaymentInfo handleOrderSubmit={this.props.handleOrderSubmit}/>
     }
   }
 

@@ -3,6 +3,7 @@ import Checkout from '../components/checkout.js'
 import Stepper from '../components/stepper.js'
 import EditReservationModal from '../components/edit-reservation-modal.js'
 import DeleteReservationModal from '../components/delete-reservation-modal.js'
+import uuid from 'uuid/v4'
 
 let image = 'https://web.sonoma.edu/campusrec/images/wwp/backpack_tahoe.jpg'
 
@@ -47,6 +48,8 @@ export default class CheckoutWizard extends React.Component {
     this.paymentView = this.paymentView.bind(this)
     this.confirmView = this.confirmView.bind(this)
     this.finishedView = this.finishedView.bind(this)
+    this.handleOrderSubmit = this.handleOrderSubmit.bind(this)
+    this.createOrder = this.createOrder.bind(this)
   }
 
   toggleEditModal(event) {
@@ -90,6 +93,22 @@ export default class CheckoutWizard extends React.Component {
         finished: 33.33
       }
     })
+  }
+
+  handleOrderSubmit(event) {
+    event.preventDefault()
+    const orderData = new FormData(event.target)
+    const orderObj = {
+      orderId: uuid(),
+      startDate: this.state.reservation.reservation.startDate,
+      endDate: this.state.reservation.reservation.endDate,
+      guests: this.state.reservation.reservation.guests,
+      vehicles: this.state.reservation.reservation.vehicles,
+      email: orderData.get('email'),
+      firstName: orderData.get('firstName'),
+      lastName: orderData.get('lastName')
+    }
+    this.createOrder(orderObj)
   }
 
   deleteReservation() {
@@ -139,8 +158,19 @@ export default class CheckoutWizard extends React.Component {
       .catch(err => console.error(err))
   }
 
+  createOrder(order) {
+    fetch('/orders', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(order)
+    }).then(res => res.json())
+      .catch(err => console.error(err))
+  }
+
   render() {
-    console.log(this.state)
     return (
       <div>
         <div style={divStyle1}>
@@ -159,7 +189,8 @@ export default class CheckoutWizard extends React.Component {
               toggleDeleteModal={this.toggleDeleteModal}
               paymentView={this.paymentView}
               confirmView={this.confirmView}
-              view={this.state.view}/>
+              view={this.state.view}
+              handleOrderSubmit={this.handleOrderSubmit}/>
             <EditReservationModal
               campsite={this.state.reservation.campsite}
               params={this.props.params}
