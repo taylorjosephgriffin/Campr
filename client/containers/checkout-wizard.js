@@ -103,7 +103,7 @@ export default class CheckoutWizard extends React.Component {
     }
     this.createOrder(orderObj)
     this.deleteReservation()
-    window.location.hash = `confirmation?orderId=${orderObj.orderId}&view=confirmation-page`
+    window.location.hash = `confirmation?orderId=${orderObj.orderId}`
   }
 
   deleteReservation() {
