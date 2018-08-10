@@ -10,7 +10,6 @@ export default function Stepper(props) {
           <Progress multi className='bg-white'>
             <Progress bar value={props.step.confirm}><span className='h4 m-0 text-white'>Confirm</span></Progress>
             <Progress bar value={props.step.payment}><span className='h4 m-0 text-white'>Payment</span></Progress>
-            <Progress bar value={props.step.finished}><span className='h4 m-0 text-white'>Checkout</span></Progress>
           </Progress>
         </Col>
       </Row>

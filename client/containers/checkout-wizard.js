@@ -32,9 +32,8 @@ export default class CheckoutWizard extends React.Component {
 
     this.state = {
       step: {
-        confirm: 33.33,
-        payment: 0,
-        finished: 0
+        confirm: 50,
+        payment: 0
       },
       view: 'confirm',
       showEditModal: false,
@@ -47,7 +46,6 @@ export default class CheckoutWizard extends React.Component {
     this.deleteReservation = this.deleteReservation.bind(this)
     this.paymentView = this.paymentView.bind(this)
     this.confirmView = this.confirmView.bind(this)
-    this.finishedView = this.finishedView.bind(this)
     this.handleOrderSubmit = this.handleOrderSubmit.bind(this)
     this.createOrder = this.createOrder.bind(this)
   }
@@ -67,7 +65,7 @@ export default class CheckoutWizard extends React.Component {
   confirmView() {
     this.setState({
       step: {
-        confirm: 33.33
+        confirm: 50
       },
       view: 'confirm'
     })
@@ -77,48 +75,41 @@ export default class CheckoutWizard extends React.Component {
   paymentView() {
     this.setState({
       step: {
-        confirm: 33.33,
-        payment: 33.33
+        confirm: 50,
+        payment: 50
       },
       view: 'payment'
     })
     window.scrollTo(0, 0)
   }
 
-  finishedView() {
-    this.setState({
-      step: {
-        confirm: 33.33,
-        payment: 33.33,
-        finished: 33.33
-      }
-    })
-  }
-
   handleOrderSubmit(event) {
     event.preventDefault()
     const orderData = new FormData(event.target)
+    const todaysDate = new Date()
+    const orderDate = todaysDate.getMonth() + '/' + todaysDate.getDate() + '/' + todaysDate.getFullYear()
     const orderObj = {
       orderId: uuid(),
+      orderDate: orderDate,
       startDate: this.state.reservation.reservation.startDate,
       endDate: this.state.reservation.reservation.endDate,
       guests: this.state.reservation.reservation.guests,
       vehicles: this.state.reservation.reservation.vehicles,
       email: orderData.get('email'),
       firstName: orderData.get('firstName'),
-      lastName: orderData.get('lastName')
+      lastName: orderData.get('lastName'),
+      park: this.state.reservation.campground.facilityName,
+      site: this.state.reservation.campsite.siteNumber
     }
     this.createOrder(orderObj)
+    this.deleteReservation()
+    window.location.hash = `confirmation?orderId=${orderObj.orderId}&view=confirmation-page`
   }
 
   deleteReservation() {
     fetch('/reservations/' + this.props.params.reservationId,
       {
         method: 'DELETE'
-      })
-      .then(res => {
-        res.json()
-        window.location.hash = 'campground-list'
       })
       .catch(err => console.error(err))
   }
@@ -171,6 +162,7 @@ export default class CheckoutWizard extends React.Component {
   }
 
   render() {
+    console.log(this.state.view)
     return (
       <div>
         <div style={divStyle1}>

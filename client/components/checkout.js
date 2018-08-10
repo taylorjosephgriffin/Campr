@@ -40,7 +40,7 @@ export default class Checkout extends React.Component {
       case 'payment':
         return <PaymentButtons
           confirmView={this.props.confirmView}
-          paymentView={this.props.paymentView} />
+          paymentView={this.props.paymentView}/>
     }
   }
 
