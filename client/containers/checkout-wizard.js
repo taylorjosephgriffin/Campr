@@ -162,7 +162,6 @@ export default class CheckoutWizard extends React.Component {
   }
 
   render() {
-    console.log(this.state.view)
     return (
       <div>
         <div style={divStyle1}>
