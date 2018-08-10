@@ -1,8 +1,9 @@
 import React from 'react'
-import Confirm from '../components/confirm.js'
+import Checkout from '../components/checkout.js'
 import Stepper from '../components/stepper.js'
 import EditReservationModal from '../components/edit-reservation-modal.js'
 import DeleteReservationModal from '../components/delete-reservation-modal.js'
+import uuid from 'uuid/v4'
 
 let image = 'https://web.sonoma.edu/campusrec/images/wwp/backpack_tahoe.jpg'
 
@@ -31,8 +32,10 @@ export default class CheckoutWizard extends React.Component {
 
     this.state = {
       step: {
-        confirm: 33.33
+        confirm: 50,
+        payment: 0
       },
+      view: 'confirm',
       showEditModal: false,
       showDeleteModal: false
     }
@@ -41,6 +44,10 @@ export default class CheckoutWizard extends React.Component {
     this.toggleEditModal = this.toggleEditModal.bind(this)
     this.toggleDeleteModal = this.toggleDeleteModal.bind(this)
     this.deleteReservation = this.deleteReservation.bind(this)
+    this.paymentView = this.paymentView.bind(this)
+    this.confirmView = this.confirmView.bind(this)
+    this.handleOrderSubmit = this.handleOrderSubmit.bind(this)
+    this.createOrder = this.createOrder.bind(this)
   }
 
   toggleEditModal(event) {
@@ -55,14 +62,54 @@ export default class CheckoutWizard extends React.Component {
     })
   }
 
+  confirmView() {
+    this.setState({
+      step: {
+        confirm: 50
+      },
+      view: 'confirm'
+    })
+    window.scrollTo(0, 0)
+  }
+
+  paymentView() {
+    this.setState({
+      step: {
+        confirm: 50,
+        payment: 50
+      },
+      view: 'payment'
+    })
+    window.scrollTo(0, 0)
+  }
+
+  handleOrderSubmit(event) {
+    event.preventDefault()
+    const orderData = new FormData(event.target)
+    const todaysDate = new Date()
+    const orderDate = todaysDate.getMonth() + '/' + todaysDate.getDate() + '/' + todaysDate.getFullYear()
+    const orderObj = {
+      orderId: uuid(),
+      orderDate: orderDate,
+      startDate: this.state.reservation.reservation.startDate,
+      endDate: this.state.reservation.reservation.endDate,
+      guests: this.state.reservation.reservation.guests,
+      vehicles: this.state.reservation.reservation.vehicles,
+      email: orderData.get('email'),
+      firstName: orderData.get('firstName'),
+      lastName: orderData.get('lastName'),
+      park: this.state.reservation.campground.facilityName,
+      site: this.state.reservation.campsite.siteNumber
+    }
+    this.createOrder(orderObj)
+    this.deleteReservation()
+    window.location.hash = `confirmation?orderId=${orderObj.orderId}`
+  }
+
   deleteReservation() {
     fetch('/reservations/' + this.props.params.reservationId,
       {
         method: 'DELETE'
-      })
-      .then(res => {
-        res.json()
-        window.location.hash = 'campground-list'
       })
       .catch(err => console.error(err))
   }
@@ -102,6 +149,18 @@ export default class CheckoutWizard extends React.Component {
       .catch(err => console.error(err))
   }
 
+  createOrder(order) {
+    fetch('/orders', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(order)
+    }).then(res => res.json())
+      .catch(err => console.error(err))
+  }
+
   render() {
     return (
       <div>
@@ -112,13 +171,17 @@ export default class CheckoutWizard extends React.Component {
         <Stepper step={this.state.step}/>
         {this.state.reservation &&
           <div>
-            <Confirm
+            <Checkout
               params={this.props.params}
               renderPrice={this.renderPrice}
               renderDetails={this.renderDetails}
               reservation={this.state.reservation}
               toggleEditModal={this.toggleEditModal}
-              toggleDeleteModal={this.toggleDeleteModal}/>
+              toggleDeleteModal={this.toggleDeleteModal}
+              paymentView={this.paymentView}
+              confirmView={this.confirmView}
+              view={this.state.view}
+              handleOrderSubmit={this.handleOrderSubmit}/>
             <EditReservationModal
               campsite={this.state.reservation.campsite}
               params={this.props.params}

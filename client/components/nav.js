@@ -27,6 +27,7 @@ export default class Navigation extends React.Component {
     }
     this.toggle = this.toggle.bind(this)
     this.refreshReservationList = this.refreshReservationList.bind(this)
+    this.refreshPastOrdersList = this.refreshPastOrdersList.bind(this)
   }
 
   toggle() {
@@ -45,13 +46,27 @@ export default class Navigation extends React.Component {
       })
   }
 
+  refreshPastOrdersList() {
+    fetch('/orders')
+      .then(res => res.json())
+      .then(orders => {
+        this.setState({
+          orders: orders
+        })
+      })
+  }
+
   componentDidMount() {
     this.refreshReservationList()
+    this.refreshPastOrdersList()
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.reservations !== this.state.reservations) {
       this.refreshReservationList()
+    }
+    if (prevState.orders !== this.state.orders) {
+      this.refreshPastOrdersList()
     }
   }
 
@@ -71,7 +86,7 @@ export default class Navigation extends React.Component {
                 <NavItem>
                   <Button id='Popover1' onClick={this.toggle} className='text-white cart-link bg-transparent border-0'><i className='fas fa-shopping-cart cart-icon mt-1 ml-2'></i><Badge style={{transform: 'translateY(-15px)'}} className='px-2' color='secondary'>{this.state.reservations && this.state.reservations.length}</Badge></Button>
                   <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.isOpen} target="Popover1" toggle={this.toggle}>
-                    <PopoverHeader className='text-center'>Reservations</PopoverHeader>
+                    <PopoverHeader className='text-center'>Pending Reservations</PopoverHeader>
                     <PopoverBody className='p-0'>
                       { this.state.reservations && this.state.reservations.length !== 0
                         ? this.state.reservations.map((reservation, index) =>
@@ -87,7 +102,25 @@ export default class Navigation extends React.Component {
                             </PopoverBody>
                           </a>
                         )
-                        : <div className='text-center my-3'>You have no reservations.</div>}
+                        : <div className='text-center my-3'>You have no pending reservations.</div>}
+                    </PopoverBody>
+                    <PopoverHeader className='text-center'>Past Orders</PopoverHeader>
+                    <PopoverBody className='p-0'>
+                      { this.state.orders && this.state.orders.length !== 0
+                        ? this.state.orders.map((order, index) =>
+                          <a href={`#confirmation?orderId=${order.orderId}`} onClick={this.toggle} key={index}>
+                            <PopoverBody className='reservation-popover rounded'>
+                              <Row>
+                                <Col xl='12' lg='12'>
+                                  <div>{order.park}</div>
+                                  <div>{`${order.startDate} - ${order.endDate}`}</div>
+                                  <div>{`Guests: ${order.guests}`}</div>
+                                </Col>
+                              </Row>
+                            </PopoverBody>
+                          </a>
+                        )
+                        : <div className='text-center my-3'>You have no past orders.</div>}
                     </PopoverBody>
                   </Popover>
                 </NavItem>
