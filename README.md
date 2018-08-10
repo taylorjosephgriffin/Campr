@@ -27,7 +27,11 @@ https://campr-app.herokuapp.com/
 
 ### View Campsite List and Create a Reservation
 
-![Campsite List](https://github.com/taylorjosephgriffin/Campr/blob/deploy-to-heroku/screenshots/campsite-list-confirmation-view.gif?raw=true)
+![Campsite List and Create Reservation](https://github.com/taylorjosephgriffin/Campr/blob/deploy-to-heroku/screenshots/campsite-list-confirmation-view.gif?raw=true)
+
+### Enter Payment Information and Complete a Reservation
+
+![Create Order](https://user-images.githubusercontent.com/23637586/43985391-fed6d094-9cbb-11e8-8ed4-a814c70d71d8.gif?raw=true)
 
 ## Installation
 
