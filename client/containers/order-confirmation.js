@@ -8,9 +8,14 @@ export default class OrderConfirmation extends React.Component {
     this.state = {
       currentOrder: null
     }
+    this.refreshCurrentOrder = this.refreshCurrentOrder.bind(this)
   }
 
   componentDidMount() {
+    this.refreshCurrentOrder()
+  }
+
+  refreshCurrentOrder() {
     fetch('/orders/' + this.props.params.orderId)
       .then(res => res.json())
       .then(order => {
@@ -18,6 +23,12 @@ export default class OrderConfirmation extends React.Component {
           currentOrder: order
         })
       })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.params !== this.props.params) {
+      this.refreshCurrentOrder()
+    }
   }
 
   render() {
