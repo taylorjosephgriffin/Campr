@@ -112,6 +112,7 @@ export default class CheckoutWizard extends React.Component {
         method: 'DELETE'
       })
       .catch(err => console.error(err))
+    window.location.hash = 'campground-list'
   }
 
   refreshReservations() {
