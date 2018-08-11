@@ -87,7 +87,7 @@ export default class CheckoutWizard extends React.Component {
     event.preventDefault()
     const orderData = new FormData(event.target)
     const todaysDate = new Date()
-    const orderDate = todaysDate.getMonth() + '/' + todaysDate.getDate() + '/' + todaysDate.getFullYear()
+    const orderDate = (todaysDate.getMonth() + 1) + '/' + todaysDate.getDate() + '/' + todaysDate.getFullYear()
     const orderObj = {
       orderId: uuid(),
       orderDate: orderDate,
