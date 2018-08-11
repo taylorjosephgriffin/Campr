@@ -12,7 +12,7 @@ export default function ConfirmationPage(props) {
   return (
     <Container fluid className='mt-5'>
       <Row className='justify-content-center'>
-        <Col xl='6' lg='8' className='reservation-page'>
+        <Col xl='6' lg='8' md='8' className='reservation-page'>
           <Card className='border-secondary' style={cardBody}>
             <Row className='payment-form'>
               <Col xl='12' lg='12' md='12' sm='12' xs='12'>

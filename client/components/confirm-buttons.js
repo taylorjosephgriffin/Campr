@@ -6,11 +6,11 @@ export default function ConfirmButtons(props) {
   return (
     <Row className='justify-content-end my-2'>
       <a href='#campground-list'>
-        <Button color='info' className='shadow float-right mr-2'>Home</Button>
+        <Button color='dark' className='shadow mr-2'>Home</Button>
       </a>
-      <Button onClick={props.toggleDeleteModal} color='danger' className='shadow float-right mr-2'>Delete</Button>
-      <Button onClick={props.toggleEditModal} color='success' className='shadow float-right mr-2'>Edit</Button>
-      <Button onClick={props.paymentView} color='info' className='shadow float-right mr-4'>Continue</Button>
+      <Button onClick={props.toggleDeleteModal} color='danger' className='shadow mr-2'>Delete</Button>
+      <Button onClick={props.toggleEditModal} color='info' className='shadow mr-2'>Edit</Button>
+      <Button onClick={props.paymentView} color='success' className='shadow mr-4'>Continue</Button>
     </Row>
   )
 }
