@@ -24,6 +24,9 @@ export default function ConfirmationPage(props) {
                     <Col xl='12' lg='12' md='12' sm='12' xs='12' className='mt-3'>
                       <div className='text-center h5'>Please retain this information for your records.</div>
                     </Col>
+                    <Col xl='12' lg='12' md='12' sm='12' xs='12' className='mt-3'>
+                      <div className='text-center h5'>You should recieve a confirmation via email shortly. (Check your spam folder)</div>
+                    </Col>
                     <Col xl='12' lg='12' md='12' sm='12' xs='12' className='mt-4'>
                       <Label>Order Number:</Label>
                       <div className='h4'>{props.order.orderId}</div>

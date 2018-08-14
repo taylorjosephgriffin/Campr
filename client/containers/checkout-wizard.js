@@ -48,6 +48,7 @@ export default class CheckoutWizard extends React.Component {
     this.confirmView = this.confirmView.bind(this)
     this.handleOrderSubmit = this.handleOrderSubmit.bind(this)
     this.createOrder = this.createOrder.bind(this)
+    this.emailConfirmation = this.emailConfirmation.bind(this)
   }
 
   toggleEditModal(event) {
@@ -95,6 +96,7 @@ export default class CheckoutWizard extends React.Component {
       endDate: this.state.reservation.reservation.endDate,
       guests: this.state.reservation.reservation.guests,
       vehicles: this.state.reservation.reservation.vehicles,
+      sitePhoto: this.state.reservation.campsite.sitePhoto,
       email: orderData.get('email'),
       firstName: orderData.get('firstName'),
       lastName: orderData.get('lastName'),
@@ -102,6 +104,7 @@ export default class CheckoutWizard extends React.Component {
       site: this.state.reservation.campsite.siteNumber
     }
     this.createOrder(orderObj)
+    this.emailConfirmation(orderObj)
     this.deleteReservation()
     window.location.hash = `confirmation?orderId=${orderObj.orderId}`
   }
@@ -159,6 +162,20 @@ export default class CheckoutWizard extends React.Component {
       method: 'POST',
       body: JSON.stringify(order)
     }).then(res => res.json())
+      .catch(err => console.error(err))
+  }
+
+  emailConfirmation(orderObj) {
+    const msg = {
+      to: orderObj.email,
+      from: 'taylorjosephgriffin@gmail.com',
+      subject: `Thank you for your reservation! Order ID: ${orderObj.orderId}`,
+      text: `Please retain this order number for reference: ${orderObj.orderId}
+        Park: ${orderObj.park} Site: ${orderObj.site} Guests: ${orderObj.guests}
+        Vehicles: ${orderObj.vehicles} Arriving: ${orderObj.startDate} Leaving:
+        ${orderObj.endDate}`
+    }
+    fetch(`/send-mail?to=${msg.to}&from=${msg.from}&subject=${msg.subject}&text=${msg.text}&orderId=${orderObj.orderId}&park=${orderObj.park}&site=${orderObj.site}&guests=${orderObj.guests}&vehicles=${orderObj.vehicles}&arriving=${orderObj.startDate}&leaving=${orderObj.endDate}&sitePhoto=${orderObj.sitePhoto}`, { method: 'POST' })
       .catch(err => console.error(err))
   }
 
