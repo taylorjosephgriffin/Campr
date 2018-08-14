@@ -7,6 +7,7 @@ const campsiteRouter = require('./routes/campsite-router.js')
 const reservationRouter = require('./routes/reservation-router.js')
 const orderRouter = require('./routes/order-router.js')
 const path = require('path')
+const sgMail = require('@sendgrid/mail')
 
 const app = express()
 
@@ -40,3 +41,52 @@ MongoClient
       console.log(`listening on port ${process.env.PORT}`)
     })
   })
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+
+app.post('/send-mail', (req, res, next) => {
+  const { to, from, subject, text, orderId, park, site, guests, vehicles, arriving, leaving, sitePhoto } = req.query
+
+  const msg = {
+    to: to,
+    from: from,
+    subject: subject,
+    text: text,
+    html: `
+      <div style='border: 1px solid #F18B8F; width: 1000px; margin: 0 auto;' >
+        <div style='text-align: center; background-color: #4CC593'>
+          <span style='font-size: 100px; color: white;'>Campr</span>
+        </div>
+        <div style='margin-left: 10px'>
+          <div>
+            <h3>Please retain this order number for reference: ${orderId}</h3>
+          </div>
+          <div>
+            <h4>Park: ${park}</h4>
+          </div>
+          <div>
+            <h4>Site: ${site}</h4>
+          </div>
+          <div>
+            <h4>Guests: ${guests}</h4>
+          </div>
+          <div>
+            <h4>Vehicles: ${vehicles}</h4>
+          </div>
+          <div>
+            <h4>Arriving: ${arriving}</h4>
+          </div>
+          <div>
+            <h4>Leaving: ${leaving}</h4>
+          </div>
+        </div>
+        <div>
+          <img style='width: 1000px; height: 700px' src='${sitePhoto}' />
+        </div>
+      </div>
+      `
+  }
+
+  sgMail.send(msg)
+    .then(msg => console.log(text))
+})
