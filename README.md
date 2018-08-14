@@ -14,6 +14,7 @@ https://campr-app.herokuapp.com/
 - Express
 - MongoDB
 - Reactstrap
+- SendGrid API V3
 
 ## Key Features
 
@@ -32,6 +33,10 @@ https://campr-app.herokuapp.com/
 ### Enter Payment Information and Complete a Reservation
 
 ![Create Order](https://user-images.githubusercontent.com/23637586/43985391-fed6d094-9cbb-11e8-8ed4-a814c70d71d8.gif?raw=true)
+
+### Receive email confirmation using the SendGrid API. 
+
+![Email Confirmation](https://user-images.githubusercontent.com/23637586/44109469-feaddfd8-9fb1-11e8-9f5e-94e8a0ffd07a.jpeg?raw=true)
 
 ## Installation
 
@@ -86,10 +91,10 @@ npm run start
 * User can edit a pending reservation.
 * User can delete a pending reservation.
 * User can pay for a reservation.
+* User can receive order confirmation via email using the SendGrid API.
 
 ## Roadmap:
 
-* User can receive order confirmation via email.
 * Convert entire project to using Reactstrap components. 
 * User can leave a review for a specific campground.
 * User can calculate their fuel cost. 
