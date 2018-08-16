@@ -6,6 +6,7 @@ import hash from './util/hash.js'
 import Campsites from './containers/campsites.js'
 import CheckoutWizard from './containers/checkout-wizard.js'
 import OrderConfirmation from './containers/order-confirmation.js'
+import GasMileageCalculator from './containers/gas-mileage-calculator.js'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -32,6 +33,8 @@ export default class App extends React.Component {
         return <CheckoutWizard params={this.state.params}/>
       case 'confirmation':
         return <OrderConfirmation params={this.state.params}/>
+      case 'mileage-calculator':
+        return <GasMileageCalculator />
     }
   }
 
