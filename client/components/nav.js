@@ -11,7 +11,13 @@ import {
   PopoverHeader,
   PopoverBody,
   Button,
-  Badge } from 'reactstrap'
+  Badge,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  Collapse,
+  NavbarToggler } from 'reactstrap'
 
 const popoverStyle = {
   maxHeight: '300px',
@@ -23,16 +29,24 @@ export default class Navigation extends React.Component {
     super(props)
 
     this.state = {
-      isOpen: false
+      isOpen: false,
+      collapsed: false
     }
     this.toggle = this.toggle.bind(this)
     this.refreshReservationList = this.refreshReservationList.bind(this)
     this.refreshPastOrdersList = this.refreshPastOrdersList.bind(this)
+    this.toggleCollapse = this.toggleCollapse.bind(this)
   }
 
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
+    })
+  }
+
+  toggleCollapse() {
+    this.setState({
+      collapsed: !this.state.collapsed
     })
   }
 
@@ -73,60 +87,67 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <div>
-        <Navbar className='main-nav fixed-top shadow' color='success' expand='md'>
+        <Navbar className='main-nav fixed-top shadow' color='success' dark expand='md'>
           <NavbarBrand className='text-white nav-logos' href='#campground-list'><i className='fas fa-fire logo-icon mr-2'></i>Campr</NavbarBrand>
-          <Nav className='ml-auto' navbar>
-            <Row>
-              <Col className='px-0'>
-                <NavItem>
-                  <NavLink className='text-white home-link' href='#campground-list'>Home</NavLink>
-                </NavItem>
-              </Col>
-              <Col className='pl-0 pr-1'>
-                <NavItem>
-                  <Button id='Popover1' onClick={this.toggle} className='text-white cart-link bg-transparent border-0'><i className='fas fa-shopping-cart cart-icon mt-1 ml-2'></i><Badge style={{transform: 'translateY(-15px)'}} className='px-2' color='secondary'>{this.state.reservations && this.state.reservations.length}</Badge></Button>
-                  <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.isOpen} target="Popover1" toggle={this.toggle}>
-                    <PopoverHeader className='text-center'>Pending Reservations</PopoverHeader>
-                    <PopoverBody className='p-0'>
-                      { this.state.reservations && this.state.reservations.length !== 0
-                        ? this.state.reservations.map((reservation, index) =>
-                          <a href={`#checkout?reservationId=${reservation.reservationId}`} onClick={this.toggle} key={index}>
-                            <PopoverBody className='reservation-popover rounded'>
-                              <Row>
-                                <Col xl='12' lg='12'>
-                                  <div>{reservation.campsite.loop}</div>
-                                  <div>{`${reservation.reservation.startDate} - ${reservation.reservation.endDate}`}</div>
-                                  <div>{`Guests: ${reservation.reservation.guests}`}</div>
-                                </Col>
-                              </Row>
-                            </PopoverBody>
-                          </a>
-                        )
-                        : <div className='text-center my-3'>You have no pending reservations.</div>}
-                    </PopoverBody>
-                    <PopoverHeader className='text-center'>Past Orders</PopoverHeader>
-                    <PopoverBody className='p-0'>
-                      { this.state.orders && this.state.orders.length !== 0
-                        ? this.state.orders.map((order, index) =>
-                          <a href={`#confirmation?orderId=${order.orderId}`} onClick={this.toggle} key={index}>
-                            <PopoverBody className='reservation-popover rounded'>
-                              <Row>
-                                <Col xl='12' lg='12'>
-                                  <div>{order.park}</div>
-                                  <div>{`${order.startDate} - ${order.endDate}`}</div>
-                                  <div>{`Guests: ${order.guests}`}</div>
-                                </Col>
-                              </Row>
-                            </PopoverBody>
-                          </a>
-                        )
-                        : <div className='text-center my-3'>You have no past orders.</div>}
-                    </PopoverBody>
-                  </Popover>
-                </NavItem>
-              </Col>
-            </Row>
-          </Nav>
+          <NavbarToggler className='text-white' onClick={this.toggleCollapse} />
+          <Collapse className='bg-success' isOpen={this.state.collapsed} navbar>
+            <Nav className='ml-auto' navbar>
+              <NavItem>
+                <NavLink className='text-white pl-2 home-link' href='#campground-list'>Home</NavLink>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret className='text-white pl-2 home-link'>
+                  Tools
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem tag='a' href='#mileage-calculator'>
+                      Gas Mileage Calculator
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+              <NavItem>
+                <Button id='Popover1' onClick={this.toggle} className='text-white cart-link bg-transparent border-0 float-right'><i className='fas fa-shopping-cart cart-icon mt-1 ml-2'></i><Badge style={{transform: 'translateY(-15px)'}} className='px-2' color='secondary'>{this.state.reservations && this.state.reservations.length}</Badge></Button>
+                <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.isOpen} target="Popover1" toggle={this.toggle}>
+                  <PopoverHeader className='text-center'>Pending Reservations</PopoverHeader>
+                  <PopoverBody className='p-0'>
+                    { this.state.reservations && this.state.reservations.length !== 0
+                      ? this.state.reservations.map((reservation, index) =>
+                        <a href={`#checkout?reservationId=${reservation.reservationId}`} onClick={this.toggle} key={index}>
+                          <PopoverBody className='reservation-popover rounded'>
+                            <Row>
+                              <Col xl='12' lg='12'>
+                                <div>{reservation.campsite.loop}</div>
+                                <div>{`${reservation.reservation.startDate} - ${reservation.reservation.endDate}`}</div>
+                                <div>{`Guests: ${reservation.reservation.guests}`}</div>
+                              </Col>
+                            </Row>
+                          </PopoverBody>
+                        </a>
+                      )
+                      : <div className='text-center my-3'>You have no pending reservations.</div>}
+                  </PopoverBody>
+                  <PopoverHeader className='text-center'>Past Orders</PopoverHeader>
+                  <PopoverBody className='p-0'>
+                    { this.state.orders && this.state.orders.length !== 0
+                      ? this.state.orders.map((order, index) =>
+                        <a href={`#confirmation?orderId=${order.orderId}`} onClick={this.toggle} key={index}>
+                          <PopoverBody className='reservation-popover rounded'>
+                            <Row>
+                              <Col xl='12' lg='12'>
+                                <div>{order.park}</div>
+                                <div>{`${order.startDate} - ${order.endDate}`}</div>
+                                <div>{`Guests: ${order.guests}`}</div>
+                              </Col>
+                            </Row>
+                          </PopoverBody>
+                        </a>
+                      )
+                      : <div className='text-center my-3'>You have no past orders.</div>}
+                  </PopoverBody>
+                </Popover>
+              </NavItem>
+            </Nav>
+          </Collapse>
         </Navbar>
       </div>
     )
