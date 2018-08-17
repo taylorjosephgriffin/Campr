@@ -15,7 +15,7 @@ export default function GasMileageRadios(props) {
             value={props.value}
             required/>
           <img className='w-100' src={props.icon} />
-          Car
+          {props.label}
         </Label>
       </FormGroup>
     </Col>
