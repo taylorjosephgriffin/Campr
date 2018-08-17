@@ -2,16 +2,10 @@
 import React from 'react'
 import {
   Container,
-  Row,
   Col,
   Card,
-  CardHeader,
-  CardBody,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Button } from 'reactstrap'
+  CardHeader } from 'reactstrap'
+import GasMileageForm from '../components/gas-mileage-form.js'
 
 const cardBody = {
   width: '100%',
@@ -44,7 +38,10 @@ export default class GasMileageCalculator extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = {}
+    this.state = {
+      submitted: false,
+      tripInfo: {}
+    }
     this.handleMileageSubmit = this.handleMileageSubmit.bind(this)
   }
 
@@ -52,11 +49,20 @@ export default class GasMileageCalculator extends React.Component {
     event.preventDefault()
     const mileageData = new FormData(event.target)
     const vehicleType = mileageData.get('type')
+    const vehicleInfo = mileageData.get('vehicleInfo')
     const distance = mileageData.get('distance')
     const mileage = mileageData.get('mileage')
     const price = mileageData.get('price')
-    const total = parseInt(distance) / parseInt(mileage) * parseInt(price)
-    console.log(`$ ${Number.parseFloat(total).toFixed(2)}`)
+    const total = Number.parseFloat(parseInt(distance) / parseInt(mileage) * parseInt(price)).toFixed(2)
+    const tripInfo = {
+      vehicleType: vehicleType,
+      vehicleInfo: vehicleInfo,
+      total: total
+    }
+
+    this.setState({
+      tripInfo: tripInfo
+    })
   }
 
   render() {
@@ -66,50 +72,17 @@ export default class GasMileageCalculator extends React.Component {
           <div style={layer}>
           </div>
         </div>
-        <Container fluid className='mt-5'>
-          <Row className='justify-content-center'>
-            <Col xl='8' lg='8' md='12' sm='12' className='reservation-page'>
-              <Card className='text-center border-secondary' style={cardBody}>
-                <CardHeader className='h1 text-dark'>Trip Cost Calculator</CardHeader>
-                <CardBody className='p-2'>
-                  <Form onSubmit={this.handleMileageSubmit}>
-                    <FormGroup className='px-5'>
-                      <legend>Choose your type of vehicle.</legend>
-                      <Label check>
-                        <Input id='car-radio' type='radio' name='type' value='car' required/>
-                        Car
-                      </Label>
-                    </FormGroup>
-                    <FormGroup className='px-5'>
-                      <Label check>
-                        <Input id='van-radio' type='radio' name='type' value='van' required/>
-                        Van
-                      </Label>
-                    </FormGroup>
-                    <FormGroup className='px-5'>
-                      <Label check>
-                        <Input id='truck-radio' type='radio' name='type' value='truck' required/>
-                        Truck
-                      </Label>
-                    </FormGroup>
-                    <legend>Distance in Miles</legend>
-                    <FormGroup>
-                      <Input type='number' name='distance' required/>
-                    </FormGroup>
-                    <legend>Fuel Efficiency in MPG</legend>
-                    <FormGroup>
-                      <Input type='number' name='mileage' required/>
-                    </FormGroup>
-                    <legend>Fuel Price / Gallon</legend>
-                    <FormGroup>
-                      <Input type='input' name='price' required/>
-                    </FormGroup>
-                    <Button type='submit'>Calculate</Button>
-                  </Form>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
+        <Container fluid className='pt-1 mt-5'>
+          <Col xl='6' lg='8' md='12' sm='12' className='reservation-page m-auto'>
+            <Card style={cardBody}>
+              <CardHeader className='text-center display-4 text-dark pb-2'>
+                Trip Cost Calculator
+              </CardHeader>
+              <GasMileageForm
+                tripInfo={this.state.tripInfo}
+                handleMileageSubmit={this.handleMileageSubmit} />
+            </Card>
+          </Col>
         </Container>
       </div>
     )
