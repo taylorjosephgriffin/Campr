@@ -4,59 +4,19 @@ import {
   Col,
   Form,
   FormGroup,
-  Label,
   Input,
   Button } from 'reactstrap'
 import GasMileageInfo from './gas-mileage-info.js'
+import GasMileageRadios from './gas-mileage-radios.js'
 
 export default function GasMileageForm(props) {
   return (
     <Form className='mt-3 p-2 text-dark' onSubmit={props.handleMileageSubmit}>
       <legend className='text-center'>Choose your type of vehicle.</legend>
       <Row className='text-center'>
-        <Col xl='4'>
-          <FormGroup className='px-5'>
-            <Label check>
-              <Input
-                className='hidden'
-                id='car-radio'
-                type='radio'
-                name='type'
-                value='car'
-                required/>
-              <img className='w-100' src='assets/car-icon.png' />
-              Car
-            </Label>
-          </FormGroup>
-        </Col>
-        <Col xl='4'>
-          <FormGroup className='px-5'>
-            <Label check>
-              <Input
-                id='truck-radio'
-                type='radio'
-                name='type'
-                value='truck'
-                required/>
-              <img className='w-100' src='assets/truck-icon.png' />
-              Truck
-            </Label>
-          </FormGroup>
-        </Col>
-        <Col xl='4'>
-          <FormGroup className='px-5'>
-            <Label check>
-              <Input
-                id='van-radio'
-                type='radio'
-                name='type'
-                value='van'
-                required/>
-              <img className='w-100' src='assets/van-icon.png' />
-              Van
-            </Label>
-          </FormGroup>
-        </Col>
+        <GasMileageRadios value='car' icon='assets/car-icon.png' />
+        <GasMileageRadios value='truck' icon='assets/truck-icon.png' />
+        <GasMileageRadios value='van' icon='assets/van-icon.png' />
       </Row>
       <Row>
         <Col xl='6'>
