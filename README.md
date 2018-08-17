@@ -16,31 +16,31 @@ https://campr-app.herokuapp.com/
 - Reactstrap
 - SendGrid API V3
 
-## Key Features
+# Key Features
 
-### View Campground List
+## View Campground List
 
 ![Campground List View](https://github.com/taylorjosephgriffin/Campr/blob/deploy-to-heroku/screenshots/campground-list.gif?raw=true)
 
-### View Campsite Details
+## View Campsite Details
 
 ![Campground Details View](https://github.com/taylorjosephgriffin/Campr/blob/deploy-to-heroku/screenshots/campground-details-view.gif?raw=true)
 
-### View Campsite List and Create a Reservation
+## View Campsite List and Create a Reservation
 
 ![Campsite List and Create Reservation](https://github.com/taylorjosephgriffin/Campr/blob/deploy-to-heroku/screenshots/campsite-list-confirmation-view.gif?raw=true)
 
-### Enter Payment Information and Complete a Reservation
+## Enter Payment Information and Complete a Reservation
 
 ![Create Order](https://user-images.githubusercontent.com/23637586/43985391-fed6d094-9cbb-11e8-8ed4-a814c70d71d8.gif?raw=true)
 
-### Receive email confirmation using the SendGrid API. 
+## Receive email confirmation using the SendGrid API. 
 
 ![Email Confirmation](https://user-images.githubusercontent.com/23637586/44109469-feaddfd8-9fb1-11e8-9f5e-94e8a0ffd07a.jpeg?raw=true)
 
-### Plan your trip using various trip planning tools.
+## Plan your trip using various trip planning tools.
 
-## Calculate the estimated fuel cost for your trip. 
+### Calculate the estimated fuel cost for your trip.
 
 ![Fuel Cost Calculator](https://user-images.githubusercontent.com/23637586/44241984-18ddb600-a17c-11e8-8f45-6cc9d0efff74.gif?raw=true)
 
