@@ -6,8 +6,10 @@ module.exports = [
     facilityNum: 'acker1227',
     facilityName: 'Ackerman Campground',
     facilityState: 'CA',
-    latitude: '40.7855556',
-    longitude: '-122.7716667',
+    location: {
+      type: 'Point',
+      coordinates: [-122.7716667, 40.7855556]
+    },
     hasAmps: false,
     petsAllowed: true,
     hasSewer: false,
@@ -33,8 +35,10 @@ module.exports = [
     facilityNum: 'leoca3404',
     facilityName: 'Leo Carrillo SP',
     facilityState: 'CA',
-    latitude: '34.0445491',
-    longitude: '-118.9582045',
+    location: {
+      type: 'Point',
+      coordinates: [-118.9582045, 34.0445491]
+    },
     hasAmps: false,
     petsAllowed: true,
     hasSewer: false,
@@ -60,8 +64,10 @@ module.exports = [
     facilityNum: 'bucke3660',
     facilityName: 'Buckeye Flat',
     facilityState: 'CA',
-    latitude: '36.6057098',
-    longitude: '-118.7240982',
+    location: {
+      type: 'Point',
+      coordinates: [-118.7240982, 36.6057098]
+    },
     hasAmps: false,
     petsAllowed: false,
     hasSewer: false,
@@ -86,8 +92,10 @@ module.exports = [
     facilityNum: 'andre3628',
     facilityName: 'Andrew Molera SP',
     facilityState: 'CA',
-    latitude: '36.2884189',
-    longitude: '-121.844272',
+    location: {
+      type: 'Point',
+      coordinates: [-121.844272, 36.2884189]
+    },
     hasAmps: false,
     petsAllowed: true,
     hasSewer: false,
@@ -113,8 +121,10 @@ module.exports = [
     facilityNum: 'kirby3782',
     facilityName: 'Kirby Cove Campground',
     facilityState: 'CA',
-    latitude: '37.8288241',
-    longitude: '-122.490737',
+    location: {
+      type: 'Point',
+      coordinates: [-122.490737, 37.8288241]
+    },
     hasAmps: false,
     petsAllowed: true,
     hasSewer: false,
@@ -140,8 +150,10 @@ module.exports = [
     facilityNum: 'moroc3356',
     facilityName: 'Moro Campground',
     facilityState: 'CA',
-    latitude: '33.5629262',
-    longitude: '-117.8223284',
+    location: {
+      type: 'Point',
+      coordinates: [-117.8223284, 33.5629262]
+    },
     hasAmps: false,
     petsAllowed: true,
     hasSewer: false,
@@ -167,8 +179,10 @@ module.exports = [
     facilityNum: 'jumbo3399',
     facilityName: 'Jumbo Rocks',
     facilityState: 'CA',
-    latitude: '33.9919309',
-    longitude: '-116.0623802',
+    location: {
+      type: 'Point',
+      coordinates: [-116.0623802, 33.9919309]
+    },
     hasAmps: false,
     petsAllowed: true,
     hasSewer: false,
@@ -194,8 +208,10 @@ module.exports = [
     facilityNum: 'pigeo4076',
     facilityName: 'Pigeon Point Campground',
     facilityState: 'CA',
-    latitude: '40.76705358',
-    longitude: '-123.1302704',
+    location: {
+      type: 'Point',
+      coordinates: [-123.1302704, 40.76705358]
+    },
     hasAmps: false,
     petsAllowed: false,
     hasSewer: false,
@@ -221,8 +237,10 @@ module.exports = [
     facilityNum: 'north3774',
     facilityName: 'North Pines Campground',
     facilityState: 'CA',
-    latitude: '37.7419444',
-    longitude: '-119.5655556',
+    location: {
+      type: 'Point',
+      coordinates: [-119.5655556, 37.7419444]
+    },
     hasAmps: false,
     petsAllowed: true,
     hasSewer: false,
@@ -248,8 +266,10 @@ module.exports = [
     facilityNum: 'liber3871',
     facilityName: 'Liberty Glen Campground',
     facilityState: 'CA',
-    latitude: '38.7141532',
-    longitude: '-123.055823',
+    location: {
+      type: 'Point',
+      coordinates: [-123.055823, 38.7141532]
+    },
     hasAmps: false,
     petsAllowed: false,
     hasSewer: false,

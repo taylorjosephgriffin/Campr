@@ -6,6 +6,13 @@ export default class Filter extends React.Component {
     super(props)
 
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.geocodeAPITest = this.geocodeAPITest.bind(this)
+  }
+
+  geocodeAPITest() {
+    fetch('https://maps.googleapis.com/maps/api/geocode/json?address=8363+Palais+Road,+Stanton,+CA&key=AIzaSyBb4CpRDr7IJC-IFKw2kcEh9C0aF1WhjzM')
+      .then(res => res.json())
+      .then(data => console.log(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng))
   }
 
   handleSubmit(event) {
@@ -28,7 +35,8 @@ export default class Filter extends React.Component {
     return (
       <div className='container-fluid mt-5 pt-4'>
         <div className='row justify-content-end'>
-          <div className='col-lg-6'>
+          <div className='col-lg-12'>
+            <button onClick={this.geocodeAPITest} className='nav-link filter-link bg-transparent text-primary h4 ml-2 mt-2 float-left'>Address</button>
             <button id='Popover2' className='nav-link filter-link bg-transparent border-0 text-primary h4 ml-2 mt-2 float-right' onClick={this.props.toggle}><i className='fas fa-filter'></i></button>
             <Popover className='w-100' placement="bottom" isOpen={this.props.popoverOpen} target="Popover2" toggle={this.props.toggle}>
               <PopoverHeader className='text-center'>Filter Results</PopoverHeader>
