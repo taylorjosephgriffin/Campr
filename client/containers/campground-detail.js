@@ -49,7 +49,7 @@ export default class CampgroundDetail extends React.Component {
   render() {
     if (!this.state.campground) return null
     return (
-      <CampgroundDetailHeader carouselClick={this.carouselClick} campground={this.state.campground} carouselIndex={this.state.carouselIndex} />
+      <CampgroundDetailHeader carouselClick={this.carouselClick} campground={this.state.campground} params={this.props.params} carouselIndex={this.state.carouselIndex} />
     )
   }
 }
