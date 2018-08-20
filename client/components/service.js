@@ -1,9 +1,10 @@
 import React from 'react'
+import { Col } from 'reactstrap'
 
 export default function Service(props) {
 
   return (
-    <div className='col-xl-6 col-6 mt-3 pl-0'>
+    <Col xl='6' lg='6' md='6' sm='6' xs='6' className='mt-3'>
       <h5>
         { props.hasService
           ? <i className='far fa-check-circle text-success'></i>
@@ -11,6 +12,6 @@ export default function Service(props) {
           &nbsp;
         { props.service }
       </h5>
-    </div>
+    </Col>
   )
 }
