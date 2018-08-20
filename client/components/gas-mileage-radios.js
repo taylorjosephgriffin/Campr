@@ -6,7 +6,7 @@ import { Col,
 
 export default function GasMileageRadios(props) {
   return (
-    <Col xl='4' lg='6' md='12' sm='12' xs='12'>
+    <Col xl='6' lg='6' md='12' sm='12' xs='12'>
       <FormGroup className='px-5'>
         <Label check>
           <Input
