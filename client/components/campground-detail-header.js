@@ -33,15 +33,26 @@ export default class CampgroundDetailHeader extends React.Component {
     super(props)
 
     this.state = {
-      favClicked: false
+      inFavorites: null
     }
-    this.favClicked = this.favClicked.bind(this)
+    this.setFavorites = this.setFavorites.bind(this)
   }
 
-  favClicked() {
-    this.setState({
-      favClicked: !this.state.favClicked
-    })
+  setFavorites() {
+    fetch('/campgrounds/' + this.props.params.id)
+      .then(res => res.json())
+      .then(campground => {
+        fetch('/favorites/' + this.props.params.id, {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          method: 'PUT',
+          body: JSON.stringify(campground)
+        })
+        this.favoriteStatus()
+      })
+      .catch(err => console.error(err))
   }
 
   render() {
@@ -64,7 +75,7 @@ export default class CampgroundDetailHeader extends React.Component {
                       </Row>
                       <Row>
                         { this.props.campground.amenities.map((amenity, index) =>
-                          <Col key={index} xl='4' lg='6' md='6' sm='6' xs='12'>
+                          <Col key={index} xl='6' lg='6' md='6' sm='6' xs='12'>
                             <ul className='list-group text-center'>
                               <li className='list-group-item mt-3'>{amenity}</li>
                             </ul>
@@ -102,8 +113,8 @@ export default class CampgroundDetailHeader extends React.Component {
                       </Row>
                       <Row className='justify-content-end'>
                         <Col xl='7' lg='8' md='6' sm='6' xs='6' className='mt-5 pb-4'>
-                          <Button onClick={this.favClicked} color='transparent' style={buttonStyle} className='mt-4 float-left'>
-                            <i style={heartStyle} className={this.state.favClicked ? 'fas fa-heart text-secondary' : 'far fa-heart text-secondary'}></i>
+                          <Button onClick={this.setFavorites} color='transparent' style={buttonStyle} className='mt-4 float-left'>
+                            <i style={heartStyle} className={this.state.inFavorites ? 'fas fa-heart text-secondary' : 'far fa-heart text-secondary'}></i>
                           </Button>
                         </Col>
                         <Col xl='5' lg='4' md='6' sm='6' xs='6' className='mt-5 pb-4'>
