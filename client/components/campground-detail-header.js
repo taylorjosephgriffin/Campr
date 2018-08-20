@@ -47,31 +47,36 @@ export default class CampgroundDetailHeader extends React.Component {
     fetch('/favorites')
       .then(res => res.json())
       .then(favorites => {
-        favorites.map(favorite => {
-          if (favorite.id === this.props.params.id) {
-            this.setState({
-              inFavorites: true
-            })
-          }
+        const isFavorited = favorites.filter(favorite => {
+          return favorite.id === this.props.params.id
         })
+        if (isFavorited.length > 0) this.setState({inFavorites: true})
+        else this.setState({inFavorites: false})
       })
   }
 
   setFavorites() {
-    fetch('/campgrounds/' + this.props.params.id)
-      .then(res => res.json())
-      .then(campground => {
-        fetch('/favorites/' + this.props.params.id, {
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          method: 'PUT',
-          body: JSON.stringify(campground)
+    if (this.state.inFavorites) {
+      fetch('/favorites/' + this.props.params.id, { method: 'DELETE' })
+        .then(() => this.favoriteStatus())
+        .catch(err => console.error(err))
+    }
+    else {
+      fetch('/campgrounds/' + this.props.params.id)
+        .then(res => res.json())
+        .then(campground => {
+          fetch('/favorites/' + this.props.params.id, {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            method: 'PUT',
+            body: JSON.stringify(campground)
+          })
+          this.favoriteStatus()
         })
-        this.favoriteStatus()
-      })
-      .catch(err => console.error(err))
+        .catch(err => console.error(err))
+    }
   }
 
   render() {
