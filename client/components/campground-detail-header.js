@@ -102,7 +102,7 @@ export default class CampgroundDetailHeader extends React.Component {
                       </Row>
                       <Row className='justify-content-end'>
                         <Col xl='7' lg='8' md='6' sm='6' xs='6' className='mt-5 pb-4'>
-                          <Button color='transparent' style={buttonStyle} className='mt-4 float-left'>
+                          <Button onClick={this.favClicked} color='transparent' style={buttonStyle} className='mt-4 float-left'>
                             <i style={heartStyle} className={this.state.favClicked ? 'fas fa-heart text-secondary' : 'far fa-heart text-secondary'}></i>
                           </Button>
                         </Col>
