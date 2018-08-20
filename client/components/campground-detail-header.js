@@ -36,6 +36,25 @@ export default class CampgroundDetailHeader extends React.Component {
       inFavorites: null
     }
     this.setFavorites = this.setFavorites.bind(this)
+    this.favoriteStatus = this.favoriteStatus.bind(this)
+  }
+
+  componentDidMount() {
+    this.favoriteStatus()
+  }
+
+  favoriteStatus() {
+    fetch('/favorites')
+      .then(res => res.json())
+      .then(favorites => {
+        favorites.map(favorite => {
+          if (favorite.id === this.props.params.id) {
+            this.setState({
+              inFavorites: true
+            })
+          }
+        })
+      })
   }
 
   setFavorites() {
