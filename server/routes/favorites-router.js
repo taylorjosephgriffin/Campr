@@ -6,17 +6,15 @@ module.exports = function favoritesRouter(collection) {
   router.get('/', (req, res, next) => {
     collection
       .find()
-      .toArray
+      .toArray()
       .then(favorites => res.json(favorites))
       .catch(err => next(err))
   })
 
   router.put('/:id', (req, res, next) => {
     collection
-      .insertOne(req.body)
-      .then(({ ops: [created] }) => {
-        res.status(201).json(created)
-      })
+      .update({id: req.params.id}, req.body, {upsert: true})
+      .then(() => res.status(201).json())
       .catch(err => next(err))
   })
 
@@ -26,4 +24,5 @@ module.exports = function favoritesRouter(collection) {
       .then(() => res.json())
       .catch(err => next(err))
   })
+  return router
 }
