@@ -16,6 +16,7 @@ import {
   Collapse,
   NavbarToggler } from 'reactstrap'
 import CartPopover from './cart-popover.js'
+import FavoritesPopover from './favorites-popover.js'
 
 const popoverStyle = {
   maxHeight: '300px',
@@ -27,18 +28,27 @@ export default class Navigation extends React.Component {
     super(props)
 
     this.state = {
-      isOpen: false,
+      cartOpen: false,
+      favOpen: false,
       collapsed: false
     }
-    this.toggle = this.toggle.bind(this)
+    this.toggleCart = this.toggleCart.bind(this)
+    this.toggleFavs = this.toggleFavs.bind(this)
     this.refreshReservationList = this.refreshReservationList.bind(this)
     this.refreshPastOrdersList = this.refreshPastOrdersList.bind(this)
+    this.refreshFavorites = this.refreshFavorites.bind(this)
     this.toggleCollapse = this.toggleCollapse.bind(this)
   }
 
-  toggle() {
+  toggleCart() {
     this.setState({
-      isOpen: !this.state.isOpen
+      cartOpen: !this.state.cartOpen
+    })
+  }
+
+  toggleFavs() {
+    this.setState({
+      favOpen: !this.state.favOpen
     })
   }
 
@@ -68,9 +78,20 @@ export default class Navigation extends React.Component {
       })
   }
 
+  refreshFavorites() {
+    fetch('/favorites')
+      .then(res => res.json())
+      .then(favorites => {
+        this.setState({
+          favorites: favorites
+        })
+      })
+  }
+
   componentDidMount() {
     this.refreshReservationList()
     this.refreshPastOrdersList()
+    this.refreshFavorites()
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -79,6 +100,9 @@ export default class Navigation extends React.Component {
     }
     if (prevState.orders !== this.state.orders) {
       this.refreshPastOrdersList()
+    }
+    if (prevState.favorites !== this.state.favorites) {
+      this.refreshFavorites()
     }
   }
 
@@ -105,12 +129,15 @@ export default class Navigation extends React.Component {
               </UncontrolledDropdown>
               <Row className='justify-content-end'>
                 <NavItem>
-                  <Button className='text-white cart-link bg-transparent border-0 pr-1 ml-1'><i title='Favorites' className='fas fa-heart cart-icon mt-1 ml-2'></i><Badge style={{transform: 'translateY(-15px)'}} className='px-2 mr-2' color='secondary'>0</Badge></Button>
+                  <Button id="Popover2" onClick={this.toggleFavs} className='text-white cart-link bg-transparent border-0 pr-1 ml-1'><i title='Favorites' className='fas fa-heart cart-icon mt-1 ml-2'></i><Badge style={{transform: 'translateY(-15px)'}} className='px-2 mr-2' color='secondary'>{this.state.favorites && this.state.favorites.length}</Badge></Button>
+                  <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.favOpen} target="Popover2" toggle={this.toggleFavs}>
+                    <FavoritesPopover collapse={this.toggleCollapse} favorites={this.state.favorites} toggle={this.toggleFavs} />
+                  </Popover>
                 </NavItem>
                 <NavItem>
-                  <Button id='Popover1' onClick={this.toggle} className='text-white cart-link bg-transparent border-0 float-right pl-1'><i title='Cart' className='fas fa-shopping-cart cart-icon mt-1'></i><Badge style={{transform: 'translateY(-15px)'}} className='px-2 mr-2' color='secondary'>{this.state.reservations && this.state.reservations.length}</Badge></Button>
-                  <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.isOpen} target="Popover1" toggle={this.toggle}>
-                    <CartPopover orders={this.state.orders} reservations={this.state.reservations} toggle={this.toggle} />
+                  <Button id='Popover1' onClick={this.toggleCart} className='text-white cart-link bg-transparent border-0 float-right pl-1'><i title='Cart' className='fas fa-shopping-cart cart-icon mt-1'></i><Badge style={{transform: 'translateY(-15px)'}} className='px-2 mr-2' color='secondary'>{this.state.reservations && this.state.reservations.length}</Badge></Button>
+                  <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.cartOpen} target="Popover1" toggle={this.toggleCart}>
+                    <CartPopover collapse={this.toggleCollapse} orders={this.state.orders} reservations={this.state.reservations} toggle={this.toggleCart} />
                   </Popover>
                 </NavItem>
               </Row>
