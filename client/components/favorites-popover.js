@@ -25,7 +25,7 @@ export default function FavoritesPopover(props) {
               </PopoverBody>
             </a>
           )
-          : <div className='text-center my-3'>You have no pending reservations.</div>}
+          : <div className='text-center my-3'>You have no favorites!</div>}
       </PopoverBody>
     </React.Fragment>
   )
