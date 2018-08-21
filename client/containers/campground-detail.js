@@ -9,9 +9,10 @@ export default class CampgroundDetail extends React.Component {
       carouselIndex: 0
     }
     this.carouselClick = this.carouselClick.bind(this)
+    this.refreshCurrent = this.refreshCurrent.bind(this)
   }
 
-  componentDidMount() {
+  refreshCurrent() {
     fetch('/campgrounds/' + this.props.params.id)
       .then(res => res.json())
       .then(camp => {
@@ -27,6 +28,17 @@ export default class CampgroundDetail extends React.Component {
           campsites: sites
         })
       })
+  }
+
+  componentDidMount() {
+    this.refreshCurrent()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.params !== this.props.params) {
+      this.refreshCurrent()
+      window.scrollTo(0, 0)
+    }
   }
 
   carouselClick(event) {
