@@ -44,6 +44,10 @@ https://campr-app.herokuapp.com/
 
 ![Fuel Cost Calculator](https://user-images.githubusercontent.com/23637586/44241984-18ddb600-a17c-11e8-8f45-6cc9d0efff74.gif?raw=true)
 
+## Favorite campgrounds.
+
+![Favorite Campgrounds](https://user-images.githubusercontent.com/23637586/44381515-7f890980-a4c5-11e8-96af-6bd4fcadb427.gif?raw=true)
+
 ## Installation
 
 ### System Requirements
@@ -99,12 +103,12 @@ npm run start
 * User can pay for a reservation.
 * User can receive order confirmation via email using the SendGrid API.
 * User can calculate their fuel cost.
+* User can save a campground to a list of favorites. 
 
 ## Roadmap:
 
 * User can leave a review for a specific campground.
 * User can filter campgrounds by proximity.
-* User can save a campground to a list of favorites. 
 * User can create a packing list. 
 * User can create a trip itinerary.
 * Convert entire project to using Reactstrap components. 
