@@ -1,5 +1,20 @@
 import React from 'react'
-import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap'
+import {
+  Button,
+  Popover,
+  PopoverHeader,
+  PopoverBody,
+  Container,
+  Col,
+  Row,
+  Form,
+  FormGroup,
+  Label,
+  Input } from 'reactstrap'
+
+const refineStyle = {
+  marginLeft: '23%'
+}
 
 export default class Filter extends React.Component {
   constructor(props) {
@@ -26,24 +41,32 @@ export default class Filter extends React.Component {
 
   render() {
     return (
-      <div className='container-fluid mt-5 pt-4'>
-        <div className='row justify-content-end'>
-          <div className='col-lg-12'>
-            <button id='Popover2' className='nav-link filter-link bg-transparent border-0 text-primary h4 ml-2 mt-2 float-right' onClick={this.props.toggle}><i className='fas fa-filter'></i></button>
-            <Popover className='w-100' placement="bottom" isOpen={this.props.popoverOpen} target="Popover2" toggle={this.props.toggle}>
+      <Container fluid className='mt-5 pt-4'>
+        <Row className='justify-content-end'>
+          <Col lg='12'>
+            <Button
+              id='Popover3'
+              color='transparent'
+              className='border-0 ml-2 mt-2 float-right'
+              onClick={this.props.toggle}>
+              <i className='fas fa-filter text-primary h4'></i>
+            </Button>
+            <Popover className='w-100' placement="bottom" isOpen={this.props.popoverOpen} target="Popover3" toggle={this.props.toggle}>
               <PopoverHeader className='text-center'>Filter Results</PopoverHeader>
               <PopoverBody>
-                <form onSubmit={this.handleSubmit}>
-                  <div className='form-group'>
-                    <label>Price</label>
-                    <select name='price' className='form-control'>
+                <Form onSubmit={this.handleSubmit}>
+                  <FormGroup>
+                    <Label>Price</Label>
+                    <Input type='select' name='price'>
                       <option>None</option>
                       <option value='45'>less than $45</option>
                       <option value='35'>less than $35</option>
                       <option value='25'>less than $25</option>
-                    </select>
-                    <label className='mt-2'>Activities</label>
-                    <select name='activity' className='form-control'>
+                    </Input>
+                  </FormGroup>
+                  <FormGroup>
+                    <Label className='mt-2'>Activities</Label>
+                    <Input type='select' name='activity' >
                       <option>None</option>
                       <option>Birding</option>
                       <option>Boating</option>
@@ -55,15 +78,15 @@ export default class Filter extends React.Component {
                       <option>Swimming</option>
                       <option>Boldering</option>
                       <option>Rock Climbing</option>
-                    </select>
-                    <Button type='submit' className='btn btn-secondary filter-button mt-4'>Refine Search</Button>
-                  </div>
-                </form>
+                    </Input>
+                    <Button type='submit' style={refineStyle} className='btn btn-secondary mt-4'>Refine Search</Button>
+                  </FormGroup>
+                </Form>
               </PopoverBody>
             </Popover>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }

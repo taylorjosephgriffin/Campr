@@ -50,12 +50,21 @@ export default class CampgroundDetail extends React.Component {
         carouselIndex: carouselIndex + 1
       })
     }
-    else if (carouselIndex > 0 && event.currentTarget.dataset.slide === 'prev') {
+    else {
+      this.setState({
+        carouselIndex: 0
+      })
+    }
+    if (carouselIndex > 0 && event.currentTarget.dataset.slide === 'prev') {
       this.setState({
         carouselIndex: carouselIndex - 1
       })
     }
-    return null
+    else if (carouselIndex <= 0 && event.currentTarget.dataset.slide === 'prev') {
+      this.setState({
+        carouselIndex: campground.facilityPhotos.length - 1
+      })
+    }
   }
 
   render() {

@@ -22,6 +22,10 @@ const popoverStyle = {
   maxHeight: '300px',
   overflow: 'scroll'
 }
+const navStyle = { height: '75px' }
+const linkStyle = { fontSize: '20px' }
+const cartStyle = { fontSize: '25px' }
+const badgeStyle = { transform: 'translateY(-15px)', fontSize: '12px' }
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -109,16 +113,35 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <div>
-        <Navbar className='main-nav fixed-top shadow' color='success' dark expand='md'>
-          <NavbarBrand className='text-white nav-logos' href='#campground-list'><i className='fas fa-fire logo-icon mr-2'></i>Campr</NavbarBrand>
+        <Navbar
+          style={navStyle}
+          className='fixed-top shadow'
+          color='success'
+          dark
+          expand='md'>
+          <NavbarBrand
+            className='text-white nav-logos'
+            href='#campground-list'>
+            <i className='fas fa-fire logo-icon mr-2'></i>
+            Campr
+          </NavbarBrand>
           <NavbarToggler className='text-white' onClick={this.toggleCollapse} />
           <Collapse className='bg-success' isOpen={this.state.collapsed} navbar>
             <Nav className='ml-auto' navbar>
               <NavItem>
-                <NavLink className='text-white pl-2 home-link' href='#campground-list'>Home</NavLink>
+                <NavLink
+                  style={linkStyle}
+                  className='text-white pl-2'
+                  href='#campground-list'>
+                  Home
+                </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret className='text-white pl-2 home-link'>
+                <DropdownToggle
+                  nav
+                  caret
+                  style={linkStyle}
+                  className='text-white pl-2'>
                   Tools
                 </DropdownToggle>
                 <DropdownMenu right>
@@ -129,15 +152,58 @@ export default class Navigation extends React.Component {
               </UncontrolledDropdown>
               <Row className='justify-content-end'>
                 <NavItem>
-                  <Button id="Popover2" onClick={this.toggleFavs} className='text-white cart-link bg-transparent border-0 pr-1 ml-1'><i title='Favorites' className='fas fa-heart cart-icon mt-1 ml-2'></i><Badge style={{transform: 'translateY(-15px)'}} className='px-2 mr-2' color='secondary'>{this.state.favorites && this.state.favorites.length}</Badge></Button>
-                  <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.favOpen} target="Popover2" toggle={this.toggleFavs}>
-                    <FavoritesPopover collapse={this.toggleCollapse} favorites={this.state.favorites} toggle={this.toggleFavs} />
+                  <Button
+                    id="Popover2"
+                    style={cartStyle}
+                    onClick={this.toggleFavs}
+                    className='text-white bg-transparent border-0 pr-1 ml-1'>
+                    <i title='Favorites' className='fas fa-heart mt-1 ml-2'></i>
+                    <Badge
+                      style={badgeStyle}
+                      className='px-2 mr-2'
+                      color='secondary'>
+                      {this.state.favorites && this.state.favorites.length}
+                    </Badge>
+                  </Button>
+                  <Popover
+                    style={popoverStyle}
+                    className='w-100 p-0'
+                    placement="bottom"
+                    isOpen={this.state.favOpen}
+                    target="Popover2"
+                    toggle={this.toggleFavs}>
+                    <FavoritesPopover
+                      collapse={this.toggleCollapse}
+                      favorites={this.state.favorites}
+                      toggle={this.toggleFavs} />
                   </Popover>
                 </NavItem>
                 <NavItem>
-                  <Button id='Popover1' onClick={this.toggleCart} className='text-white cart-link bg-transparent border-0 float-right pl-1'><i title='Cart' className='fas fa-shopping-cart cart-icon mt-1'></i><Badge style={{transform: 'translateY(-15px)'}} className='px-2 mr-2' color='secondary'>{this.state.reservations && this.state.reservations.length}</Badge></Button>
-                  <Popover style={popoverStyle} className='w-100 p-0' placement="bottom" isOpen={this.state.cartOpen} target="Popover1" toggle={this.toggleCart}>
-                    <CartPopover collapse={this.toggleCollapse} orders={this.state.orders} reservations={this.state.reservations} toggle={this.toggleCart} />
+                  <Button
+                    id='Popover1'
+                    style={cartStyle}
+                    onClick={this.toggleCart}
+                    className='text-white bg-transparent border-0 float-right pl-1'>
+                    <i title='Cart' className='fas fa-shopping-cart mt-1'></i>
+                    <Badge
+                      style={badgeStyle}
+                      className='px-2 mr-2'
+                      color='secondary'>
+                      {this.state.reservations && this.state.reservations.length}
+                    </Badge>
+                  </Button>
+                  <Popover
+                    style={popoverStyle}
+                    className='w-100 p-0'
+                    placement="bottom"
+                    isOpen={this.state.cartOpen}
+                    target="Popover1"
+                    toggle={this.toggleCart}>
+                    <CartPopover
+                      collapse={this.toggleCollapse}
+                      orders={this.state.orders}
+                      reservations={this.state.reservations}
+                      toggle={this.toggleCart} />
                   </Popover>
                 </NavItem>
               </Row>

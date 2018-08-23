@@ -4,6 +4,12 @@ import { PopoverHeader,
   Row,
   Col } from 'reactstrap'
 
+const popoverStyle = {
+  border: '0.5px solid lightgrey',
+  width: '100%',
+  overflow: 'hidden'
+}
+
 export default function CartPopover(props) {
   return (
     <React.Fragment>
@@ -12,7 +18,7 @@ export default function CartPopover(props) {
         { props.reservations && props.reservations.length !== 0
           ? props.reservations.map((reservation, index) =>
             <a href={`#checkout?reservationId=${reservation.reservationId}`} onClick={props.toggle} key={index}>
-              <PopoverBody className='reservation-popover rounded'>
+              <PopoverBody style={popoverStyle} className='rounded'>
                 <Row>
                   <Col xl='12' lg='12'>
                     <div>{reservation.campsite.loop}</div>
@@ -30,7 +36,7 @@ export default function CartPopover(props) {
         { props.orders && props.orders.length !== 0
           ? props.orders.map((order, index) =>
             <a href={`#confirmation?orderId=${order.orderId}`} onClick={props.toggle} key={index}>
-              <PopoverBody className='reservation-popover rounded'>
+              <PopoverBody style={popoverStyle} className='rounded'>
                 <Row>
                   <Col xl='12' lg='12'>
                     <div>{order.park}</div>

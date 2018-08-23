@@ -1,6 +1,19 @@
 import React from 'react'
-import { Button, Row, Col, Container } from 'reactstrap'
+import {
+  Button,
+  Row,
+  Col,
+  Container,
+  Card,
+  CardTitle,
+  CardBody } from 'reactstrap'
 import SiteInfo from './site-info.js'
+
+const campsiteNumberStyle = {
+  fontSize: '40px',
+  fontWeight: '100',
+  backgroundColor: 'rgba(122, 194, 173, 0.7)'
+}
 
 export default function CampsitesList(props) {
 
@@ -9,20 +22,21 @@ export default function CampsitesList(props) {
   }
   else {
     return (
-      <div className='container-fluid mt-5 pt-4'>
-        <div className='row'>
+      <Container fluid className='mt-5 pt-4'>
+        <Row className='row'>
           { props.activeSites.map((site, index) =>
-            <div key={index} className='col-xl-4 col-lg-6 mt-4'>
-              <div className='card h-100 campsite-card shadow'>
+            <Col xl='4' lg='6' key={index} className='mt-4'>
+              <Card className='h-100 campsite-card shadow'>
                 <div
-                  className='shadow card-img-top campsite-list-image h-100'
-                  style={{backgroundImage: `url(${site.sitePhoto})`,
+                  className='shadow card-img-top h-100'
+                  style={{minHeight: '400px',
+                    backgroundImage: `url(${site.sitePhoto})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover'}}>
-                  <h5 className='card-title py-2 campsite-name text-light text-center'>{`Site #${site.siteNumber}`}</h5>
+                  <CardTitle style={campsiteNumberStyle} className='h3 py-2 text-light text-center'>{`Site #${site.siteNumber}`}</CardTitle>
                 </div>
-                <div className='card-body py-2 pl-2 pr-2'>
-                  <div className='row'>
+                <CardBody className='py-2 pl-2 pr-2'>
+                  <Row>
                     <SiteInfo content={`Price: $${props.campground.price}/night`} />
                     <SiteInfo content={`Max people: ${site.maxPeople}`} />
                     <SiteInfo content={`Max length: ${site.maxEqpLen}`} />
@@ -47,13 +61,13 @@ export default function CampsitesList(props) {
                         </Col>
                       </Row>
                     </Container>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  </Row>
+                </CardBody>
+              </Card>
+            </Col>
           )}
-        </div>
-      </div>
+        </Row>
+      </Container>
     )
   }
 }
