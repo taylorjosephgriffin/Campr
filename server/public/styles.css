@@ -109,3 +109,7 @@
 .progress {
   height: 45px !important;
 }
+
+.not-active {
+  color: black;
+}

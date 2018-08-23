@@ -51,10 +51,12 @@
     "express": "^4.16.3",
     "moment": "^2.22.2",
     "mongodb": "^3.1.1",
+    "nuka-carousel": "^4.3.6",
     "qs": "^6.5.2",
     "react": "^16.4.2",
     "react-dates": "^17.1.1",
     "react-dom": "^16.4.2",
+    "react-resize-detector": "^3.1.1",
     "sendgrid": "^5.2.3",
     "stylelint-config-standard": "^18.2.0",
     "uuid": "^3.3.2"
