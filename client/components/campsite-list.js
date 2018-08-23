@@ -9,6 +9,12 @@ import {
   CardBody } from 'reactstrap'
 import SiteInfo from './site-info.js'
 
+const campsiteNumberStyle = {
+  fontSize: '40px',
+  fontWeight: '100',
+  backgroundColor: 'rgba(122, 194, 173, 0.7)'
+}
+
 export default function CampsitesList(props) {
 
   if (props.activeSites.length === 0 || !props.campground) {
@@ -22,11 +28,12 @@ export default function CampsitesList(props) {
             <Col xl='4' lg='6' key={index} className='mt-4'>
               <Card className='h-100 campsite-card shadow'>
                 <div
-                  className='shadow card-img-top campsite-list-image h-100'
-                  style={{backgroundImage: `url(${site.sitePhoto})`,
+                  className='shadow card-img-top h-100'
+                  style={{minHeight: '400px',
+                    backgroundImage: `url(${site.sitePhoto})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover'}}>
-                  <CardTitle className='h3 py-2 campsite-name text-light text-center'>{`Site #${site.siteNumber}`}</CardTitle>
+                  <CardTitle style={campsiteNumberStyle} className='h3 py-2 text-light text-center'>{`Site #${site.siteNumber}`}</CardTitle>
                 </div>
                 <CardBody className='py-2 pl-2 pr-2'>
                   <Row>

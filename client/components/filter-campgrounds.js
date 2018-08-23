@@ -12,6 +12,10 @@ import {
   Label,
   Input } from 'reactstrap'
 
+const refineStyle = {
+  marginLeft: '23%'
+}
+
 export default class Filter extends React.Component {
   constructor(props) {
     super(props)
@@ -43,7 +47,7 @@ export default class Filter extends React.Component {
             <Button
               id='Popover3'
               color='transparent'
-              className='nav-link filter-link border-0 ml-2 mt-2 float-right'
+              className='border-0 ml-2 mt-2 float-right'
               onClick={this.props.toggle}>
               <i className='fas fa-filter text-primary h4'></i>
             </Button>
@@ -75,7 +79,7 @@ export default class Filter extends React.Component {
                       <option>Boldering</option>
                       <option>Rock Climbing</option>
                     </Input>
-                    <Button type='submit' className='btn btn-secondary filter-button mt-4'>Refine Search</Button>
+                    <Button type='submit' style={refineStyle} className='btn btn-secondary mt-4'>Refine Search</Button>
                   </FormGroup>
                 </Form>
               </PopoverBody>

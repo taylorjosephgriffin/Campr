@@ -73,11 +73,11 @@ export default class ReservationModal extends React.Component {
                 <Row>
                   <Col xl='6'>
                     <h3 className='text-dark text-center'>{clickedSite.length !== 0 && clickedSite[0].loop}</h3>
-                    <Badge color='secondary mt-2'><h6 className='mb-0 text-white'>{clickedSite.length !== 0 ? `site #${clickedSite[0].siteNumber}` : null}</h6></Badge>
+                    <Badge color='secondary my-2'><h6 className='mb-0 text-white'>{clickedSite.length !== 0 ? `site #${clickedSite[0].siteNumber}` : null}</h6></Badge>
                   </Col>
                   <Col xl='6'>
                     <div>
-                      <img className='modal-image' src={clickedSite.length !== 0 ? clickedSite[0].sitePhoto : null} />
+                      <img className='w-100' src={clickedSite.length !== 0 ? clickedSite[0].sitePhoto : null} />
                     </div>
                   </Col>
                 </Row>
