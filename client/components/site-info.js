@@ -1,10 +1,13 @@
 import React from 'react'
+import {
+  Col,
+  CardText } from 'reactstrap'
 
 export default function SiteInfo(props) {
 
   return (
-    <div className='col-xl-6 col-lg-6 col-6 py-2'>
-      <p className='card-text h5'>{props.content}{props.additionalElement}</p>
-    </div>
+    <Col xl='6' lg='6' col-xs='6' className='py-2'>
+      <CardText className='h5'>{props.content}{props.additionalElement}</CardText>
+    </Col>
   )
 }
