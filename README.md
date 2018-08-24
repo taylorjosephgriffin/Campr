@@ -38,6 +38,10 @@ https://campr-app.herokuapp.com/
 
 ![Email Confirmation](https://user-images.githubusercontent.com/23637586/44109469-feaddfd8-9fb1-11e8-9f5e-94e8a0ffd07a.jpeg?raw=true)
 
+## Filter campgrounds by proximity using Google's Geocoding API.
+
+![Filter By Proximity](https://user-images.githubusercontent.com/23637586/44558458-1e497c00-a6f9-11e8-8451-1257e356ef9c.gif?raw=true)
+
 ## Plan your trip using various trip planning tools.
 
 ### Calculate the estimated fuel cost for your trip.
@@ -104,14 +108,14 @@ npm run start
 * User can receive order confirmation via email using the SendGrid API.
 * User can calculate their fuel cost.
 * User can save a campground to a list of favorites. 
+* Convert entire project to using Reactstrap components. 
+* User can filter campgrounds by proximity.
 
 ## Roadmap:
 
 * User can leave a review for a specific campground.
-* User can filter campgrounds by proximity.
 * User can create a packing list. 
 * User can create a trip itinerary.
-* Convert entire project to using Reactstrap components. 
 
 ## Contributing
 
