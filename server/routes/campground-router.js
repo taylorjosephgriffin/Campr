@@ -6,8 +6,24 @@ module.exports = function campgroundRouter(collection) {
   router.get('/', (req, res, next) => {
     const validPrice = !isNaN(req.query.maxPrice)
     const validAmenity = req.query.amenities
+    const validLong = req.query.longitude
+    const validLat = req.query.latitude
 
     let filterQuery = {}
+
+    if (validLong && validLat && !validPrice && !validAmenity) {
+      filterQuery = {
+        'location': {
+          $near: {
+            $geometry: {
+              type: 'Point',
+              coordinates: [ parseInt(req.query.longitude), parseInt(req.query.latitude) ]
+            },
+            $maxDistance: parseInt(req.query.distance)
+          }
+        }
+      }
+    }
 
     if (validAmenity && !validPrice) {
       filterQuery.amenities = {
