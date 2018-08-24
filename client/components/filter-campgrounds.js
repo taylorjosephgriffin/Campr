@@ -21,6 +21,7 @@ export default class Filter extends React.Component {
     super(props)
 
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleAddress = this.handleAddress.bind(this)
   }
 
   handleSubmit(event) {
@@ -39,15 +40,56 @@ export default class Filter extends React.Component {
     this.props.loadCampgrounds(filter)
   }
 
+  handleAddress(event) {
+    event.preventDefault()
+    const addressData = new FormData(event.target)
+    const address = addressData.get('address').split(' ')
+    const distance = addressData.get('distance')
+    let string = ''
+    address.forEach(element => {
+      string += element + '+'
+    })
+    fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + string.slice(0, string.length - 1) + `key=${process.env.GEOCODING_API_KEY}`)
+      .then(res => res.json())
+      .then(data => {
+        this.props.loadCampgrounds({
+          longitude: data.results[0].geometry.location.lng,
+          latitude: data.results[0].geometry.location.lat,
+          distance: distance
+        })
+      })
+
+  }
+
   render() {
     return (
       <Container fluid className='mt-5 pt-4'>
-        <Row className='justify-content-end'>
-          <Col lg='12'>
+        <Row className='justify-content-end reservation-page mt-2'>
+          <Form className='col-lg-11 col-sm-11 col-12' onSubmit={this.handleAddress}>
+            <Row className='justify-content-start mb-2'>
+              <Col lg='5' sm='8' xs='7' className='mt-2 pr-1'>
+                <Input type='text' name='address' placeholder='Enter your full address' required></Input>
+              </Col>
+              <Col lg='1' sm='2' xs='2' className='mt-2 pl-0 pr-1'>
+                <Input type='select' name='distance' required>
+                  <option value='160934'>{'<' + ' 100 Miles'}</option>
+                  <option value='321869'>{'<' + ' 200 Miles'}</option>
+                  <option value='482803'>{'<' + ' 300 Miles'}</option>
+                  <option value='643738'>{'<' + ' 400 Miles'}</option>
+                  <option value='804672'>{'<' + ' 500 Miles'}</option>
+                  <option value='10000000'>{'All'}</option>
+                </Input>
+              </Col>
+              <Col lg='1' sm='1' xs='2' className='mt-2 pl-0'>
+                <Button type='submit'>Search</Button>
+              </Col>
+            </Row>
+          </Form>
+          <Col lg='1' sm='1' xs='12'>
             <Button
               id='Popover3'
               color='transparent'
-              className='border-0 ml-2 mt-2 float-right'
+              className='border-0 ml-2 mt-2 bg-transparent float-right'
               onClick={this.props.toggle}>
               <i className='fas fa-filter text-primary h4'></i>
             </Button>
