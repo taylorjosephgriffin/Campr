@@ -49,10 +49,11 @@ export default class Filter extends React.Component {
     address.forEach(element => {
       string += element + '+'
     })
-    fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + string.slice(0, string.length - 1) + `&key=AIzaSyBaxLXzwivBLesF8QWvJzIrbTE24Ki-whg`)
+    fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + string.slice(0, string.length - 1) + '&key=AIzaSyBb4CpRDr7IJC-IFKw2kcEh9C0aF1WhjzM')
       .then(res => res.json())
       .then(data => {
         this.props.loadCampgrounds({
+          address: string.slice(0, string.length - 1),
           longitude: data.results[0].geometry.location.lng,
           latitude: data.results[0].geometry.location.lat,
           distance: distance
