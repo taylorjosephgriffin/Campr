@@ -17,6 +17,7 @@ import {
   NavbarToggler } from 'reactstrap'
 import CartPopover from './cart-popover.js'
 import FavoritesPopover from './favorites-popover.js'
+const equal = require('fast-deep-equal')
 
 const popoverStyle = {
   maxHeight: '300px',
@@ -42,6 +43,7 @@ export default class Navigation extends React.Component {
     this.refreshPastOrdersList = this.refreshPastOrdersList.bind(this)
     this.refreshFavorites = this.refreshFavorites.bind(this)
     this.toggleCollapse = this.toggleCollapse.bind(this)
+    this.refreshAllLists = this.refreshAllLists.bind(this)
   }
 
   toggleCart() {
@@ -66,9 +68,11 @@ export default class Navigation extends React.Component {
     fetch('/reservations')
       .then(res => res.json())
       .then(reservation => {
-        this.setState({
-          reservations: reservation
-        })
+        if (!equal(this.state.reservations, reservation)) {
+          this.setState({
+            reservations: reservation
+          })
+        }
       })
   }
 
@@ -76,9 +80,11 @@ export default class Navigation extends React.Component {
     fetch('/orders')
       .then(res => res.json())
       .then(orders => {
-        this.setState({
-          orders: orders
-        })
+        if (!equal(this.state.orders, orders)) {
+          this.setState({
+            orders: orders
+          })
+        }
       })
   }
 
@@ -86,31 +92,27 @@ export default class Navigation extends React.Component {
     fetch('/favorites')
       .then(res => res.json())
       .then(favorites => {
-        this.setState({
-          favorites: favorites
-        })
+        if (!equal(this.state.favorites, favorites)) {
+          this.setState({
+            favorites: favorites
+          })
+        }
       })
   }
 
-  componentDidMount() {
+  refreshAllLists() {
     this.refreshReservationList()
     this.refreshPastOrdersList()
     this.refreshFavorites()
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.reservations !== this.state.reservations) {
-      this.refreshReservationList()
-    }
-    if (prevState.orders !== this.state.orders) {
-      this.refreshPastOrdersList()
-    }
-    if (prevState.favorites !== this.state.favorites) {
-      this.refreshFavorites()
-    }
+  componentDidMount() {
+    setInterval(() => this.refreshAllLists(), 5000)
+    this.refreshAllLists()
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <Navbar
