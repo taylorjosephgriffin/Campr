@@ -9,6 +9,7 @@ const orderRouter = require('./routes/order-router.js')
 const favoritesRouter = require('./routes/favorites-router.js')
 const path = require('path')
 const sgMail = require('@sendgrid/mail')
+const fetch = require('node-fetch')
 
 const app = express()
 
@@ -44,6 +45,13 @@ MongoClient
       console.log(`listening on port ${process.env.PORT}`)
     })
   })
+
+app.get('/geocode', (req, res, next) => {
+  fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${req.query.address}&key=${process.env.GEOCODING_API_KEY}`)
+    .then(res => res.json())
+    .then(data => res.send(data))
+    .catch(err => console.error(err))
+})
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
