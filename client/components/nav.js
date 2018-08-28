@@ -112,7 +112,6 @@ export default class Navigation extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <Navbar
