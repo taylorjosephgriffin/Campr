@@ -11,6 +11,7 @@ import { Container,
   ListGroup,
   Button
 } from 'reactstrap'
+import CampgroundReviews from './campground-reviews.js'
 
 const buttonStyle = {
   height: '50px'
@@ -155,6 +156,7 @@ export default class CampgroundDetailHeader extends React.Component {
                 <CampgroundDetailCarousel campground={this.props.campground} carouselClick={this.props.carouselClick} carouselIndex={this.props.carouselIndex}/>
               </Row>
             </CardBody>
+            <CampgroundReviews />
           </Col>
         </Row>
       </Container>
