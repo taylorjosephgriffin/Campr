@@ -156,7 +156,7 @@ export default class CampgroundDetailHeader extends React.Component {
                 <CampgroundDetailCarousel campground={this.props.campground} carouselClick={this.props.carouselClick} carouselIndex={this.props.carouselIndex}/>
               </Row>
             </CardBody>
-            <CampgroundReviews />
+            <CampgroundReviews params={this.props.params}/>
           </Col>
         </Row>
       </Container>
