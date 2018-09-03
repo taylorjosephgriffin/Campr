@@ -7,6 +7,7 @@ const campsiteRouter = require('./routes/campsite-router.js')
 const reservationRouter = require('./routes/reservation-router.js')
 const orderRouter = require('./routes/order-router.js')
 const favoritesRouter = require('./routes/favorites-router.js')
+const reviewsRouter = require('./routes/reviews-router.js')
 const path = require('path')
 const sgMail = require('@sendgrid/mail')
 const fetch = require('node-fetch')
@@ -28,6 +29,7 @@ MongoClient
     const orders = client.db().collection('orders')
     const favorites = client.db().collection('favorites')
     const publicPath = path.join(__dirname, 'public/')
+    const reviews = client.db().collection('reviews')
 
     app
       .use((err, req, res, next) => {
@@ -39,6 +41,7 @@ MongoClient
       .use('/reservations', reservationRouter(reservations))
       .use('/orders', orderRouter(orders))
       .use('/favorites', favoritesRouter(favorites))
+      .use('/reviews', reviewsRouter(reviews))
       .use(express.static(publicPath))
 
     app.listen(process.env.PORT, () => {
