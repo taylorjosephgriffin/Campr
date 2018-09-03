@@ -13,15 +13,15 @@ module.exports = function reviewsRouter(collection) {
 
   router.get('/:id', (req, res, next) => {
     collection
-      .findOne({ id: req.params.id })
+      .findOne({ campgroundId: req.params.id })
       .then(reviews => res.json(reviews))
       .catch(err => next(err))
   })
 
   router.put('/:id', (req, res, next) => {
     collection
-      .findOneAndInsert({id: req.params.id}, req.body)
-      .then(() => res.status(201).json())
+      .update({ campgroundId: req.params.id }, { $push: { reviews: req.body } }, { upsert: true })
+      .then(review => res.json(review))
       .catch(err => next(err))
   })
   return router

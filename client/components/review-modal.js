@@ -27,13 +27,13 @@ export default class ReviewModal extends React.Component {
     const review = reviewData.get('review')
 
     const reviewObj = {
-      camgroundId: this.props.params.id,
       name: name,
       location: location,
       review: review,
       rating: document.getElementById('rating1').value
     }
 
+    this.props.createReview(reviewObj)
   }
 
   handleRating(value) {

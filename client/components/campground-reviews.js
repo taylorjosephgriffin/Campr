@@ -17,6 +17,7 @@ export default class CampgroundReviews extends React.Component {
       isOpen: false
     }
     this.toggle = this.toggle.bind(this)
+    this.createReview = this.createReview.bind(this)
   }
 
   toggle() {
@@ -25,14 +26,35 @@ export default class CampgroundReviews extends React.Component {
     })
   }
 
+  createReview(review) {
+    fetch('/reviews/' + this.props.params.id, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'PUT',
+      body: JSON.stringify(review)
+    }).then(() => this.toggle())
+      .catch(err => console.error(err))
+  }
+
   render() {
+    console.log(this.props.params.id)
     return (
       <div>
         <CardBody>
           <Row>
             <Col xl='12'>
               <Card className='mt-3'>
-                <CardHeader className='h1'>Reviews<Button onClick={this.toggle} className='float-right'>Leave a Review</Button></CardHeader>
+                <CardHeader
+                  className='h1'>
+                  Reviews
+                  <Button
+                    onClick={this.toggle}
+                    className='float-right'>
+                    Leave a Review
+                  </Button>
+                </CardHeader>
                 <CardBody style={{height: '400px', overflow: 'scroll'}}>
                   <CardText>No reviews.</CardText>
                 </CardBody>
@@ -43,7 +65,8 @@ export default class CampgroundReviews extends React.Component {
         <ReviewModal
           isOpen={this.state.isOpen}
           toggleReviewModal={this.toggle}
-          params={this.props.params}/>
+          params={this.props.params}
+          createReview={this.createReview} />
       </div>
     )
   }
