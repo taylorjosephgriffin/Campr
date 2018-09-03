@@ -39,7 +39,6 @@ export default class CampgroundReviews extends React.Component {
   }
 
   render() {
-    console.log(this.props.params.id)
     return (
       <div>
         <CardBody>
