@@ -15,6 +15,7 @@ https://campr-app.herokuapp.com/
 - MongoDB
 - Reactstrap
 - SendGrid API V3
+- Google Geocoding API
 
 # Key Features
 
@@ -81,6 +82,8 @@ Create a `.env` file in the project root. Example:
 ```
 MONGODB_URI=mongodb://localhost:27017/campr
 PORT=3000
+GEOCODING_API_KEY=your_api_key
+SENDGRID_API_KEY=your_api_key
 ```
 
 Automatically run/restart server with `nodemon` and live reload page on update with `browser-sync`
@@ -110,10 +113,11 @@ npm run start
 * User can save a campground to a list of favorites. 
 * Convert entire project to using Reactstrap components. 
 * User can filter campgrounds by proximity.
+* User can create a review for a specific campground.
 
 ## Roadmap:
 
-* User can leave a review for a specific campground.
+* User can view ratings and reviews for campgrounds.
 * User can create a packing list. 
 * User can create a trip itinerary.
 
