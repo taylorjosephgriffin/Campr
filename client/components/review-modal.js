@@ -23,16 +23,17 @@ export default class ReviewModal extends React.Component {
     event.preventDefault()
     const reviewData = new FormData(event.target)
     const name = reviewData.get('name')
+    const email = reviewData.get('email')
     const location = reviewData.get('location')
     const review = reviewData.get('review')
 
     const reviewObj = {
       name: name,
+      email: email,
       location: location,
       review: review,
       rating: document.getElementById('rating1').value
     }
-
     this.props.createReview(reviewObj)
   }
 
@@ -45,11 +46,10 @@ export default class ReviewModal extends React.Component {
     return (
       <div>
         <Modal centered isOpen={this.props.isOpen}>
-          <ModalHeader onClick={this.props.close}>
+          <ModalHeader className='justify-content-center' onClick={this.props.close}>
             <div className='h3 mb-0'>Leave a Review</div>
           </ModalHeader>
           <Form onSubmit={this.handleSubmit}>
-
             <ModalBody className='pt-0'>
               <FormGroup>
                 <Input id='rating1' type='text' name='rating' style={{display: 'none'}} defaultValue={1} />
@@ -64,21 +64,19 @@ export default class ReviewModal extends React.Component {
               </FormGroup>
               <FormGroup>
                 <Label>Name</Label>
-                <Input type='text' name='name' required >
-
-                </Input>
+                <Input type='text' name='name' required ></Input>
+              </FormGroup>
+              <FormGroup>
+                <Label>Email</Label>
+                <Input type='text' name='email' required ></Input>
               </FormGroup>
               <FormGroup>
                 <Label>Location</Label>
-                <Input type='text' name='location' required >
-
-                </Input>
+                <Input type='text' name='location' required ></Input>
               </FormGroup>
               <FormGroup>
                 <Label>Review</Label>
-                <Input type='textarea' name='review' required >
-
-                </Input>
+                <Input type='textarea' name='review' required ></Input>
               </FormGroup>
             </ModalBody>
             <ModalFooter className='py-2'>
