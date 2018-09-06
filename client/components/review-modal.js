@@ -17,6 +17,21 @@ export default class ReviewModal extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleRating = this.handleRating.bind(this)
+    this.getReviewDate = this.getReviewDate.bind(this)
+  }
+
+  getReviewDate() {
+    let today = new Date()
+    let day = today.getDate()
+    let month = today.getMonth() + 1
+    let year = today.getFullYear()
+
+    if (day < 10) day = `0${day}`
+    if (month < 10) month = `0${month}`
+
+    today = `${month}/${day}/${year}`
+
+    return today
   }
 
   handleSubmit(event) {
@@ -26,10 +41,12 @@ export default class ReviewModal extends React.Component {
     const email = reviewData.get('email')
     const location = reviewData.get('location')
     const review = reviewData.get('review')
+    const date = this.getReviewDate()
 
     const reviewObj = {
       name: name,
       email: email,
+      date: date,
       location: location,
       review: review,
       rating: document.getElementById('rating1').value
