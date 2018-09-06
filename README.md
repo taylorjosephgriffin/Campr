@@ -53,6 +53,12 @@ https://campr-app.herokuapp.com/
 
 ![Favorite Campgrounds](https://user-images.githubusercontent.com/23637586/44381515-7f890980-a4c5-11e8-96af-6bd4fcadb427.gif?raw=true)
 
+## User can review campgrounds.
+
+![Review Campgrounds](https://user-images.githubusercontent.com/23637586/45001820-7435e380-af85-11e8-911f-76aca702e061.gif?raw=true)
+
+![Review Campgrounds](https://user-images.githubusercontent.com/23637586/45182790-23b5c480-b1d7-11e8-8a2b-7241b7a78c2e.gif?raw=true)
+
 ## Installation
 
 ### System Requirements
@@ -114,10 +120,10 @@ npm run start
 * Convert entire project to using Reactstrap components. 
 * User can filter campgrounds by proximity.
 * User can create a review for a specific campground.
+* User can view reviews for campgrounds.
 
 ## Roadmap:
 
-* User can view ratings and reviews for campgrounds.
 * User can create a packing list. 
 * User can create a trip itinerary.
 
