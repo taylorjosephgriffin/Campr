@@ -37,7 +37,7 @@ export default class Filter extends React.Component {
     if (price !== 'none') {
       filter.maxPrice = price
     }
-    this.props.loadCampgrounds(filter)
+    this.props.filterCampgrounds(filter)
   }
 
   handleAddress(event) {
@@ -52,7 +52,7 @@ export default class Filter extends React.Component {
     fetch(`/geocode?address=${string.slice(0, string.length - 1)}`)
       .then(res => res.json())
       .then(data => {
-        this.props.loadCampgrounds({
+        this.props.filterCampgrounds({
           longitude: data.results[0].geometry.location.lng,
           latitude: data.results[0].geometry.location.lat,
           distance: distance

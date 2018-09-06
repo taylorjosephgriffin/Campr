@@ -31,8 +31,8 @@ export default function CampgroundList(props) {
                     backgroundSize: 'cover'}}>
                   <CardTitle style={campgroundNameStyle} className='card-title h2 py-2 text-light text-center'>{campground.facilityName}</CardTitle>
                 </div>
-                <CardBody className='card-body campground-body py-2 pl-2'>
-                  <CardText className='h5 mt-4'>{`$${campground.price}.00 / night`}</CardText>
+                <CardBody className='card-body campground-body py-2 px-2 mt-4'>
+                  <CardText className='h5 d-inline'>{`$${campground.price}.00 / night`}</CardText>
                 </CardBody>
               </Card>
             </a>

@@ -19,6 +19,35 @@ module.exports = [
     checkIn: 2,
     checkOut: 12,
     price: 25,
+    reviews: [
+      {
+        name: 'Teddi Eastman',
+        email: 'teddieastman@gmail.com',
+        date: '07/02/2018',
+        location: 'Cottonwood, CA',
+        review: `This Campground is great for views and spacious sites. Even though there are some sites that are right next to each other it seems to be room enough to fit all of your camping needs. There is no running water which is the only reason why I would not give this a 5-star rating. The water between Lake Lewiston and Trinity Lake is extremely cold and I would not recommend swimming in it unless you are a polar bear. Despite not having running water, they do have flushing toilets which is nice. There is not much access to the water on that campsite,  and not a lot of shore fishing available at the campsite itself. But you can drive a little ways and fish Lewiston lake or Trinity Lake either way is not very far from the campsite.`,
+        rating: '4'
+      },
+      {
+        name: 'Jamee Cocheran',
+        email: 'jameecocheran@gmail.com',
+        date: '12/20/2018',
+        location: 'Fortuna, CA',
+        review: `We went camping in July here and I paid for three days of use ($60). We ended up only staying one night due to the place being just short of infested with wasps, incredibly hard ground, poor lake access and the hum from the power plant droning all night. It was our only chance to vacation during the entire year. The only upside I suppose was that there was no one else there so we had privacy?`,
+        rating: '2'
+      },
+      {
+        name: 'Jim Gill',
+        email: 'jimgill@gmail.com',
+        date: '01/09/2018',
+        location: 'Freestone, CA',
+        review: `We stayed one week in late September / early October 2016.  There are about 50 sites, and only perhaps 5 were occupied.   We could not see our neighbors in either direction.
+        The layout follows the edge of Lewiston Lake.  The sites are large.  Easy access to the shoreline for fishing.
+        We went for the dark skies.  Great star gazing with very little influence from nearby towns or Redding to the East.  We spoke to the camphost, "Lana".  She was very nice.  If you want a quiet get-away, this is a good place for that.
+        The county road runs right by the campsites, so don't be surprised that you are not isolated from traffic.`,
+        rating: '1'
+      }
+    ],
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking'
     ],
@@ -48,6 +77,39 @@ module.exports = [
     checkIn: 2,
     checkOut: 12,
     price: 45,
+    reviews: [
+      {
+        name: 'Cary Saltzman',
+        email: 'carysaltzman@gmail.com',
+        date: '09/03/2018',
+        location: 'Los Angeles, CA',
+        review: `Great place to relax, take your family and your pup! Beautiful views of the ocean! The beach has many access points so it his hard to find the dog beach. This is located between lifeguard stations 3 and 5. I suggest going through the actual park entrance and paying the $12 fee so beautiful places like this say clean, people have jobs and the park gets updated. It is also easier if your like me and love to set up camp for the day because the parking lot is right on the beach :) If you do not have the money, no worries just park on PCH. Swimming was a bit challenging here the day we went. There is a massive layer of small sized rocks that are being pushed about when the waves come in. If you like a rough sloughing then this is for you! We have not camped there yet but did visit the grounds. After a long summer and tons of tourist, the campground look clean to me. There are little nooks if you want to be more secluded or a middle area if you want to be more social. They have showers, flush toilets, electric and the guard at the entrance was very informative and charming at the same time!`,
+        rating: '5'
+      },
+      {
+        name: 'Jennifer Detman',
+        email: 'jenniferdetman@gmail.com',
+        date: '08/20/2018',
+        location: 'Bellingham, WA',
+        review: `If I'm not mistaken, this is one of a few beaches in the greater LA area where dogs are allowed. Dogs must be on leashes at all times. We brought our dog, and he had a blast!
+        Pros: + Dogs are allowed as long as they are on leashes + The beach is mostly sandy + There are bathrooms and showers
+        + Parking is easy and the rates are reasonable: $3 per hour or $12 for the day
+        Cons: - The bathrooms are not very clean. The toilets are made of stainless, and there are no toilet seats (or fused with the toilets)!
+        We will definitely come back!`,
+        rating: '4'
+      },
+      {
+        name: 'Andrew Jackson',
+        email: 'andrewjackson@gmail.com',
+        date: '09/05/2018',
+        location: 'Lancaster, CA',
+        review: `Got tent set up finally around 8 pm and couldn't wait to get some firewood to relax cook hot dogs and roast marshmallows but apparently that was a really unheard of thing to do along with inconvenient for the camp host to have to get up out of his chair to sell it to me (it was next to him) very rude very disrespectful and hateful behavior never met camp host so sour and hateful with his mad face sneering lip he grumbled about it being too late (8pm) to buy it yet begrudgingly got his f#t a$$ up to get up out of his chair to take my money. That pretty much took the fun out of my evening. I don't like being treated with disrespect when I pay hard earned money for a relaxing pleasant time camping at the beach. What happened Leo Carrillo ?! You need to review your code of conduct toward paying guests with mandated don't be an a whole to campers wanting to buy wood - guess he thinks he's entitled to be rude as he sleeps there so must love acting so superior and
+        Condescending. Here's my middle finger hope you get replaced this is Southern California it's where people go to relax and hopefully have a great time - thanks
+        For the memory oh greatest most honorable mad faced cranky chair sitting it's my purpose to assist as campers camp host but I really hate when people bother me while I'm sitting next to my firewood for sale pile of wood. He didn't refuse to sell it he just made you wish he was somebody suited for the position he was assigned to be there for WHAT IS UP WITH ENTITLED STATE PARK VOLUNTEERS OR  EMPLOYEES?? And since when do camp hosts act so despicable. Wow someone's not
+        Monitoring the help.`,
+        rating: '1'
+      }
+    ],
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing'
     ],
@@ -77,6 +139,38 @@ module.exports = [
     checkIn: 2,
     checkOut: 12,
     price: 35,
+    reviews: [
+      {
+        name: 'Andrew Jackson',
+        email: 'andrewjackson@gmail.com',
+        date: '09/05/2018',
+        location: 'Lancaster, CA',
+        review: `Got tent set up finally around 8 pm and couldn't wait to get some firewood to relax cook hot dogs and roast marshmallows but apparently that was a really unheard of thing to do along with inconvenient for the camp host to have to get up out of his chair to sell it to me (it was next to him) very rude very disrespectful and hateful behavior never met camp host so sour and hateful with his mad face sneering lip he grumbled about it being too late (8pm) to buy it yet begrudgingly got his f#t a$$ up to get up out of his chair to take my money. That pretty much took the fun out of my evening. I don't like being treated with disrespect when I pay hard earned money for a relaxing pleasant time camping at the beach. What happened Leo Carrillo ?! You need to review your code of conduct toward paying guests with mandated don't be an a whole to campers wanting to buy wood - guess he thinks he's entitled to be rude as he sleeps there so must love acting so superior and
+        Condescending. Here's my middle finger hope you get replaced this is Southern California it's where people go to relax and hopefully have a great time - thanks
+        For the memory oh greatest most honorable mad faced cranky chair sitting it's my purpose to assist as campers camp host but I really hate when people bother me while I'm sitting next to my firewood for sale pile of wood. He didn't refuse to sell it he just made you wish he was somebody suited for the position he was assigned to be there for WHAT IS UP WITH ENTITLED STATE PARK VOLUNTEERS OR  EMPLOYEES?? And since when do camp hosts act so despicable. Wow someone's not
+        Monitoring the help.`,
+        rating: '1'
+      },
+      {
+        name: 'Jim Gill',
+        email: 'jimgill@gmail.com',
+        date: '01/09/2018',
+        location: 'Freestone, CA',
+        review: `We stayed one week in late September / early October 2016.  There are about 50 sites, and only perhaps 5 were occupied.   We could not see our neighbors in either direction.
+        The layout follows the edge of Lewiston Lake.  The sites are large.  Easy access to the shoreline for fishing.
+        We went for the dark skies.  Great star gazing with very little influence from nearby towns or Redding to the East.  We spoke to the camphost, "Lana".  She was very nice.  If you want a quiet get-away, this is a good place for that.
+        The county road runs right by the campsites, so don't be surprised that you are not isolated from traffic.`,
+        rating: '2'
+      },
+      {
+        name: 'Teddi Eastman',
+        email: 'teddieastman@gmail.com',
+        date: '07/02/2018',
+        location: 'Cottonwood, CA',
+        review: `This Campground is great for views and spacious sites. Even though there are some sites that are right next to each other it seems to be room enough to fit all of your camping needs. There is no running water which is the only reason why I would not give this a 5-star rating. The water between Lake Lewiston and Trinity Lake is extremely cold and I would not recommend swimming in it unless you are a polar bear. Despite not having running water, they do have flushing toilets which is nice. There is not much access to the water on that campsite,  and not a lot of shore fishing available at the campsite itself. But you can drive a little ways and fish Lewiston lake or Trinity Lake either way is not very far from the campsite.`,
+        rating: '4'
+      }
+    ],
     amenities: [
       'camping', 'fishing', 'hiking', 'kayaking', 'swimming', 'relaxing'
     ],
@@ -105,6 +199,39 @@ module.exports = [
     checkIn: 2,
     checkOut: 12,
     price: 45,
+    reviews: [
+      {
+        name: 'Cary Saltzman',
+        email: 'carysaltzman@gmail.com',
+        date: '09/03/2018',
+        location: 'Los Angeles, CA',
+        review: `Great place to relax, take your family and your pup! Beautiful views of the ocean! The beach has many access points so it his hard to find the dog beach. This is located between lifeguard stations 3 and 5. I suggest going through the actual park entrance and paying the $12 fee so beautiful places like this say clean, people have jobs and the park gets updated. It is also easier if your like me and love to set up camp for the day because the parking lot is right on the beach :) If you do not have the money, no worries just park on PCH. Swimming was a bit challenging here the day we went. There is a massive layer of small sized rocks that are being pushed about when the waves come in. If you like a rough sloughing then this is for you! We have not camped there yet but did visit the grounds. After a long summer and tons of tourist, the campground look clean to me. There are little nooks if you want to be more secluded or a middle area if you want to be more social. They have showers, flush toilets, electric and the guard at the entrance was very informative and charming at the same time!`,
+        rating: '5'
+      },
+      {
+        name: 'Jennifer Detman',
+        email: 'jenniferdetman@gmail.com',
+        date: '08/20/2018',
+        location: 'Bellingham, WA',
+        review: `If I'm not mistaken, this is one of a few beaches in the greater LA area where dogs are allowed. Dogs must be on leashes at all times. We brought our dog, and he had a blast!
+        Pros: + Dogs are allowed as long as they are on leashes + The beach is mostly sandy + There are bathrooms and showers
+        + Parking is easy and the rates are reasonable: $3 per hour or $12 for the day
+        Cons: - The bathrooms are not very clean. The toilets are made of stainless, and there are no toilet seats (or fused with the toilets)!
+        We will definitely come back!`,
+        rating: '4'
+      },
+      {
+        name: 'Andrew Jackson',
+        email: 'andrewjackson@gmail.com',
+        date: '09/05/2018',
+        location: 'Lancaster, CA',
+        review: `Got tent set up finally around 8 pm and couldn't wait to get some firewood to relax cook hot dogs and roast marshmallows but apparently that was a really unheard of thing to do along with inconvenient for the camp host to have to get up out of his chair to sell it to me (it was next to him) very rude very disrespectful and hateful behavior never met camp host so sour and hateful with his mad face sneering lip he grumbled about it being too late (8pm) to buy it yet begrudgingly got his f#t a$$ up to get up out of his chair to take my money. That pretty much took the fun out of my evening. I don't like being treated with disrespect when I pay hard earned money for a relaxing pleasant time camping at the beach. What happened Leo Carrillo ?! You need to review your code of conduct toward paying guests with mandated don't be an a whole to campers wanting to buy wood - guess he thinks he's entitled to be rude as he sleeps there so must love acting so superior and
+        Condescending. Here's my middle finger hope you get replaced this is Southern California it's where people go to relax and hopefully have a great time - thanks
+        For the memory oh greatest most honorable mad faced cranky chair sitting it's my purpose to assist as campers camp host but I really hate when people bother me while I'm sitting next to my firewood for sale pile of wood. He didn't refuse to sell it he just made you wish he was somebody suited for the position he was assigned to be there for WHAT IS UP WITH ENTITLED STATE PARK VOLUNTEERS OR  EMPLOYEES?? And since when do camp hosts act so despicable. Wow someone's not
+        Monitoring the help.`,
+        rating: '1'
+      }
+    ],
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing'
     ],
@@ -134,6 +261,39 @@ module.exports = [
     checkIn: 2,
     checkOut: 12,
     price: 50,
+    reviews: [
+      {
+        name: 'Cary Saltzman',
+        email: 'carysaltzman@gmail.com',
+        date: '09/03/2018',
+        location: 'Los Angeles, CA',
+        review: `Great place to relax, take your family and your pup! Beautiful views of the ocean! The beach has many access points so it his hard to find the dog beach. This is located between lifeguard stations 3 and 5. I suggest going through the actual park entrance and paying the $12 fee so beautiful places like this say clean, people have jobs and the park gets updated. It is also easier if your like me and love to set up camp for the day because the parking lot is right on the beach :) If you do not have the money, no worries just park on PCH. Swimming was a bit challenging here the day we went. There is a massive layer of small sized rocks that are being pushed about when the waves come in. If you like a rough sloughing then this is for you! We have not camped there yet but did visit the grounds. After a long summer and tons of tourist, the campground look clean to me. There are little nooks if you want to be more secluded or a middle area if you want to be more social. They have showers, flush toilets, electric and the guard at the entrance was very informative and charming at the same time!`,
+        rating: '5'
+      },
+      {
+        name: 'Jennifer Detman',
+        email: 'jenniferdetman@gmail.com',
+        date: '08/20/2018',
+        location: 'Bellingham, WA',
+        review: `If I'm not mistaken, this is one of a few beaches in the greater LA area where dogs are allowed. Dogs must be on leashes at all times. We brought our dog, and he had a blast!
+        Pros: + Dogs are allowed as long as they are on leashes + The beach is mostly sandy + There are bathrooms and showers
+        + Parking is easy and the rates are reasonable: $3 per hour or $12 for the day
+        Cons: - The bathrooms are not very clean. The toilets are made of stainless, and there are no toilet seats (or fused with the toilets)!
+        We will definitely come back!`,
+        rating: '4'
+      },
+      {
+        name: 'Andrew Jackson',
+        email: 'andrewjackson@gmail.com',
+        date: '09/05/2018',
+        location: 'Lancaster, CA',
+        review: `Got tent set up finally around 8 pm and couldn't wait to get some firewood to relax cook hot dogs and roast marshmallows but apparently that was a really unheard of thing to do along with inconvenient for the camp host to have to get up out of his chair to sell it to me (it was next to him) very rude very disrespectful and hateful behavior never met camp host so sour and hateful with his mad face sneering lip he grumbled about it being too late (8pm) to buy it yet begrudgingly got his f#t a$$ up to get up out of his chair to take my money. That pretty much took the fun out of my evening. I don't like being treated with disrespect when I pay hard earned money for a relaxing pleasant time camping at the beach. What happened Leo Carrillo ?! You need to review your code of conduct toward paying guests with mandated don't be an a whole to campers wanting to buy wood - guess he thinks he's entitled to be rude as he sleeps there so must love acting so superior and
+        Condescending. Here's my middle finger hope you get replaced this is Southern California it's where people go to relax and hopefully have a great time - thanks
+        For the memory oh greatest most honorable mad faced cranky chair sitting it's my purpose to assist as campers camp host but I really hate when people bother me while I'm sitting next to my firewood for sale pile of wood. He didn't refuse to sell it he just made you wish he was somebody suited for the position he was assigned to be there for WHAT IS UP WITH ENTITLED STATE PARK VOLUNTEERS OR  EMPLOYEES?? And since when do camp hosts act so despicable. Wow someone's not
+        Monitoring the help.`,
+        rating: '1'
+      }
+    ],
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing', 'kayaking'
     ],
@@ -163,6 +323,39 @@ module.exports = [
     checkIn: 2,
     checkOut: 12,
     price: 70,
+    reviews: [
+      {
+        name: 'Cary Saltzman',
+        email: 'carysaltzman@gmail.com',
+        date: '09/03/2018',
+        location: 'Los Angeles, CA',
+        review: `Great place to relax, take your family and your pup! Beautiful views of the ocean! The beach has many access points so it his hard to find the dog beach. This is located between lifeguard stations 3 and 5. I suggest going through the actual park entrance and paying the $12 fee so beautiful places like this say clean, people have jobs and the park gets updated. It is also easier if your like me and love to set up camp for the day because the parking lot is right on the beach :) If you do not have the money, no worries just park on PCH. Swimming was a bit challenging here the day we went. There is a massive layer of small sized rocks that are being pushed about when the waves come in. If you like a rough sloughing then this is for you! We have not camped there yet but did visit the grounds. After a long summer and tons of tourist, the campground look clean to me. There are little nooks if you want to be more secluded or a middle area if you want to be more social. They have showers, flush toilets, electric and the guard at the entrance was very informative and charming at the same time!`,
+        rating: '5'
+      },
+      {
+        name: 'Jennifer Detman',
+        email: 'jenniferdetman@gmail.com',
+        date: '08/20/2018',
+        location: 'Bellingham, WA',
+        review: `If I'm not mistaken, this is one of a few beaches in the greater LA area where dogs are allowed. Dogs must be on leashes at all times. We brought our dog, and he had a blast!
+        Pros: + Dogs are allowed as long as they are on leashes + The beach is mostly sandy + There are bathrooms and showers
+        + Parking is easy and the rates are reasonable: $3 per hour or $12 for the day
+        Cons: - The bathrooms are not very clean. The toilets are made of stainless, and there are no toilet seats (or fused with the toilets)!
+        We will definitely come back!`,
+        rating: '4'
+      },
+      {
+        name: 'Andrew Jackson',
+        email: 'andrewjackson@gmail.com',
+        date: '09/05/2018',
+        location: 'Lancaster, CA',
+        review: `Got tent set up finally around 8 pm and couldn't wait to get some firewood to relax cook hot dogs and roast marshmallows but apparently that was a really unheard of thing to do along with inconvenient for the camp host to have to get up out of his chair to sell it to me (it was next to him) very rude very disrespectful and hateful behavior never met camp host so sour and hateful with his mad face sneering lip he grumbled about it being too late (8pm) to buy it yet begrudgingly got his f#t a$$ up to get up out of his chair to take my money. That pretty much took the fun out of my evening. I don't like being treated with disrespect when I pay hard earned money for a relaxing pleasant time camping at the beach. What happened Leo Carrillo ?! You need to review your code of conduct toward paying guests with mandated don't be an a whole to campers wanting to buy wood - guess he thinks he's entitled to be rude as he sleeps there so must love acting so superior and
+        Condescending. Here's my middle finger hope you get replaced this is Southern California it's where people go to relax and hopefully have a great time - thanks
+        For the memory oh greatest most honorable mad faced cranky chair sitting it's my purpose to assist as campers camp host but I really hate when people bother me while I'm sitting next to my firewood for sale pile of wood. He didn't refuse to sell it he just made you wish he was somebody suited for the position he was assigned to be there for WHAT IS UP WITH ENTITLED STATE PARK VOLUNTEERS OR  EMPLOYEES?? And since when do camp hosts act so despicable. Wow someone's not
+        Monitoring the help.`,
+        rating: '1'
+      }
+    ],
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'surfing', 'kayaking'
     ],
@@ -192,6 +385,39 @@ module.exports = [
     checkIn: 2,
     checkOut: 12,
     price: 25,
+    reviews: [
+      {
+        name: 'Cary Saltzman',
+        email: 'carysaltzman@gmail.com',
+        date: '09/03/2018',
+        location: 'Los Angeles, CA',
+        review: `Great place to relax, take your family and your pup! Beautiful views of the ocean! The beach has many access points so it his hard to find the dog beach. This is located between lifeguard stations 3 and 5. I suggest going through the actual park entrance and paying the $12 fee so beautiful places like this say clean, people have jobs and the park gets updated. It is also easier if your like me and love to set up camp for the day because the parking lot is right on the beach :) If you do not have the money, no worries just park on PCH. Swimming was a bit challenging here the day we went. There is a massive layer of small sized rocks that are being pushed about when the waves come in. If you like a rough sloughing then this is for you! We have not camped there yet but did visit the grounds. After a long summer and tons of tourist, the campground look clean to me. There are little nooks if you want to be more secluded or a middle area if you want to be more social. They have showers, flush toilets, electric and the guard at the entrance was very informative and charming at the same time!`,
+        rating: '5'
+      },
+      {
+        name: 'Jennifer Detman',
+        email: 'jenniferdetman@gmail.com',
+        date: '08/20/2018',
+        location: 'Bellingham, WA',
+        review: `If I'm not mistaken, this is one of a few beaches in the greater LA area where dogs are allowed. Dogs must be on leashes at all times. We brought our dog, and he had a blast!
+        Pros: + Dogs are allowed as long as they are on leashes + The beach is mostly sandy + There are bathrooms and showers
+        + Parking is easy and the rates are reasonable: $3 per hour or $12 for the day
+        Cons: - The bathrooms are not very clean. The toilets are made of stainless, and there are no toilet seats (or fused with the toilets)!
+        We will definitely come back!`,
+        rating: '4'
+      },
+      {
+        name: 'Andrew Jackson',
+        email: 'andrewjackson@gmail.com',
+        date: '09/05/2018',
+        location: 'Lancaster, CA',
+        review: `Got tent set up finally around 8 pm and couldn't wait to get some firewood to relax cook hot dogs and roast marshmallows but apparently that was a really unheard of thing to do along with inconvenient for the camp host to have to get up out of his chair to sell it to me (it was next to him) very rude very disrespectful and hateful behavior never met camp host so sour and hateful with his mad face sneering lip he grumbled about it being too late (8pm) to buy it yet begrudgingly got his f#t a$$ up to get up out of his chair to take my money. That pretty much took the fun out of my evening. I don't like being treated with disrespect when I pay hard earned money for a relaxing pleasant time camping at the beach. What happened Leo Carrillo ?! You need to review your code of conduct toward paying guests with mandated don't be an a whole to campers wanting to buy wood - guess he thinks he's entitled to be rude as he sleeps there so must love acting so superior and
+        Condescending. Here's my middle finger hope you get replaced this is Southern California it's where people go to relax and hopefully have a great time - thanks
+        For the memory oh greatest most honorable mad faced cranky chair sitting it's my purpose to assist as campers camp host but I really hate when people bother me while I'm sitting next to my firewood for sale pile of wood. He didn't refuse to sell it he just made you wish he was somebody suited for the position he was assigned to be there for WHAT IS UP WITH ENTITLED STATE PARK VOLUNTEERS OR  EMPLOYEES?? And since when do camp hosts act so despicable. Wow someone's not
+        Monitoring the help.`,
+        rating: '1'
+      }
+    ],
     amenities: [
       'birding', 'campfire', 'hiking', 'boldering', 'rock climbing'
     ],
@@ -221,6 +447,39 @@ module.exports = [
     checkIn: 2,
     checkOut: 12,
     price: 15,
+    reviews: [
+      {
+        name: 'Cary Saltzman',
+        email: 'carysaltzman@gmail.com',
+        date: '09/03/2018',
+        location: 'Los Angeles, CA',
+        review: `Great place to relax, take your family and your pup! Beautiful views of the ocean! The beach has many access points so it his hard to find the dog beach. This is located between lifeguard stations 3 and 5. I suggest going through the actual park entrance and paying the $12 fee so beautiful places like this say clean, people have jobs and the park gets updated. It is also easier if your like me and love to set up camp for the day because the parking lot is right on the beach :) If you do not have the money, no worries just park on PCH. Swimming was a bit challenging here the day we went. There is a massive layer of small sized rocks that are being pushed about when the waves come in. If you like a rough sloughing then this is for you! We have not camped there yet but did visit the grounds. After a long summer and tons of tourist, the campground look clean to me. There are little nooks if you want to be more secluded or a middle area if you want to be more social. They have showers, flush toilets, electric and the guard at the entrance was very informative and charming at the same time!`,
+        rating: '5'
+      },
+      {
+        name: 'Jennifer Detman',
+        email: 'jenniferdetman@gmail.com',
+        date: '08/20/2018',
+        location: 'Bellingham, WA',
+        review: `If I'm not mistaken, this is one of a few beaches in the greater LA area where dogs are allowed. Dogs must be on leashes at all times. We brought our dog, and he had a blast!
+        Pros: + Dogs are allowed as long as they are on leashes + The beach is mostly sandy + There are bathrooms and showers
+        + Parking is easy and the rates are reasonable: $3 per hour or $12 for the day
+        Cons: - The bathrooms are not very clean. The toilets are made of stainless, and there are no toilet seats (or fused with the toilets)!
+        We will definitely come back!`,
+        rating: '4'
+      },
+      {
+        name: 'Andrew Jackson',
+        email: 'andrewjackson@gmail.com',
+        date: '09/05/2018',
+        location: 'Lancaster, CA',
+        review: `Got tent set up finally around 8 pm and couldn't wait to get some firewood to relax cook hot dogs and roast marshmallows but apparently that was a really unheard of thing to do along with inconvenient for the camp host to have to get up out of his chair to sell it to me (it was next to him) very rude very disrespectful and hateful behavior never met camp host so sour and hateful with his mad face sneering lip he grumbled about it being too late (8pm) to buy it yet begrudgingly got his f#t a$$ up to get up out of his chair to take my money. That pretty much took the fun out of my evening. I don't like being treated with disrespect when I pay hard earned money for a relaxing pleasant time camping at the beach. What happened Leo Carrillo ?! You need to review your code of conduct toward paying guests with mandated don't be an a whole to campers wanting to buy wood - guess he thinks he's entitled to be rude as he sleeps there so must love acting so superior and
+        Condescending. Here's my middle finger hope you get replaced this is Southern California it's where people go to relax and hopefully have a great time - thanks
+        For the memory oh greatest most honorable mad faced cranky chair sitting it's my purpose to assist as campers camp host but I really hate when people bother me while I'm sitting next to my firewood for sale pile of wood. He didn't refuse to sell it he just made you wish he was somebody suited for the position he was assigned to be there for WHAT IS UP WITH ENTITLED STATE PARK VOLUNTEERS OR  EMPLOYEES?? And since when do camp hosts act so despicable. Wow someone's not
+        Monitoring the help.`,
+        rating: '1'
+      }
+    ],
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'kayaking', 'swimming'
     ],
@@ -250,6 +509,39 @@ module.exports = [
     checkIn: 2,
     checkOut: 12,
     price: 35,
+    reviews: [
+      {
+        name: 'Cary Saltzman',
+        email: 'carysaltzman@gmail.com',
+        date: '09/03/2018',
+        location: 'Los Angeles, CA',
+        review: `Great place to relax, take your family and your pup! Beautiful views of the ocean! The beach has many access points so it his hard to find the dog beach. This is located between lifeguard stations 3 and 5. I suggest going through the actual park entrance and paying the $12 fee so beautiful places like this say clean, people have jobs and the park gets updated. It is also easier if your like me and love to set up camp for the day because the parking lot is right on the beach :) If you do not have the money, no worries just park on PCH. Swimming was a bit challenging here the day we went. There is a massive layer of small sized rocks that are being pushed about when the waves come in. If you like a rough sloughing then this is for you! We have not camped there yet but did visit the grounds. After a long summer and tons of tourist, the campground look clean to me. There are little nooks if you want to be more secluded or a middle area if you want to be more social. They have showers, flush toilets, electric and the guard at the entrance was very informative and charming at the same time!`,
+        rating: '5'
+      },
+      {
+        name: 'Jennifer Detman',
+        email: 'jenniferdetman@gmail.com',
+        date: '08/20/2018',
+        location: 'Bellingham, WA',
+        review: `If I'm not mistaken, this is one of a few beaches in the greater LA area where dogs are allowed. Dogs must be on leashes at all times. We brought our dog, and he had a blast!
+        Pros: + Dogs are allowed as long as they are on leashes + The beach is mostly sandy + There are bathrooms and showers
+        + Parking is easy and the rates are reasonable: $3 per hour or $12 for the day
+        Cons: - The bathrooms are not very clean. The toilets are made of stainless, and there are no toilet seats (or fused with the toilets)!
+        We will definitely come back!`,
+        rating: '4'
+      },
+      {
+        name: 'Andrew Jackson',
+        email: 'andrewjackson@gmail.com',
+        date: '09/05/2018',
+        location: 'Lancaster, CA',
+        review: `Got tent set up finally around 8 pm and couldn't wait to get some firewood to relax cook hot dogs and roast marshmallows but apparently that was a really unheard of thing to do along with inconvenient for the camp host to have to get up out of his chair to sell it to me (it was next to him) very rude very disrespectful and hateful behavior never met camp host so sour and hateful with his mad face sneering lip he grumbled about it being too late (8pm) to buy it yet begrudgingly got his f#t a$$ up to get up out of his chair to take my money. That pretty much took the fun out of my evening. I don't like being treated with disrespect when I pay hard earned money for a relaxing pleasant time camping at the beach. What happened Leo Carrillo ?! You need to review your code of conduct toward paying guests with mandated don't be an a whole to campers wanting to buy wood - guess he thinks he's entitled to be rude as he sleeps there so must love acting so superior and
+        Condescending. Here's my middle finger hope you get replaced this is Southern California it's where people go to relax and hopefully have a great time - thanks
+        For the memory oh greatest most honorable mad faced cranky chair sitting it's my purpose to assist as campers camp host but I really hate when people bother me while I'm sitting next to my firewood for sale pile of wood. He didn't refuse to sell it he just made you wish he was somebody suited for the position he was assigned to be there for WHAT IS UP WITH ENTITLED STATE PARK VOLUNTEERS OR  EMPLOYEES?? And since when do camp hosts act so despicable. Wow someone's not
+        Monitoring the help.`,
+        rating: '1'
+      }
+    ],
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'kayaking', 'swimming'
     ],
@@ -279,6 +571,39 @@ module.exports = [
     checkIn: 2,
     checkOut: 12,
     price: 15,
+    reviews: [
+      {
+        name: 'Cary Saltzman',
+        email: 'carysaltzman@gmail.com',
+        date: '09/03/2018',
+        location: 'Los Angeles, CA',
+        review: `Great place to relax, take your family and your pup! Beautiful views of the ocean! The beach has many access points so it his hard to find the dog beach. This is located between lifeguard stations 3 and 5. I suggest going through the actual park entrance and paying the $12 fee so beautiful places like this say clean, people have jobs and the park gets updated. It is also easier if your like me and love to set up camp for the day because the parking lot is right on the beach :) If you do not have the money, no worries just park on PCH. Swimming was a bit challenging here the day we went. There is a massive layer of small sized rocks that are being pushed about when the waves come in. If you like a rough sloughing then this is for you! We have not camped there yet but did visit the grounds. After a long summer and tons of tourist, the campground look clean to me. There are little nooks if you want to be more secluded or a middle area if you want to be more social. They have showers, flush toilets, electric and the guard at the entrance was very informative and charming at the same time!`,
+        rating: '5'
+      },
+      {
+        name: 'Jennifer Detman',
+        email: 'jenniferdetman@gmail.com',
+        date: '08/20/2018',
+        location: 'Bellingham, WA',
+        review: `If I'm not mistaken, this is one of a few beaches in the greater LA area where dogs are allowed. Dogs must be on leashes at all times. We brought our dog, and he had a blast!
+        Pros: + Dogs are allowed as long as they are on leashes + The beach is mostly sandy + There are bathrooms and showers
+        + Parking is easy and the rates are reasonable: $3 per hour or $12 for the day
+        Cons: - The bathrooms are not very clean. The toilets are made of stainless, and there are no toilet seats (or fused with the toilets)!
+        We will definitely come back!`,
+        rating: '4'
+      },
+      {
+        name: 'Andrew Jackson',
+        email: 'andrewjackson@gmail.com',
+        date: '09/05/2018',
+        location: 'Lancaster, CA',
+        review: `Got tent set up finally around 8 pm and couldn't wait to get some firewood to relax cook hot dogs and roast marshmallows but apparently that was a really unheard of thing to do along with inconvenient for the camp host to have to get up out of his chair to sell it to me (it was next to him) very rude very disrespectful and hateful behavior never met camp host so sour and hateful with his mad face sneering lip he grumbled about it being too late (8pm) to buy it yet begrudgingly got his f#t a$$ up to get up out of his chair to take my money. That pretty much took the fun out of my evening. I don't like being treated with disrespect when I pay hard earned money for a relaxing pleasant time camping at the beach. What happened Leo Carrillo ?! You need to review your code of conduct toward paying guests with mandated don't be an a whole to campers wanting to buy wood - guess he thinks he's entitled to be rude as he sleeps there so must love acting so superior and
+        Condescending. Here's my middle finger hope you get replaced this is Southern California it's where people go to relax and hopefully have a great time - thanks
+        For the memory oh greatest most honorable mad faced cranky chair sitting it's my purpose to assist as campers camp host but I really hate when people bother me while I'm sitting next to my firewood for sale pile of wood. He didn't refuse to sell it he just made you wish he was somebody suited for the position he was assigned to be there for WHAT IS UP WITH ENTITLED STATE PARK VOLUNTEERS OR  EMPLOYEES?? And since when do camp hosts act so despicable. Wow someone's not
+        Monitoring the help.`,
+        rating: '1'
+      }
+    ],
     amenities: [
       'birding', 'boating', 'campfire', 'fishing', 'hiking', 'kayaking', 'swimming'
     ],
