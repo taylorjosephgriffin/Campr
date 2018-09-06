@@ -49,7 +49,7 @@ export default class CampgroundReviews extends React.Component {
     fetch('/reviews/' + this.props.params.id)
       .then(res => res.json())
       .then(reviews => {
-        if (reviews) {
+        if (reviews.reviews) {
           this.setState({
             reviews: reviews.reviews
           })

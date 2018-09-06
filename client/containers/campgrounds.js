@@ -15,7 +15,6 @@ export default class Campgrounds extends React.Component {
     this.toggle = this.toggle.bind(this)
     this.filterCampgrounds = this.filterCampgrounds.bind(this)
     this.loadCampgrounds = this.loadCampgrounds.bind(this)
-    this.loadReviews = this.loadReviews.bind(this)
   }
 
   filterCampgrounds(filter) {
@@ -40,19 +39,8 @@ export default class Campgrounds extends React.Component {
       })
   }
 
-  loadReviews() {
-    fetch('/reviews')
-      .then(res => res.json())
-      .then(reviews => {
-        this.setState({
-          reviews: reviews
-        })
-      })
-  }
-
   componentDidMount() {
     this.loadCampgrounds()
-    this.loadReviews()
   }
 
   toggle() {
@@ -65,7 +53,7 @@ export default class Campgrounds extends React.Component {
     return (
       <Fragment>
         <Filter filterCampgrounds={this.filterCampgrounds} toggle={this.toggle} campgrounds={this.state.campgrounds} popoverOpen={this.state.showFilters} />
-        <CampgroundList reviews={this.state.reviews} campgrounds={this.state.campgrounds} />
+        <CampgroundList campgrounds={this.state.campgrounds} />
       </Fragment>
     )
   }

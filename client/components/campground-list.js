@@ -7,7 +7,6 @@ import {
   CardTitle,
   CardBody,
   CardText } from 'reactstrap'
-import Rating from 'react-rating'
 
 const campgroundNameStyle = {
   fontSize: '40px',
@@ -34,13 +33,6 @@ export default function CampgroundList(props) {
                 </div>
                 <CardBody className='card-body campground-body py-2 px-2 mt-4'>
                   <CardText className='h5 d-inline'>{`$${campground.price}.00 / night`}</CardText>
-                  <div className='d-inline float-right'>
-                    <Rating
-                      readonly={true}
-                      initialRating={5}
-                      emptySymbol='far fa-star'
-                      fullSymbol='fas fa-star' />
-                  </div>
                 </CardBody>
               </Card>
             </a>

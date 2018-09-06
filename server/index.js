@@ -29,7 +29,6 @@ MongoClient
     const orders = client.db().collection('orders')
     const favorites = client.db().collection('favorites')
     const publicPath = path.join(__dirname, 'public/')
-    const reviews = client.db().collection('reviews')
 
     app
       .use((err, req, res, next) => {
@@ -41,7 +40,7 @@ MongoClient
       .use('/reservations', reservationRouter(reservations))
       .use('/orders', orderRouter(orders))
       .use('/favorites', favoritesRouter(favorites))
-      .use('/reviews', reviewsRouter(reviews))
+      .use('/reviews', reviewsRouter(campgrounds))
       .use(express.static(publicPath))
 
     app.listen(process.env.PORT, () => {
