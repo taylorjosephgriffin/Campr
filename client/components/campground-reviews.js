@@ -4,26 +4,29 @@ import {
   Col,
   Card,
   CardHeader,
-  CardText,
   Button,
   CardBody } from 'reactstrap'
 import ReviewModal from './review-modal.js'
+import RenderReview from './review.js'
 
 export default class CampgroundReviews extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      isOpen: false
+      isOpen: false,
+      reviews: []
     }
     this.toggle = this.toggle.bind(this)
     this.createReview = this.createReview.bind(this)
+    this.updateReviews = this.updateReviews.bind(this)
   }
 
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     })
+    this.updateReviews()
   }
 
   createReview(review) {
@@ -36,6 +39,22 @@ export default class CampgroundReviews extends React.Component {
       body: JSON.stringify(review)
     }).then(() => this.toggle())
       .catch(err => console.error(err))
+  }
+
+  componentDidMount() {
+    this.updateReviews()
+  }
+
+  updateReviews() {
+    fetch('/reviews/' + this.props.params.id)
+      .then(res => res.json())
+      .then(reviews => {
+        if (reviews) {
+          this.setState({
+            reviews: reviews.reviews
+          })
+        }
+      })
   }
 
   render() {
@@ -54,8 +73,15 @@ export default class CampgroundReviews extends React.Component {
                     Leave a Review
                   </Button>
                 </CardHeader>
-                <CardBody style={{height: '400px', overflow: 'scroll'}}>
-                  <CardText>No reviews.</CardText>
+                <CardBody style={{height: '400px', overflow: 'scroll', padding: '0'}}>
+                  { this.state.reviews.length > 0
+                    ? this.state.reviews.map((review, index) =>
+                      <RenderReview
+                        key={index}
+                        review={review} />
+                    )
+                    : <Col className='mt-5 h-100'><span className='display-1 text-dark'>{'No Reviews'}</span></Col>
+                  }
                 </CardBody>
               </Card>
             </Col>
@@ -65,7 +91,8 @@ export default class CampgroundReviews extends React.Component {
           isOpen={this.state.isOpen}
           toggleReviewModal={this.toggle}
           params={this.props.params}
-          createReview={this.createReview} />
+          createReview={this.createReview}
+          reviews={this.state.reviews} />
       </div>
     )
   }
