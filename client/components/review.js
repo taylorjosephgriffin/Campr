@@ -11,13 +11,14 @@ export default function RenderReview(props) {
 
   return (
     <Card>
-      <Container>
+      <Container fluid>
         <CardBody>
           <Row>
             <Col xl='2' lg='2' md='3' sm='12' xs='12'>
               <img style={{width: '100%'}} className='py-2' src='./assets/review-icon.png' />
               <div className='text-center text-dark'>{props.review.name}</div>
               <div className='text-center text-dark'>{props.review.location}</div>
+              <div className='text-center text-dark'>{props.review.date}</div>
               <div className='text-center text-success'>
                 <Rating
                   readonly={true}
